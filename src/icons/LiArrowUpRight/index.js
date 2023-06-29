@@ -1,0 +1,1 @@
+export { LiArrowUpRight } from "./LiArrowUpRight";
