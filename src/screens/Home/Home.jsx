@@ -4,6 +4,7 @@ import { LiArrowUpRight } from "../../icons/LiArrowUpRight";
 import { LinearArrowsTransferVertical } from "../../icons/LinearArrowsTransferVertical";
 import "./style.css";
 import ConnectToMetamask from './components/MetamaskButton';
+import TelegramButton from './components/TelegramButton';
 
 export const Home = () => {
   return (
@@ -19,7 +20,7 @@ export const Home = () => {
             </div>
             <div className="frame-2">
               <div className="group">
-                <img className="vector" alt="Vector" src="/img/vector-1.svg" />
+                <TelegramButton />
               </div>
               <div className="button">
                 <ConnectToMetamask />
