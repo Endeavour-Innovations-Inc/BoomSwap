@@ -3,7 +3,7 @@ import React from 'react';
 const TelegramButton = () => {
 
   const redirectToTelegram = () => {
-    window.open('https://www.google.com', '_blank');
+    window.open('https://t.me/boom_tocen', '_blank');
   };
 
   const buttonStyle = {
