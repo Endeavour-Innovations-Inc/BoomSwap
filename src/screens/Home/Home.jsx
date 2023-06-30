@@ -77,10 +77,7 @@ export const Home = () => {
         <img className="vector-3" alt="Vector" src="/img/vector-2.png" />
         <div className="overlap-5">
           <div className="menu">
-            <div className="text-wrapper-4">Trade</div>
-            <div className="text-wrapper">Earn</div>
-            <div className="text-wrapper">Dashboard</div>
-            <div className="text-wrapper">ITO</div>
+            
           </div>
           <div className="frame-4">
             <div className="frame-5">
