@@ -5,6 +5,7 @@ import { LinearArrowsTransferVertical } from "../../icons/LinearArrowsTransferVe
 import "./style.css";
 import ConnectToMetamask from './components/MetamaskButton';
 import TelegramButton from './components/TelegramButton';
+import AddToMetamask from "./components/AddToMetamaskButton";
 
 export const Home = () => {
   return (
@@ -37,8 +38,7 @@ export const Home = () => {
                 Blockchain Development company.
               </p>
               <div className="button-2">
-                <div className="text-wrapper-3">Add to MetaMask</div>
-                <LiArrowUpRight className="icon-instance-node" color="white" />
+                <AddToMetamask />
               </div>
             </div>
             <div className="overlap-wrapper">
