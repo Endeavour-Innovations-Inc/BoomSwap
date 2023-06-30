@@ -3,6 +3,7 @@ import { Ru } from "../../components/Ru";
 import { LiArrowUpRight } from "../../icons/LiArrowUpRight";
 import { LinearArrowsTransferVertical } from "../../icons/LinearArrowsTransferVertical";
 import "./style.css";
+import ConnectToMetamask from './components/MetamaskButton';
 
 export const Home = () => {
   return (
@@ -21,7 +22,7 @@ export const Home = () => {
                 <img className="vector" alt="Vector" src="/img/vector-1.svg" />
               </div>
               <div className="button">
-                <div className="text-wrapper-2">Connect to MetaMask</div>
+                <ConnectToMetamask />
               </div>
             </div>
           </div>
