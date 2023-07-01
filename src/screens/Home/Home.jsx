@@ -31,7 +31,7 @@ export const Home = () => {
           <div className="overlap-group">
             <div className="ellipse" />
             <div className="frame-3">
-              <h1 className="h-1">Welcome to BoomToken ICO</h1>
+              <h1 className="h-1">Welcome to BoomFinance ICO</h1>
               <p className="we-provide-software">
                 We Provide Software Development and Staffing Services. Expand <br />
                 the boundaries of your business using high-tech development services from Top 1 Dubai &amp; Miami
@@ -86,7 +86,7 @@ export const Home = () => {
             </div>
             <div className="text-wrapper-5">РУС</div>
           </div>
-          <div className="text-wrapper-6">© 2023 VierTrust</div>
+          <div className="text-wrapper-6">© 2023 BoomFinance</div>
         </div>
         <div className="buy-now">Buy Now</div>
         <div className="frame-6">
@@ -128,15 +128,15 @@ export const Home = () => {
             <div className="rectangle" />
           </div>
           <div className="group-13">
-            <div className="text-wrapper-9">Токенов продано</div>
-            <div className="text-wrapper-10">1,000,000,000 / 1,000,000,000</div>
+            <div className="text-wrapper-9">Tokens Sold</div>
+            <div className="text-wrapper-10">330,000,000 / 1,000,000,000</div>
           </div>
         </div>
         <div className="frame-wrapper">
           <div className="frame-8">
             <div className="group-14">
               <div className="text-wrapper-11">BoomToken</div>
-              <p className="text-wrapper-12">Trade tokens in an instant</p>
+              <p className="text-wrapper-12">Purchase tokens in an instant</p>
             </div>
             <div className="frame-9">
               <div className="text-wrapper-13">AmountBNB</div>
