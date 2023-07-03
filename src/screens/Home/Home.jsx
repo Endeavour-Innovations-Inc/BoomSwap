@@ -8,6 +8,8 @@ import TelegramButton from './components/TelegramButton';
 import AddToMetamask from "./components/AddToMetamaskButton";
 import TokenPurchaseFrame from "./components/PurchaseTokensFrame";
 import TokensSoldBar from "./components/TokensSoldBar";
+import LanguageSelector from "./components/LangSelector";
+import NavbarButtons from "./components/NavbarButtons";
 
 export const Home = () => {
   return (
@@ -16,10 +18,7 @@ export const Home = () => {
         <div className="overlap">
           <div className="frame">
             <div className="navbar">
-              <button className="text-wrapper-button" onClick={() => {}}>Trade</button>
-              <button className="text-wrapper-button" onClick={() => {}}>Earn</button>
-              <button className="text-wrapper-button" onClick={() => {}}>Dashboard</button>
-              <button className="text-wrapper-button" onClick={() => {}}>ITO</button>
+              <NavbarButtons />
             </div>
             <div className="frame-2">
               <div className="group">
@@ -79,14 +78,9 @@ export const Home = () => {
         <img className="vector-3" alt="Vector" src="/img/vector-2.png" />
         <div className="overlap-5">
           <div className="menu">
-            
           </div>
           <div className="frame-4">
-            <div className="frame-5">
-              <Ru RU="/img/ru.svg" className="RU-instance" />
-              <img className="vector-4" alt="Vector" src="/img/vector-332.svg" />
-            </div>
-            <div className="text-wrapper-5">РУС</div>
+            <LanguageSelector />
           </div>
           <div className="text-wrapper-6">© 2023 BoomFinance</div>
         </div>
