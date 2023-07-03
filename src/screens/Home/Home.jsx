@@ -7,6 +7,7 @@ import ConnectToMetamask from './components/MetamaskButton';
 import TelegramButton from './components/TelegramButton';
 import AddToMetamask from "./components/AddToMetamaskButton";
 import TokenPurchaseFrame from "./components/PurchaseTokensFrame";
+import TokensSoldBar from "./components/TokensSoldBar";
 
 export const Home = () => {
   return (
@@ -125,13 +126,7 @@ export const Home = () => {
           </div>
         </div>
         <div className="frame-7">
-          <div className="rectangle-wrapper">
-            <div className="rectangle" />
-          </div>
-          <div className="group-13">
-            <div className="text-wrapper-9">Tokens Sold</div>
-            <div className="text-wrapper-10">330,000,000 / 1,000,000,000</div>
-          </div>
+          <TokensSoldBar />
         </div>
         <div className="frame-wrapper">
           <TokenPurchaseFrame />
