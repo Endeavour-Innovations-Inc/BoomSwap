@@ -35,69 +35,6 @@
   width: fit-content;
 }
 
-.home .navbar {
-  align-items: center;
-  display: flex;
-  gap: 67px;
-  justify-content: center;
-  position: relative;
-  width: fit-content;
-}
-
-.home .text-wrapper {
-  color: #6f767e;
-  font-family: "TT Firs Neue-Medium", Helvetica;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 24px;
-  margin-top: -1px;
-  position: relative;
-  white-space: nowrap;
-  width: fit-content;
-}
-
-.text-wrapper-button {
-  color: #6f767e;
-  font-family: "TT Firs Neue-Medium", Helvetica;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 24px;
-  margin-top: -1px;
-  position: relative;
-  white-space: nowrap;
-  width: fit-content;
-  border: none;
-  background: none;
-  cursor: pointer;
-  z-index: 1000;
-  padding: 10px 20px; /* Add padding to make the button slightly bigger */
-  border-radius: 10px; /* Add border-radius to make the edges rounded */
-  margin-right: -25px;
-}
-
-
-/* Change color to dark grey when hovering */
-.text-wrapper-button:hover {
-  background-color: darkgrey;
-}
-
-/* Blink effect when clicking */
-.text-wrapper-button:active {
-  animation: blink-animation 0.5s linear;
-}
-
-/* Define the blink animation */
-@keyframes blink-animation {
-  0%, 50%, 100% {
-    opacity: 1;
-  }
-  25%, 75% {
-    opacity: 0;
-  }
-}
-
 .home .frame-2 {
   align-items: flex-start;
   display: flex;
@@ -130,15 +67,6 @@
   cursor: pointer;
 }
 
-.home .vector {
-  height: 18px;
-  left: 12px;
-  position: absolute;
-  top: 15px;
-  width: 21px;
-  z-index: 1000;
-}
-
 .home .button {
   align-items: center;
   background-color: #271f15;
@@ -155,39 +83,6 @@
 .home .button:hover {
   background-color: rgb(255, 189, 60);
   cursor: pointer;
-}
-
-.home .text-wrapper-2 {
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-  background: linear-gradient(
-    180deg,
-    rgb(247, 179, 50) 0%,
-    rgb(252.88, 173.7, 20.02) 35.19%,
-    rgb(213.56, 129.21, 2.67) 100%
-  );
-  background-clip: text;
-  color: transparent;
-  font-family: "TT Firs Neue-Medium", Helvetica;
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 24px;
-  margin-top: -1px;
-  position: relative;
-  text-fill-color: transparent;
-  white-space: nowrap;
-  width: fit-content;
-  z-index: 1000;
-}
-
-.home .button:hover .text-wrapper-2 {
-  background: linear-gradient(
-    180deg,
-    rgb(255, 189, 60) 0%,
-    rgb(255, 183.7, 30.02) 35.19%,
-    rgb(223.56, 139.21, 12.67) 100%
-  );
 }
 
 .home .overlap-group {
@@ -475,19 +370,6 @@
   width: fit-content;
 }
 
-.home .text-wrapper-4 {
-  color: #efefef;
-  font-family: "TT Firs Neue-Medium", Helvetica;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 24px;
-  margin-top: -1px;
-  position: relative;
-  white-space: nowrap;
-  width: fit-content;
-}
-
 .home .frame-4 {
   align-items: center;
   display: flex;
@@ -495,42 +377,6 @@
   left: 75px;
   position: absolute;
   top: 71px;
-  width: fit-content;
-}
-
-.home .frame-5 {
-  align-items: center;
-  display: flex;
-  gap: 5px;
-  position: relative;
-  width: fit-content;
-}
-
-.home .RU-instance {
-  height: 13.53px !important;
-  left: unset !important;
-  min-width: 18.94px !important;
-  position: relative !important;
-  top: unset !important;
-  width: unset !important;
-}
-
-.home .vector-4 {
-  height: 3.16px;
-  min-width: 6.31px;
-  position: relative;
-}
-
-.home .text-wrapper-5 {
-  color: #c4c4c4;
-  font-family: "TT Firs Neue-Regular", Helvetica;
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: 0;
-  line-height: 24px;
-  margin-top: -1px;
-  position: relative;
-  white-space: nowrap;
   width: fit-content;
 }
 
