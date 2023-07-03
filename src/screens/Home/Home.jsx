@@ -17,9 +17,7 @@ export const Home = () => {
       <div className="div">
         <div className="overlap">
           <div className="frame">
-            <div className="navbar">
-              <NavbarButtons />
-            </div>
+            <NavbarButtons />
             <div className="frame-2">
               <div className="group">
                 <TelegramButton />

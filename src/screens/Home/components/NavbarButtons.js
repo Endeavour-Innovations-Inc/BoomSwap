@@ -21,13 +21,18 @@ const NavbarButtons = () => {
     // Add the link or functionality for the ITO button here
   };
 
+  const redirectToOther = () => {
+    // Add the link or functionality for the ITO button here
+  };
+
   const navbarStyle = {
     alignItems: 'center',
     display: 'flex',
-    gap: '67px',
-    justifyContent: 'center',
+    gap: '50px',
+    justifyContent: 'flex-start', // Align items to the left
     position: 'relative',
     width: 'fit-content',
+    marginLeft: '-40px', // Add some space to the left
   };
 
   const buttonStyle = (isHovered, isPressed) => ({
@@ -104,6 +109,16 @@ const NavbarButtons = () => {
         onClick={redirectToITO}
       >
         ITO
+      </button>
+      <button
+        style={buttonStyle(hoveredButton === 'other', pressedButton === 'other')}
+        onMouseEnter={() => setHoveredButton('other')}
+        onMouseLeave={() => setHoveredButton(null)}
+        onMouseDown={() => setPressedButton('other')}
+        onMouseUp={() => setPressedButton(null)}
+        onClick={redirectToOther}
+      >
+        ...
       </button>
     </div>
   );
