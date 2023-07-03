@@ -6,6 +6,7 @@ import "./style.css";
 import ConnectToMetamask from './components/MetamaskButton';
 import TelegramButton from './components/TelegramButton';
 import AddToMetamask from "./components/AddToMetamaskButton";
+import TokenPurchaseFrame from "./components/PurchaseTokensFrame";
 
 export const Home = () => {
   return (
@@ -133,26 +134,7 @@ export const Home = () => {
           </div>
         </div>
         <div className="frame-wrapper">
-          <div className="frame-8">
-            <div className="group-14">
-              <div className="text-wrapper-11">BoomToken</div>
-              <p className="text-wrapper-12">Purchase tokens in an instant</p>
-            </div>
-            <div className="frame-9">
-              <div className="text-wrapper-13">AmountBNB</div>
-            </div>
-            <div className="frame-9">
-              <div className="text-wrapper-14">Token Price</div>
-            </div>
-            <LinearArrowsTransferVertical className="icon-instance-node" />
-            <div className="frame-9">
-              <div className="text-wrapper-14">Token Quantity for Purchase</div>
-            </div>
-            <div className="button-3">
-              <div className="text-wrapper-3">Add to MetaMask</div>
-              <LiArrowUpRight className="icon-instance-node" color="white" />
-            </div>
-          </div>
+          <TokenPurchaseFrame />
         </div>
       </div>
     </div>
