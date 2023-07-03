@@ -12,7 +12,7 @@ const TokenPurchaseFrame = () => {
     display: 'flex',
     flexDirection: 'column',
     gap: '10px',
-    padding: '10px 0px',
+    padding: '5px 0px',
     width: 'fit-content',
   };
 
@@ -92,6 +92,7 @@ const TokenPurchaseFrame = () => {
     padding: '19px 30px',
     position: 'relative',
     width: '567px',
+    cursor: 'pointer',
   };
 
   const textWrapper3Style = {
@@ -122,7 +123,17 @@ const TokenPurchaseFrame = () => {
     boxSizing: 'border-box',
 };
 
+   const purchaseTokens = async () => {
+    try {
+      // Add the logic for purchasing tokens here
+      console.log('Purchasing tokens...');
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
+    <div style={frameWrapperStyle}>
       <div style={frame8Style}>
         <div style={group14Style}>
           <div style={textWrapper11Style}>BoomToken</div>
@@ -156,11 +167,12 @@ const TokenPurchaseFrame = () => {
             onChange={(e) => setAmount(e.target.value)}
           />
         </div>
-        <div style={button3Style}>
-          <div style={textWrapper3Style}>Purchase Tokens</div>
-          <LiArrowUpRight className="icon-instance-node" color="white" />
+        <div style={button3Style} onClick={purchaseTokens}>
+            <div style={textWrapper3Style}>Purchase Tokens</div>
+            <LiArrowUpRight className="icon-instance-node" color="white" />
         </div>
       </div>
+    </div>
   );
 };
 
