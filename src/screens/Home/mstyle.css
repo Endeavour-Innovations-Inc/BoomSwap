@@ -1,0 +1,725 @@
+.android-large {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .android-large .div {
+    background-color: #ffffff;
+    border: 0.89px none;
+    height: 3047px;
+    overflow: hidden;
+    position: relative;
+    width: 360px;
+  }
+  
+  .android-large .overlap {
+    height: 965px;
+    left: -136px;
+    position: absolute;
+    top: -118px;
+    width: 538px;
+  }
+  
+  .android-large .rectangle {
+    background-color: #101014;
+    height: 965px;
+    left: 136px;
+    position: absolute;
+    top: 0;
+    width: 360px;
+  }
+  
+  .android-large .li-menu {
+    height: 34px !important;
+    left: 447px !important;
+    position: absolute !important;
+    top: 145px !important;
+    width: 34px !important;
+  }
+  
+  .android-large .group {
+    background: linear-gradient(
+      180deg,
+      rgb(247, 179, 50) 0%,
+      rgb(252.88, 173.7, 20.02) 35.19%,
+      rgb(213.56, 129.21, 2.67) 100%
+    );
+    border-radius: 17px;
+    height: 34px;
+    left: 151px;
+    position: absolute;
+    top: 145px;
+    width: 34px;
+  }
+  
+  .android-large .vector {
+    height: 13px;
+    left: 8px;
+    position: absolute;
+    top: 11px;
+    width: 15px;
+  }
+  
+  .android-large .overlap-wrapper {
+    height: 405px;
+    left: 0;
+    position: absolute;
+    top: 560px;
+    width: 538px;
+  }
+  
+  .android-large .overlap-group {
+    height: 405px;
+    left: 136px;
+    position: relative;
+    width: 360px;
+  }
+  
+  .android-large .ellipse {
+    background-color: #f2a1103b;
+    border-radius: 158.48px/84.18px;
+    filter: blur(432.61px);
+    height: 168px;
+    left: 18px;
+    position: absolute;
+    top: 168px;
+    width: 317px;
+  }
+  
+  .android-large .img {
+    height: 324px;
+    left: 0;
+    position: absolute;
+    top: 81px;
+    width: 360px;
+  }
+  
+  .android-large .group-wrapper {
+    height: 378px;
+    left: 18px;
+    position: absolute;
+    top: 0;
+    width: 327px;
+  }
+  
+  .android-large .group-2 {
+    height: 378px;
+  }
+  
+  .android-large .overlap-group-wrapper {
+    height: 378px;
+    width: 327px;
+  }
+  
+  .android-large .overlap-2 {
+    height: 378px;
+    position: relative;
+  }
+  
+  .android-large .group-3 {
+    height: 172px;
+    left: 36px;
+    position: absolute;
+    top: 206px;
+    width: 268px;
+  }
+  
+  .android-large .div-wrapper {
+    height: 327px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 327px;
+  }
+  
+  .android-large .overlap-3 {
+    height: 327px;
+    position: relative;
+  }
+  
+  .android-large .group-4 {
+    height: 122px;
+    left: 69px;
+    position: absolute;
+    top: 205px;
+    width: 201px;
+  }
+  
+  .android-large .group-5 {
+    height: 114px;
+    left: 75px;
+    position: absolute;
+    top: 185px;
+    width: 188px;
+  }
+  
+  .android-large .group-6 {
+    height: 107px;
+    left: 81px;
+    position: absolute;
+    top: 167px;
+    width: 177px;
+  }
+  
+  .android-large .group-7 {
+    height: 70px;
+    left: 119px;
+    position: absolute;
+    top: 175px;
+    width: 103px;
+  }
+  
+  .android-large .group-8 {
+    height: 231px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 327px;
+  }
+  
+  .android-large .overlap-group-2 {
+    height: 231px;
+    position: relative;
+  }
+  
+  .android-large .vector-2 {
+    height: 209px;
+    left: 26px;
+    position: absolute;
+    top: 23px;
+    width: 289px;
+  }
+  
+  .android-large .test {
+    height: 162px;
+    left: 99px;
+    object-fit: cover;
+    position: absolute;
+    top: 23px;
+    width: 152px;
+  }
+  
+  .android-large .test-2 {
+    height: 81px;
+    left: 251px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 76px;
+  }
+  
+  .android-large .test-3 {
+    height: 64px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 45px;
+    width: 60px;
+  }
+  
+  .android-large .frame {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    left: 151px;
+    position: absolute;
+    top: 258px;
+    width: fit-content;
+  }
+  
+  .android-large .text-wrapper {
+    color: #ffffff;
+    font-family: "TT Firs Neue-Medium", Helvetica;
+    font-size: 31px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    width: 330px;
+  }
+  
+  .android-large .we-provide-software {
+    color: #ffffff;
+    font-family: "TT Firs Neue-Light", Helvetica;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 24px;
+    position: relative;
+    width: 330px;
+  }
+  
+  .android-large .button {
+    align-items: flex-end;
+    background: linear-gradient(
+      180deg,
+      rgb(247, 179, 50) 0%,
+      rgb(252.88, 173.7, 20.02) 35.19%,
+      rgb(213.56, 129.21, 2.67) 100%
+    );
+    border-radius: 8px;
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    padding: 19px 30px;
+    position: relative;
+    width: 330px;
+  }
+  
+  .android-large .text-wrapper-2 {
+    color: #ffffff;
+    font-family: "TT Firs Neue-Medium", Helvetica;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .android-large .li-arrow-up-right {
+    height: 24px !important;
+    min-width: 24px !important;
+    position: relative !important;
+  }
+  
+  .android-large .buy-now {
+    color: #252323;
+    font-family: "TT Firs Neue-Medium", Helvetica;
+    font-size: 28px;
+    font-weight: 500;
+    left: 121px;
+    letter-spacing: 0;
+    line-height: 72px;
+    position: absolute;
+    top: 888px;
+    white-space: nowrap;
+  }
+  
+  .android-large .group-9 {
+    height: 185px;
+    left: 15px;
+    position: absolute;
+    top: 998px;
+    width: 332px;
+  }
+  
+  .android-large .overlap-group-3 {
+    background-color: #e6e6e6;
+    border-radius: 14px;
+    height: 185px;
+    position: relative;
+    width: 330px;
+  }
+  
+  .android-large .img-2 {
+    height: 185px;
+    left: 30px;
+    position: absolute;
+    top: 0;
+    width: 300px;
+  }
+  
+  .android-large .text-wrapper-3 {
+    color: #000000;
+    font-family: "TT Firs Neue-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 44px;
+    letter-spacing: 0;
+    line-height: 24px;
+    position: absolute;
+    top: 106px;
+    width: 111px;
+  }
+  
+  .android-large .wallet {
+    height: 185px;
+    left: 15px;
+    position: absolute;
+    top: 1208px;
+    width: 332px;
+  }
+  
+  .android-large .text-wrapper-4 {
+    color: #000000;
+    font-family: "TT Firs Neue-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 35px;
+    letter-spacing: 0;
+    line-height: 24px;
+    position: absolute;
+    top: 106px;
+    width: 82px;
+  }
+  
+  .android-large .bnb-wrapper {
+    height: 185px;
+    left: 15px;
+    position: absolute;
+    top: 1418px;
+    width: 330px;
+  }
+  
+  .android-large .overlap-group-wrapper-2 {
+    height: 185px;
+    width: 332px;
+  }
+  
+  .android-large .p {
+    color: #000000;
+    font-family: "TT Firs Neue-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 35px;
+    letter-spacing: 0;
+    line-height: 24px;
+    position: absolute;
+    top: 106px;
+    width: 164px;
+  }
+  
+  .android-large .buy-wrapper {
+    height: 185px;
+    left: 15px;
+    position: absolute;
+    top: 1628px;
+    width: 330px;
+  }
+  
+  .android-large .press-the-buy-now {
+    color: #000000;
+    font-family: "TT Firs Neue-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 35px;
+    letter-spacing: 0;
+    line-height: 24px;
+    position: absolute;
+    top: 106px;
+    width: 178px;
+  }
+  
+  .android-large .overlap-4 {
+    background-color: #e6e6e6;
+    border-radius: 14px;
+    height: 435px;
+    left: 15px;
+    position: absolute;
+    top: 1838px;
+    width: 330px;
+  }
+  
+  .android-large .button-2 {
+    align-items: flex-end;
+    background: linear-gradient(
+      180deg,
+      rgb(247, 179, 50) 0%,
+      rgb(252.88, 173.7, 20.02) 35.19%,
+      rgb(213.56, 129.21, 2.67) 100%
+    );
+    border-radius: 8px;
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    left: 17px;
+    padding: 19px 30px;
+    position: absolute;
+    top: 336px;
+    width: 296px;
+  }
+  
+  .android-large .text-wrapper-5 {
+    color: #ffffff;
+    font-family: "TT Firs Neue-Medium", Helvetica;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -0.25px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .android-large .li-arrow-up-right-instance {
+    height: 19px !important;
+    min-width: 19px !important;
+    position: relative !important;
+  }
+  
+  .android-large .frame-2 {
+    align-items: flex-start;
+    border: 1px solid;
+    border-color: #d0d0d0;
+    border-radius: 6px;
+    display: flex;
+    gap: 51px;
+    left: 17px;
+    overflow: hidden;
+    padding: 14px 30px;
+    position: absolute;
+    top: 90px;
+    width: 296px;
+  }
+  
+  .android-large .text-wrapper-6 {
+    color: #c6c6c6;
+    font-family: "TT Firs Neue-Medium", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin-top: -1px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .android-large .frame-3 {
+    align-items: flex-start;
+    border: 1px solid;
+    border-color: #d0d0d0;
+    border-radius: 6px;
+    display: flex;
+    gap: 51px;
+    left: 17px;
+    overflow: hidden;
+    padding: 14px 30px;
+    position: absolute;
+    top: 154px;
+    width: 296px;
+  }
+  
+  .android-large .linear-arrows {
+    height: 24px !important;
+    left: 153px !important;
+    position: absolute !important;
+    top: 218px !important;
+    width: 24px !important;
+  }
+  
+  .android-large .frame-4 {
+    align-items: flex-start;
+    border: 1px solid;
+    border-color: #d0d0d0;
+    border-radius: 6px;
+    display: flex;
+    gap: 51px;
+    left: 17px;
+    overflow: hidden;
+    padding: 14px 30px;
+    position: absolute;
+    top: 254px;
+    width: 296px;
+  }
+  
+  .android-large .group-10 {
+    height: 43px;
+    left: 72px;
+    position: absolute;
+    top: 26px;
+    width: 189px;
+  }
+  
+  .android-large .text-wrapper-7 {
+    color: #272624;
+    font-family: "TT Firs Neue-Medium", Helvetica;
+    font-size: 20px;
+    font-weight: 500;
+    left: 36px;
+    letter-spacing: 0;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+  }
+  
+  .android-large .text-wrapper-8 {
+    color: #c6c6c6;
+    font-family: "TT Firs Neue-Regular", Helvetica;
+    font-size: 15px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 15px;
+    position: absolute;
+    top: 28px;
+    white-space: nowrap;
+  }
+  
+  .android-large .frame-5 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    left: 15px;
+    position: absolute;
+    top: 2324px;
+    width: 330px;
+  }
+  
+  .android-large .rectangle-wrapper {
+    background-color: #dedede;
+    border-radius: 99px;
+    height: 4px;
+    min-width: 330px;
+    position: relative;
+  }
+  
+  .android-large .rectangle-2 {
+    background: linear-gradient(
+      180deg,
+      rgb(247, 179, 50) 0%,
+      rgb(252.88, 173.7, 20.02) 35.19%,
+      rgb(213.56, 129.21, 2.67) 100%
+    );
+    border-radius: 99px;
+    height: 4px;
+    width: 57px;
+  }
+  
+  .android-large .group-11 {
+    height: 48px;
+    min-width: 231px;
+    position: relative;
+  }
+  
+  .android-large .text-wrapper-9 {
+    color: #3f3f3f;
+    font-family: "TT Firs Neue-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 24px;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+  }
+  
+  .android-large .text-wrapper-10 {
+    color: #3f3f3f;
+    font-family: "TT Firs Neue-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 24px;
+    position: absolute;
+    text-align: right;
+    top: 24px;
+    white-space: nowrap;
+  }
+  
+  .android-large .overlap-5 {
+    background-color: #101014;
+    height: 719px;
+    left: 0;
+    position: absolute;
+    top: 2537px;
+    width: 360px;
+  }
+  
+  .android-large .frame-6 {
+    align-items: center;
+    display: flex;
+    gap: 11px;
+    left: 15px;
+    position: absolute;
+    top: 348px;
+    width: fit-content;
+  }
+  
+  .android-large .frame-7 {
+    align-items: center;
+    display: flex;
+    gap: 5px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .android-large .RU-instance {
+    height: 13.53px !important;
+    left: unset !important;
+    min-width: 18.94px !important;
+    position: relative !important;
+    top: unset !important;
+    width: unset !important;
+  }
+  
+  .android-large .vector-3 {
+    height: 3.16px;
+    min-width: 6.31px;
+    position: relative;
+  }
+  
+  .android-large .text-wrapper-11 {
+    color: #c4c4c4;
+    font-family: "TT Firs Neue-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin-top: -1px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .android-large .frame-8 {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+    left: 133px;
+    position: absolute;
+    top: 60px;
+    width: fit-content;
+  }
+  
+  .android-large .text-wrapper-12 {
+    color: #efefef;
+    font-family: "TT Firs Neue-Medium", Helvetica;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin-top: -1px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .android-large .text-wrapper-13 {
+    color: #6f767e;
+    font-family: "TT Firs Neue-Medium", Helvetica;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 24px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .android-large .text-wrapper-14 {
+    color: #6f767e;
+    font-family: "TT Firs Neue-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    left: 214px;
+    letter-spacing: 0;
+    line-height: 24px;
+    position: absolute;
+    top: 347px;
+    white-space: nowrap;
+  }
+  
