@@ -20,7 +20,6 @@ export const Home = () => {
   return (
     <div className="home">
       {isMobile ? (
-            <div className="android-large">
             <div className="div">
               <div className="overlap">
                 <div className="rectangle" />
@@ -137,16 +136,9 @@ export const Home = () => {
                   </div>
                   <div className="text-wrapper-11">РУС</div>
                 </div>
-                <div className="frame-8">
-                  <div className="text-wrapper-12">Trade</div>
-                  <div className="text-wrapper-13">Earn</div>
-                  <div className="text-wrapper-13">Dashboard</div>
-                  <div className="text-wrapper-13">ITO</div>
-                </div>
-                <div className="text-wrapper-14">© 2023 VierTrust</div>
+                <div className="text-wrapper-14">© 2023 BoomFinance</div>
               </div>
             </div>
-          </div>
       ) : (
         // Existing content for desktop
       <div className="div">
