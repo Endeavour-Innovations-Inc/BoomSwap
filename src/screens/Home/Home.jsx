@@ -3,6 +3,7 @@ import "./style.css";
 import ConnectToMetamask from './components/MetamaskButton';
 import TelegramButton from './components/TelegramButton';
 import AddToMetamask from "./components/AddToMetamaskButton";
+import mAddToMetamask from "./mobileComponents/mAddToMetamask"
 import TokenPurchaseFrame from "./components/PurchaseTokensFrame";
 import TokensSoldBar from "./components/TokensSoldBar";
 import LanguageSelector from "./components/LangSelector";
@@ -20,6 +21,7 @@ export const Home = () => {
   return (
     <div className="home">
       {isMobile ? (
+            <div className="android-large">
             <div className="div">
               <div className="overlap">
                 <div className="rectangle" />
@@ -59,14 +61,13 @@ export const Home = () => {
                   </div>
                 </div>
                 <div className="frame">
-                  <h1 className="text-wrapper">Welcome to BoomToken ICO</h1>
+                  <h1 className="text-wrapper">Welcome to BoomFinance ICO</h1>
                   <p className="we-provide-software">
                     We Provide Software Development and Staffing Services. Expand the boundaries of your business using
                     high-tech development services from Top 1 Dubai &amp; Miami Blockchain Development company.
                   </p>
                   <div className="button">
-                    <div className="text-wrapper-2">Add to MetaMask</div>
-                    <LiArrowUpRight2 className="li-arrow-up-right" color="white" />
+                    <mAddToMetamask />
                   </div>
                 </div>
               </div>
@@ -139,6 +140,7 @@ export const Home = () => {
                 <div className="text-wrapper-14">© 2023 BoomFinance</div>
               </div>
             </div>
+          </div>
       ) : (
         // Existing content for desktop
       <div className="div">
