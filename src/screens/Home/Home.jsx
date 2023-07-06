@@ -19,6 +19,7 @@ import MobileTelegramButton from "./mobileComponents/mTelegramButton";
 import MTokenPurchaseFrame from "./mobileComponents/mPurchaseTokens";
 import MLanguageSelector from "./mobileComponents/mLangSelector";
 import MNavbarButtons from "./mobileComponents/mNavbarButtons";
+import MTokensSoldBar from "./mobileComponents/mTokensSoldBar";
 
 export const Home = () => {
   const isMobile = window.innerWidth <= 768; // You can adjust this value
@@ -138,8 +139,7 @@ export const Home = () => {
                   <div className="rectangle-2" />
                 </div>
                 <div className="group-11">
-                  <div className="text-wrapper-9">Токенов продано</div>
-                  <div className="text-wrapper-10">1,000,000,000 / 1,000,000,000</div>
+                  <MTokensSoldBar />
                 </div>
               </div>
               <div className="overlap-5">
