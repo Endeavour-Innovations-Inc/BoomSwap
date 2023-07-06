@@ -1,7 +1,7 @@
 import React from 'react';
 import { LiArrowUpRight2 } from '../../../icons/LiArrowUpRight2';
 
-const mAddToMetamask = () => {
+const MAddToMetamask = () => {
 
   const buttonStyle = {
     display: 'flex',
@@ -60,4 +60,4 @@ const mAddToMetamask = () => {
   );
 };
 
-export default mAddToMetamask;
+export default MAddToMetamask;

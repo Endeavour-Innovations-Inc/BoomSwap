@@ -3,7 +3,7 @@ import "./style.css";
 import ConnectToMetamask from './components/MetamaskButton';
 import TelegramButton from './components/TelegramButton';
 import AddToMetamask from "./components/AddToMetamaskButton";
-import mAddToMetamask from "./mobileComponents/mAddToMetamask"
+import MAddToMetamask from "./mobileComponents/MAddToMetamask"
 import TokenPurchaseFrame from "./components/PurchaseTokensFrame";
 import TokensSoldBar from "./components/TokensSoldBar";
 import LanguageSelector from "./components/LangSelector";
@@ -67,7 +67,7 @@ export const Home = () => {
                     high-tech development services from Top 1 Dubai &amp; Miami Blockchain Development company.
                   </p>
                   <div className="button">
-                    <mAddToMetamask />
+                    <MAddToMetamask />
                   </div>
                 </div>
               </div>
