@@ -3,19 +3,6 @@ import { LiArrowUpRight2 } from '../../../icons/LiArrowUpRight2';
 
 const MAddToMetamask = () => {
 
-  const buttonStyle = {
-    display: 'flex',
-    alignItems: 'center', // Changed from 'flex-end' to 'center'
-    justifyContent: 'center',
-    gap: '6px',
-    padding: '19px 30px',
-    borderRadius: '8px',
-    width: '330px',
-    background: 'linear-gradient(180deg, rgb(247, 179, 50) 0%, rgb(252.88, 173.7, 20.02) 35.19%, rgb(213.56, 129.21, 2.67) 100%)',
-    position: 'relative',
-    cursor: 'pointer',
-  };
-
   const textStyle = {
     color: '#ffffff',
     fontFamily: '"TT Firs Neue-Medium", Helvetica',
