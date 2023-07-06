@@ -16,6 +16,10 @@ const MAddToMetamask = () => {
 
   const addToMetamask = async () => {
     try {
+      if (!window.ethereum) {
+        alert('Please install MetaMask to use this feature.');
+        return;
+      }
       const wasAdded = await window.ethereum.request({
         method: 'wallet_watchAsset',
         params: {
@@ -40,10 +44,10 @@ const MAddToMetamask = () => {
   };
 
   return (
-    <div className="button" onClick={addToMetamask}>
+    <button className="button" onClick={addToMetamask}>
       <div style={textStyle}>Add to MetaMask</div>
       <LiArrowUpRight2 style={{fill: 'white'}} />
-    </div>
+    </button>
   );
 };
 
