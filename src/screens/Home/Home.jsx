@@ -144,6 +144,7 @@ export const Home = () => {
               <div className="overlap-5">
                 <div className="frame-6">
                   <MLanguageSelector />
+                  <div className="text-wrapper-14">© 2023 BoomFinance</div>
                   {/*
                   <div className="frame-7">
                     <Ru RU="/img/ru-1.svg" className="RU-instance" />
