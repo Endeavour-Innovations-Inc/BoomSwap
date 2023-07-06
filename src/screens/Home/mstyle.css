@@ -715,7 +715,7 @@
     font-size: 16px;
     font-weight: 400;
     position: absolute; 
-    right: 0; /* start with 0 and then adjust as needed */
+    right: 100px; /* start with 0 and then adjust as needed */
     top: 0; /* adjust this value as needed */
     letter-spacing: 0;
     line-height: 24px;
