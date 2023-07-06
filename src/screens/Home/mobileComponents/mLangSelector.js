@@ -40,6 +40,7 @@ const MLanguageSelector = () => {
     gap: '8px', // Reduced gap
     position: 'relative',
     cursor: 'pointer',
+    paddingRight: '15px', // Add right padding here
   };
 
   const textWrapper5Style = {
