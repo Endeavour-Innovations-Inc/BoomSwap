@@ -5,7 +5,7 @@ const MAddToMetamask = () => {
 
   const buttonStyle = {
     display: 'flex',
-    alignItems: 'flex-end',
+    alignItems: 'center', // Changed from 'flex-end' to 'center'
     justifyContent: 'center',
     gap: '6px',
     padding: '19px 30px',
@@ -55,7 +55,7 @@ const MAddToMetamask = () => {
   return (
     <div style={buttonStyle} onClick={addToMetamask}>
       <div style={textStyle}>Add to MetaMask</div>
-      <LiArrowUpRight2 className="li-arrow-up-right" color="white" />
+      <LiArrowUpRight2 style={{fill: 'white'}} /> {/* Ensure that the icon is rendered correctly */}
     </div>
   );
 };

@@ -6,7 +6,7 @@ const AddToMetamask = () => {
     alignItems: 'center',
     justifyContent: 'center',
     gap: '6px',
-    padding: '19px 30px',
+    padding: '15px 20px',
     borderRadius: '8px',
     cursor: 'pointer',
     width: 'fit-content',
