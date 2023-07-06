@@ -32,7 +32,7 @@ const MNavbarButtons = () => {
     display: 'flex',
     flexDirection: 'column', // stack items vertically
     gap: '10px', // minimum space between items
-    justifyContent: 'flex-start',
+    justifyContent: 'center', // align items to the center
     position: 'relative',
     width: 'fit-content',
     marginLeft: '-40px',

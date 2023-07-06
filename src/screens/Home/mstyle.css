@@ -715,11 +715,18 @@
     font-family: "TT Firs Neue-Regular", Helvetica;
     font-size: 16px;
     font-weight: 400;
-    left: 214px;
     letter-spacing: 0;
     line-height: 24px;
-    position: right; /* changed from absolute */
+    position: absolute; 
+    right: 0; 
     top: 347px;
     white-space: nowrap;
   }
+  
+  
+  
+  
+  
+  
+  
   
