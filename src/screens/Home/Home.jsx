@@ -146,13 +146,6 @@ export const Home = () => {
                 <div className="frame-6">
                   <MLanguageSelector />
                   <div className="text-wrapper-14">© 2023 BoomFinance</div>
-                  {/*
-                  <div className="frame-7">
-                    <Ru RU="/img/ru-1.svg" className="RU-instance" />
-                    <img className="vector-3" alt="Vector" src="/img/vector-332.svg" />
-                  </div>
-                  <div className="text-wrapper-11">РУС</div>
-                  */}
                 </div>
                 <div className="frame-8">
                   <MNavbarButtons />

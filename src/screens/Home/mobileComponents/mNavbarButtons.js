@@ -28,15 +28,14 @@ const MNavbarButtons = () => {
   };
 
   const navbarStyle = {
-    alignItems: 'center',
+    alignItems: 'center', // align items vertically in the center
     display: 'flex',
     flexDirection: 'column', // stack items vertically
     gap: '10px', // minimum space between items
-    justifyContent: 'center', // align items to the center
+    justifyContent: 'space-around', // distribute space evenly between items
     position: 'relative',
-    width: 'fit-content',
-    marginLeft: '-40px',
-  };
+    height: '100%', // ensure the div takes the full height
+  };  
 
   const buttonStyle = (isHovered, isPressed) => ({
     color: '#6f767e',
