@@ -145,10 +145,12 @@ export const Home = () => {
               <div className="overlap-5">
                 <div className="frame-6">
                   {/* <MLanguageSelector /> */}
-                  <div className="text-wrapper-14">© 2023 BoomFinance</div>
+                  <MNavbarButtons />
+                  {/*<div className="text-wrapper-14">© 2023 BoomFinance</div>*/}
                 </div>
                 <div className="frame-8">
-                  <MNavbarButtons />
+                  <div className="text-wrapper-14">© 2023 BoomFinance</div>
+                  {/*<MNavbarButtons />*/}
                 </div>
               </div>
             </div>
