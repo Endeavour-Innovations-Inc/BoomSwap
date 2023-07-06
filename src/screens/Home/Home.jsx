@@ -99,7 +99,7 @@ export const Home = () => {
               </div>
               <div className="overlap-4">
                 <div className="button-2">
-                  <div className="text-wrapper-5">Add to MetaMask</div>
+                  <div className="text-wrapper-5">Purchase Tokens</div>
                   <LiArrowUpRight className="li-arrow-up-right-instance" />
                 </div>
                 <div className="frame-2">
@@ -133,6 +133,12 @@ export const Home = () => {
                     <img className="vector-3" alt="Vector" src="/img/vector-332.svg" />
                   </div>
                   <div className="text-wrapper-11">РУС</div>
+                </div>
+                <div className="frame-8">
+                  <div className="text-wrapper-12">Trade</div>
+                  <div className="text-wrapper-13">Earn</div>
+                  <div className="text-wrapper-13">Dashboard</div>
+                  <div className="text-wrapper-13">ITO</div>
                 </div>
                 <div className="text-wrapper-14">© 2023 BoomFinance</div>
               </div>
