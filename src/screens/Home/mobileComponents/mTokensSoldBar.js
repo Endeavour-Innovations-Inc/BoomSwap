@@ -63,17 +63,17 @@ const textWrapper10Style = {
     left: '0', // Align to the left, same as "Tokens Sold"
 };
 
-  return (
-        <div style={frame7Style}>
-        <div style={rectangleWrapperStyle}>
+return (
+    <div style={frame7Style}>
+      <div style={rectangleWrapperStyle}>
         <div style={rectangleStyle} />
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}> {/* use full width of the parent component */}
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', width: '100%' }}>
         <div style={textWrapper9Style}>Tokens Sold</div>
         <div style={textWrapper10Style}>{`${tokensSold.toLocaleString()} / ${totalTokens.toLocaleString()}`}</div>
-        </div>
+      </div>
     </div>
-  );
+  );  
 };
 
 export default MTokensSoldBar;
