@@ -28,14 +28,13 @@ const MNavbarButtons = () => {
   };
 
   const navbarStyle = {
-    alignItems: 'center', // align items vertically in the center
     display: 'flex',
-    flexDirection: 'row', // stack items horizontally
+    flexDirection: 'column', // stack items vertically
     gap: '10px', // minimum space between items
-    justifyContent: 'space-between', // distribute space evenly between items
+    justifyContent: 'center', // center items vertically
+    alignItems: 'center', // center items horizontally
     position: 'relative',
-    width: '80%', // adjust this value to make buttons spread more or less
-    flexWrap: 'wrap', // allow items to wrap to next line if space is not enough
+    marginBottom: '50px', // space between navbar and copyright, adjust as needed
   };  
 
   const buttonStyle = (isHovered, isPressed) => ({
