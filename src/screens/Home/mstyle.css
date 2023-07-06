@@ -564,26 +564,6 @@
     width: 330px;
   }
   
-  .android-large .rectangle-wrapper {
-    background-color: #dedede;
-    border-radius: 99px;
-    height: 4px;
-    min-width: 330px;
-    position: relative;
-  }
-  
-  .android-large .rectangle-2 {
-    background: linear-gradient(
-      180deg,
-      rgb(247, 179, 50) 0%,
-      rgb(252.88, 173.7, 20.02) 35.19%,
-      rgb(213.56, 129.21, 2.67) 100%
-    );
-    border-radius: 99px;
-    height: 4px;
-    width: 57px;
-  }
-  
   .android-large .group-11 {
     height: 48px;
     min-width: 231px;

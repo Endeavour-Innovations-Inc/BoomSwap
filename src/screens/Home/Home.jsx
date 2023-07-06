@@ -135,12 +135,9 @@ export const Home = () => {
               </div>
               */}
               <div className="frame-5">
-                <div className="rectangle-wrapper">
-                  <div className="rectangle-2" />
-                </div>
-                <div className="group-11">
-                  <MTokensSoldBar />
-                </div>
+                  <div className="group-11">
+                      <MTokensSoldBar />
+                  </div>
               </div>
               <div className="overlap-5">
                 <div className="frame-6">
