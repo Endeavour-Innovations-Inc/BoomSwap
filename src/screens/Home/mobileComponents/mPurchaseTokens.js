@@ -6,24 +6,23 @@ const MTokenPurchaseFrame = () => {
   const [amount, setAmount] = useState('');
 
   const frameWrapperStyle = {
-    alignItems: 'flex-start',
     backgroundColor: '#e6e6e6',
     borderRadius: '14px',
     display: 'flex',
     flexDirection: 'column',
-    gap: '10px',
-    padding: '5px 0px',
-    width: '90%', // Updated for mobile
-    margin: '0 auto', // Center the content
+    alignItems: 'center', // Center align items horizontally
+    justifyContent: 'center', // Center align items vertically
+    padding: '20px', // Add some padding around the content
+    width: '330px', // Set the width to match the frame
+    height: '435px', // Set the height to match the frame
   };
 
   const frame8Style = {
-    alignItems: 'center',
     display: 'flex',
     flexDirection: 'column',
+    alignItems: 'center', // Center align items horizontally
     gap: '12px',
-    position: 'relative',
-    width: 'fit-content',
+    width: '100%', // Take the full width of the parent container
   };
 
   const group14Style = {
