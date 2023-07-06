@@ -3,7 +3,7 @@ import "./style.css";
 import ConnectToMetamask from './components/MetamaskButton';
 import TelegramButton from './components/TelegramButton';
 import AddToMetamask from "./components/AddToMetamaskButton";
-import MAddToMetamask from "./mobileComponents/MAddToMetamask";
+import MAddToMetamask from "./mobileComponents/mAddToMetamask";
 import TokenPurchaseFrame from "./components/PurchaseTokensFrame";
 import TokensSoldBar from "./components/TokensSoldBar";
 import LanguageSelector from "./components/LangSelector";
