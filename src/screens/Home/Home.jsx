@@ -17,9 +17,10 @@ import { LinearArrowsTransferVertical } from "../../icons/LinearArrowsTransferVe
 
 export const Home = () => {
   const containerStyle = {
-    overflow: 'auto', // Enables scrolling
-    zoom: '100%', // Controls the zoom level, you can set it to the desired percentage
+    overflowX: 'scroll', // Enables horizontal scrolling
+    overflowY: 'scroll', // Enables vertical scrolling
     height: '100vh', // Sets the height of the container to 100% of the viewport height
+    whiteSpace: 'nowrap', // Prevents the content from wrapping to the next line
   };
 
   return(
