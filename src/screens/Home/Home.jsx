@@ -26,9 +26,11 @@ export const Home = () => {
               <div className="overlap">
                 <div className="rectangle" />
                 <MConnectToMetamask />
+                {/* removing it for testing
                 <div className="group">
                   <img className="vector" alt="Vector" src="/img/vector-1.svg" />
                 </div>
+                */}
                 <div className="overlap-wrapper">
                   <div className="overlap-group">
                     <div className="ellipse" />

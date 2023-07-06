@@ -18,6 +18,10 @@ const MConnectToMetamask = () => {
   };
 
   const buttonStyle = {
+    position: 'absolute',
+    top: '10px',
+    left: '10px',
+    zIndex: 1000,
     alignItems: 'center',
     backgroundColor: '#271f15',
     borderRadius: '8px',
