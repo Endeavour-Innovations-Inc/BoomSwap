@@ -146,10 +146,11 @@ export const Home = () => {
                 <div className="frame-6">
                   {/* <MLanguageSelector /> */}
                   <MNavbarButtons />
+                  <div className="text-wrapper-14">© 2023 BoomFinance</div>
                   {/*<div className="text-wrapper-14">© 2023 BoomFinance</div>*/}
                 </div>
                 <div className="frame-8">
-                  <div className="text-wrapper-14">© 2023 BoomFinance</div>
+                  {/*<div className="text-wrapper-14">© 2023 BoomFinance</div>*/}
                   {/*<MNavbarButtons />*/}
                 </div>
               </div>
