@@ -17,6 +17,7 @@ import { LinearArrowsTransferVertical } from "../../icons/LinearArrowsTransferVe
 import MConnectToMetamask from "./mobileComponents/mMetamaskButton";
 import MobileTelegramButton from "./mobileComponents/mTelegramButton";
 import MTokenPurchaseFrame from "./mobileComponents/mPurchaseTokens";
+import MLanguageSelector from "./mobileComponents/mLangSelector";
 
 export const Home = () => {
   const isMobile = window.innerWidth <= 768; // You can adjust this value
@@ -142,11 +143,14 @@ export const Home = () => {
               </div>
               <div className="overlap-5">
                 <div className="frame-6">
+                  <MLanguageSelector />
+                  {/*
                   <div className="frame-7">
                     <Ru RU="/img/ru-1.svg" className="RU-instance" />
                     <img className="vector-3" alt="Vector" src="/img/vector-332.svg" />
                   </div>
                   <div className="text-wrapper-11">РУС</div>
+                  */}
                 </div>
                 <div className="frame-8">
                   <div className="text-wrapper-12">Trade</div>
