@@ -630,11 +630,10 @@
     align-items: center;
     display: flex;
     gap: 11px;
-    left: 15px;
-    position: absolute;
+    position: relative; /* ensure this line is present */
     top: 348px;
     width: fit-content;
-  }
+  }  
   
   .android-large .frame-7 {
     align-items: center;
@@ -715,10 +714,11 @@
     font-family: "TT Firs Neue-Regular", Helvetica;
     font-size: 16px;
     font-weight: 400;
-    position: absolute; /* changed to absolute */
-    right: 10px; /* adjust this value to position your element */
-    top: 347px;
+    position: absolute; 
+    right: 0; /* start with 0 and then adjust as needed */
+    top: 0; /* adjust this value as needed */
     letter-spacing: 0;
     line-height: 24px;
     white-space: nowrap;
   }
+  
