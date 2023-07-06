@@ -18,6 +18,7 @@ import MConnectToMetamask from "./mobileComponents/mMetamaskButton";
 import MobileTelegramButton from "./mobileComponents/mTelegramButton";
 import MTokenPurchaseFrame from "./mobileComponents/mPurchaseTokens";
 import MLanguageSelector from "./mobileComponents/mLangSelector";
+import MNavbarButtons from "./mobileComponents/mNavbarButtons";
 
 export const Home = () => {
   const isMobile = window.innerWidth <= 768; // You can adjust this value
@@ -154,7 +155,7 @@ export const Home = () => {
                   */}
                 </div>
                 <div className="frame-8">
-                  <NavbarButtons />
+                  <MNavbarButtons />
                 </div>
               </div>
             </div>

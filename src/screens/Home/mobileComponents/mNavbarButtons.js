@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Home } from '../Home';
 
-const NavbarButtons = () => {
+const MNavbarButtons = () => {
 
   const [hoveredButton, setHoveredButton] = useState(null);
   const [pressedButton, setPressedButton] = useState(null);
@@ -16,7 +16,7 @@ const NavbarButtons = () => {
   };
 
   const redirectToDashboard = () => {
-    
+    // Add the link or functionality for the Dashboard button here
   };
 
   const redirectToITO = () => {
@@ -24,17 +24,18 @@ const NavbarButtons = () => {
   };
 
   const redirectToOther = () => {
-    // Add the link or functionality for the ITO button here
+    // Add the link or functionality for the Other button here
   };
 
   const navbarStyle = {
     alignItems: 'center',
     display: 'flex',
-    gap: '50px',
-    justifyContent: 'flex-start', // Align items to the left
+    flexDirection: 'column', // stack items vertically
+    gap: '10px', // minimum space between items
+    justifyContent: 'flex-start',
     position: 'relative',
     width: 'fit-content',
-    marginLeft: '-40px', // Add some space to the left
+    marginLeft: '-40px',
   };
 
   const buttonStyle = (isHovered, isPressed) => ({
@@ -126,4 +127,4 @@ const NavbarButtons = () => {
   );
 };
 
-export default NavbarButtons;
+export default MNavbarButtons;
