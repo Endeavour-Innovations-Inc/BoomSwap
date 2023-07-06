@@ -629,11 +629,11 @@
   .android-large .frame-6 {
     align-items: center;
     display: flex;
-    justify-content: space-between; /* Add this line */
-    width: 100%; /* Adjust this as needed */
     gap: 11px;
+    left: 15px;
     position: absolute;
     top: 348px;
+    width: fit-content;
   }
   
   .android-large .frame-7 {
@@ -677,11 +677,10 @@
     display: flex;
     flex-direction: column;
     gap: 37px;
+    left: 133px;
     position: absolute;
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
+    top: 60px;
+    width: fit-content;
   }
   
   .android-large .text-wrapper-12 {
@@ -716,18 +715,11 @@
     font-family: "TT Firs Neue-Regular", Helvetica;
     font-size: 16px;
     font-weight: 400;
+    left: 214px;
     letter-spacing: 0;
     line-height: 24px;
-    position: absolute; 
-    right: 0; 
+    position: center; /* changed from absolute */
     top: 347px;
     white-space: nowrap;
   }
-  
-  
-  
-  
-  
-  
-  
   
