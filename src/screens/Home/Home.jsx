@@ -14,6 +14,7 @@ import { LiArrowUpRight } from "../../icons/LiArrowUpRight";
 import { LiArrowUpRight2 } from "../../icons/LiArrowUpRight2";
 import { LiMenu1 } from "../../icons/LiMenu1";
 import { LinearArrowsTransferVertical } from "../../icons/LinearArrowsTransferVertical";
+import MConnectToMetamask from "./mobileComponents/mMetamaskButton";
 
 export const Home = () => {
   const isMobile = window.innerWidth <= 768; // You can adjust this value
@@ -24,7 +25,7 @@ export const Home = () => {
         <div className="div">
               <div className="overlap">
                 <div className="rectangle" />
-                <LiMenu1 className="li-menu" color="white" />
+                <MConnectToMetamask />
                 <div className="group">
                   <img className="vector" alt="Vector" src="/img/vector-1.svg" />
                 </div>
