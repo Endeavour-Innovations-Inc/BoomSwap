@@ -40,9 +40,9 @@ const MAddToMetamask = () => {
   };
 
   return (
-    <div style={buttonStyle} onClick={addToMetamask}>
+    <div className="button" onClick={addToMetamask}>
       <div style={textStyle}>Add to MetaMask</div>
-      <LiArrowUpRight2 style={{fill: 'white'}} /> {/* Ensure that the icon is rendered correctly */}
+      <LiArrowUpRight2 style={{fill: 'white'}} />
     </div>
   );
 };
