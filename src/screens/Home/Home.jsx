@@ -154,12 +154,8 @@ export const Home = () => {
                   */}
                 </div>
                 <div className="frame-8">
-                  <div className="text-wrapper-12">Trade</div>
-                  <div className="text-wrapper-13">Earn</div>
-                  <div className="text-wrapper-13">Dashboard</div>
-                  <div className="text-wrapper-13">ITO</div>
+                  <NavbarButtons />
                 </div>
-                <div className="text-wrapper-14">© 2023 BoomFinance</div>
               </div>
             </div>
       </div>
