@@ -15,6 +15,7 @@ import { LiArrowUpRight2 } from "../../icons/LiArrowUpRight2";
 import { LiMenu1 } from "../../icons/LiMenu1";
 import { LinearArrowsTransferVertical } from "../../icons/LinearArrowsTransferVertical";
 import MConnectToMetamask from "./mobileComponents/mMetamaskButton";
+import MobileTelegramButton from "./mobileComponents/mTelegramButton";
 
 export const Home = () => {
   const isMobile = window.innerWidth <= 768; // You can adjust this value
@@ -26,6 +27,8 @@ export const Home = () => {
               <div className="overlap">
                 <div className="rectangle" />
                 <MConnectToMetamask />
+                {/* Component below is a telegram button */}
+                <MobileTelegramButton />
                 {/* removing it for testing
                 <div className="group">
                   <img className="vector" alt="Vector" src="/img/vector-1.svg" />
