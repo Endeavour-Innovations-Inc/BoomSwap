@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 
 const LanguageSelector = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState('РУС');
+  const [selectedLanguage, setSelectedLanguage] = useState('ENG');
 
   const languages = [
-    { code: 'ru', label: 'РУС' },
     { code: 'en', label: 'ENG' },
+    { code: 'ru', label: 'РУС' },
     { code: 'es', label: 'ESP' },
     { code: 'fr', label: 'FRA' },
     { code: 'de', label: 'DEU' },

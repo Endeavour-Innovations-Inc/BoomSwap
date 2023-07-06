@@ -144,7 +144,7 @@ export const Home = () => {
               </div>
               <div className="overlap-5">
                 <div className="frame-6">
-                  <MLanguageSelector />
+                  {/* <MLanguageSelector /> */}
                   <div className="text-wrapper-14">© 2023 BoomFinance</div>
                 </div>
                 <div className="frame-8">

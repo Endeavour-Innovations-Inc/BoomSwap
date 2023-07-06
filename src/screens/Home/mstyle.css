@@ -618,6 +618,10 @@
   }
   
   .android-large .overlap-5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #101014;
     height: 719px;
     left: 0;
@@ -627,14 +631,14 @@
   }
   
   .android-large .frame-6 {
-    align-items: center;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 11px;
-    position: relative; /* ensure this line is present */
-    top: 348px;
-    width: fit-content;
-  }  
-  
+    width: 100%;
+  }
+
   .android-large .frame-7 {
     align-items: center;
     display: flex;
@@ -672,14 +676,12 @@
   }
   
   .android-large .frame-8 {
-    align-items: center;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 37px;
-    left: 133px;
-    position: absolute;
-    top: 60px;
-    width: fit-content;
+    width: 100%;
   }
   
   .android-large .text-wrapper-12 {
@@ -714,11 +716,9 @@
     font-family: "TT Firs Neue-Regular", Helvetica;
     font-size: 16px;
     font-weight: 400;
-    position: absolute; 
-    right: -290px; /* start with 0 and then adjust as needed */
-    top: 0; /* adjust this value as needed */
     letter-spacing: 0;
     line-height: 24px;
+    text-align: center;
     white-space: nowrap;
   }
   
