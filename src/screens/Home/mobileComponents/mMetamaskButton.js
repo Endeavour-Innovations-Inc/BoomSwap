@@ -20,7 +20,7 @@ const MConnectToMetamask = () => {
   const buttonStyle = {
     position: 'absolute',
     top: '10px',
-    left: '50px', // Position it to the right of the .group element
+    left: '100px', // Position it to the right of the .group element
     zIndex: 1000,
     alignItems: 'center',
     backgroundColor: '#271f15',
@@ -33,11 +33,12 @@ const MConnectToMetamask = () => {
     color: 'white',
     textAlign: 'center',
     cursor: 'pointer',
+    fontSize: '12px', // Add this line to make the font smaller
   };
 
   return (
     <div style={buttonStyle} onClick={connectWallet}>
-      {account ? `Connected: ${account.substring(0, 6)}...` : 'Connect to MetaMask'}
+      {account ? `Connected: ${account.substring(0, 6)}...` : 'Connect Wallet'}
     </div>
   );
 };
