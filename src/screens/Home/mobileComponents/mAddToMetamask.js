@@ -16,10 +16,17 @@ const MAddToMetamask = () => {
 
   const addToMetamask = async () => {
     try {
+      // Check if MetaMask is installed
       if (!window.ethereum) {
-        alert('Please install MetaMask to use this feature.');
+        alert('MetaMask is not installed.');
         return;
       }
+  
+      // Log the network for debugging
+      const network = await window.ethereum.request({ method: 'net_version' });
+      console.log(`MetaMask Network ID: ${network}`);
+  
+      // Try to add the token
       const wasAdded = await window.ethereum.request({
         method: 'wallet_watchAsset',
         params: {
@@ -32,14 +39,14 @@ const MAddToMetamask = () => {
           },
         },
       });
-
+  
       if (wasAdded) {
         console.log('Token was successfully added to MetaMask');
       } else {
         console.log('Token was not added');
       }
     } catch (error) {
-      console.error(error);
+      console.error('Error adding token:', error);
     }
   };
 
