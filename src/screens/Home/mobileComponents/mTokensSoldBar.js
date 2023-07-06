@@ -25,6 +25,7 @@ const MTokensSoldBar = () => {
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: '0 10px',
+    width: '100%', // use full width of the parent component
   };
 
   const rectangleStyle = {
@@ -43,11 +44,12 @@ const MTokensSoldBar = () => {
     fontSize: '14px', 
     fontWeight: '400',
     letterSpacing: '0',
-    lineHeight: '24px',
+    lineHeight: '20px',// changed
     whiteSpace: 'nowrap',
     position: 'relative',
     top: '0px',
     left: '0',
+    width: '100%', // use full width of the parent component
 };
 
 const textWrapper10Style = {
@@ -56,11 +58,12 @@ const textWrapper10Style = {
     fontSize: '14px',
     fontWeight: '400',
     letterSpacing: '0',
-    lineHeight: '24px',
+    lineHeight: '20px', //changed
     whiteSpace: 'nowrap',
     position: 'relative',
     top: '24px', // Adjust the position so it's directly below "Tokens Sold"
     left: '0', // Align to the left, same as "Tokens Sold"
+    width: '100%', // use full width of the parent component
 };
 
 return (
