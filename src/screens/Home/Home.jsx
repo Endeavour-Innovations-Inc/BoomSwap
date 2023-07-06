@@ -16,6 +16,7 @@ import { LiMenu1 } from "../../icons/LiMenu1";
 import { LinearArrowsTransferVertical } from "../../icons/LinearArrowsTransferVertical";
 import MConnectToMetamask from "./mobileComponents/mMetamaskButton";
 import MobileTelegramButton from "./mobileComponents/mTelegramButton";
+import MTokenPurchaseFrame from "./mobileComponents/mPurchaseTokens";
 
 export const Home = () => {
   const isMobile = window.innerWidth <= 768; // You can adjust this value
@@ -105,6 +106,8 @@ export const Home = () => {
                   </div>
                 </div>
               </div>
+              <MTokenPurchaseFrame />
+              {/*
               <div className="overlap-4">
                 <div className="button-2">
                   <div className="text-wrapper-5">Purchase Tokens</div>
@@ -125,6 +128,7 @@ export const Home = () => {
                   <p className="text-wrapper-8">Trade tokens in an instant</p>
                 </div>
               </div>
+              */}
               <div className="frame-5">
                 <div className="rectangle-wrapper">
                   <div className="rectangle-2" />
