@@ -620,7 +620,7 @@
   .android-large .overlap-5 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     background-color: #101014;
     height: 719px;
@@ -628,6 +628,7 @@
     position: absolute;
     top: 2537px;
     width: 360px;
+    padding-top: 50px; /* Adjust this value as needed to decrease/increase the gap at the top */
   }
   
   .android-large .frame-6 {

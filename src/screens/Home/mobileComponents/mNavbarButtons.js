@@ -30,11 +30,12 @@ const MNavbarButtons = () => {
   const navbarStyle = {
     alignItems: 'center', // align items vertically in the center
     display: 'flex',
-    flexDirection: 'column', // stack items vertically
+    flexDirection: 'row', // stack items horizontally
     gap: '10px', // minimum space between items
-    justifyContent: 'space-around', // distribute space evenly between items
+    justifyContent: 'space-between', // distribute space evenly between items
     position: 'relative',
-    height: '100%', // ensure the div takes the full height
+    width: '80%', // adjust this value to make buttons spread more or less
+    flexWrap: 'wrap', // allow items to wrap to next line if space is not enough
   };  
 
   const buttonStyle = (isHovered, isPressed) => ({
@@ -54,7 +55,6 @@ const MNavbarButtons = () => {
     zIndex: 1000,
     padding: '10px 20px',
     borderRadius: '10px',
-    marginRight: '-25px',
     animation: isPressed ? 'blink-animation 0.5s linear' : 'none',
   });
 
