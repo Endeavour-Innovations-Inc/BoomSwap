@@ -65,10 +65,11 @@ const MTokenPurchaseFrame = () => {
     display: 'flex',
     padding: '0px',
     position: 'relative',
-    width: '90%', // Updated for mobile
+    width: '100%', // Updated for mobile
     height: '50px',
     boxSizing: 'border-box',
-  };
+    marginBottom: '10px', // Add some margin at the bottom
+  };  
 
   const textWrapper14Style = {
     color: '#c6c6c6',
@@ -90,9 +91,9 @@ const MTokenPurchaseFrame = () => {
     display: 'flex',
     gap: '6px',
     justifyContent: 'center',
-    padding: '12px 24px', // Updated for mobile
+    padding: '12px 0px', // Updated for mobile
     position: 'relative',
-    width: '90%', // Updated for mobile
+    width: '100%', // Updated for mobile
     cursor: 'pointer',
   };
 
@@ -110,7 +111,7 @@ const MTokenPurchaseFrame = () => {
   const inputStyle = {
     color: '#c6c6c6',
     fontFamily: '"TT Firs Neue-Medium", Helvetica',
-    fontSize: '16px', // Increase font size
+    fontSize: '16px',
     fontWeight: '500',
     letterSpacing: '0',
     lineHeight: '24px',
@@ -120,9 +121,9 @@ const MTokenPurchaseFrame = () => {
     height: '100%', // Set height to 100% of the container
     borderRadius: '6px', // Rounded corners
     border: 'none', // Remove the border
-    padding: '10px 20px', // Adjust padding
+    padding: '10px', // Adjust padding
     boxSizing: 'border-box',
-};
+  };
 
    const purchaseTokens = async () => {
     try {
