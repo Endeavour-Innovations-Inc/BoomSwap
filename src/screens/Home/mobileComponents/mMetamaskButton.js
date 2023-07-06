@@ -20,7 +20,7 @@ const MConnectToMetamask = () => {
   const buttonStyle = {
     position: 'absolute',
     top: '10px',
-    left: '250px', // Position it to the right of the .group element
+    left: '200px', // Position it to the right of the .group element
     zIndex: 1000,
     alignItems: 'center',
     backgroundColor: '#271f15',
