@@ -26,9 +26,11 @@ export const Home = () => {
         <div className="div">
               <div className="overlap">
                 <div className="rectangle" />
-                <MConnectToMetamask />
                 {/* Component below is a telegram button */}
-                <MobileTelegramButton />
+                <div className="group">
+                  <MConnectToMetamask />
+                  <MobileTelegramButton />
+                </div>
                 {/* removing it for testing
                 <div className="group">
                   <img className="vector" alt="Vector" src="/img/vector-1.svg" />
