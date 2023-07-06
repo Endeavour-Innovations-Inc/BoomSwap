@@ -65,11 +65,11 @@ const MTokenPurchaseFrame = () => {
     display: 'flex',
     padding: '0px',
     position: 'relative',
-    width: '100%', // Updated for mobile
+    width: '310px', // Updated to be close to the frame width
     height: '50px',
     boxSizing: 'border-box',
     marginBottom: '10px', // Add some margin at the bottom
-  };  
+  };
 
   const textWrapper14Style = {
     color: '#c6c6c6',
@@ -91,9 +91,9 @@ const MTokenPurchaseFrame = () => {
     display: 'flex',
     gap: '6px',
     justifyContent: 'center',
-    padding: '12px 0px', // Updated for mobile
+    padding: '12px 0px',
     position: 'relative',
-    width: '100%', // Updated for mobile
+    width: '310px', // Updated to be close to the frame width
     cursor: 'pointer',
   };
 
