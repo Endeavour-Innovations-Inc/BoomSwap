@@ -38,30 +38,30 @@ const MTokensSoldBar = () => {
   };
 
   const textWrapper9Style = {
-    color: '#3f3f3f', // updated color
+    color: '#3f3f3f', 
     fontFamily: '"TT Firs Neue-Regular", Helvetica',
-    fontSize: '14px', // updated font-size
+    fontSize: '14px', 
     fontWeight: '400',
     letterSpacing: '0',
-    lineHeight: '24px', // updated line-height
+    lineHeight: '24px',
     whiteSpace: 'nowrap',
     position: 'relative',
     top: '0px',
     left: '0',
-  };
-  
-  const textWrapper10Style = {
-    color: '#3f3f3f', // updated color
+};
+
+const textWrapper10Style = {
+    color: '#3f3f3f',
     fontFamily: '"TT Firs Neue-Regular", Helvetica',
-    fontSize: '14px', // updated font-size
+    fontSize: '14px',
     fontWeight: '400',
     letterSpacing: '0',
-    lineHeight: '24px', // updated line-height
+    lineHeight: '24px',
     whiteSpace: 'nowrap',
     position: 'relative',
-    top: '10px',
-    right: '0',
-  };
+    top: '24px', // Adjust the position so it's directly below "Tokens Sold"
+    left: '0', // Align to the left, same as "Tokens Sold"
+};
 
   return (
         <div style={frame7Style}>
