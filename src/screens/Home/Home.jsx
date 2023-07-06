@@ -106,7 +106,9 @@ export const Home = () => {
                   </div>
                 </div>
               </div>
-              <MTokenPurchaseFrame />
+              <div className="overlap-4">
+                <MTokenPurchaseFrame />
+              </div>
               {/*
               <div className="overlap-4">
                 <div className="button-2">
