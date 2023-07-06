@@ -58,7 +58,7 @@ const textWrapper10Style = {
     fontSize: '14px',
     fontWeight: '400',
     letterSpacing: '0',
-    lineHeight: '20px', //changed
+    lineHeight: '5px', //changed
     whiteSpace: 'nowrap',
     position: 'relative',
     top: '24px', // Adjust the position so it's directly below "Tokens Sold"
