@@ -3,7 +3,9 @@ import { LiArrowUpRight } from "../../../icons/LiArrowUpRight";
 import { LinearArrowsTransferVertical } from "../../../icons/LinearArrowsTransferVertical";
 
 const TokenPurchaseFrame = () => {
-  const [amount, setAmount] = useState('');
+  const [bnbAmount, setBnbAmount] = useState('');
+  const [tokenPrice, setTokenPrice] = useState('');
+  const [tokenQuantity, setTokenQuantity] = useState('');
 
   const frameWrapperStyle = {
     alignItems: 'flex-start',
@@ -144,8 +146,8 @@ const TokenPurchaseFrame = () => {
             style={inputStyle}
             type="text"
             placeholder="Amount BNB"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
+            value={bnbAmount}
+            onChange={(e) => setBnbAmount(e.target.value)}
           />
         </div>
         <div style={frame9Style}>
@@ -153,8 +155,8 @@ const TokenPurchaseFrame = () => {
             style={inputStyle}
             type="text"
             placeholder="Token Price"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
+            value={tokenPrice}
+            onChange={(e) => setTokenPrice(e.target.value)}
           />
         </div>
         <LinearArrowsTransferVertical className="icon-instance-node" />
@@ -163,8 +165,8 @@ const TokenPurchaseFrame = () => {
             style={inputStyle}
             type="text"
             placeholder="Token Quantity For Purchase"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
+            value={tokenQuantity}
+            onChange={(e) => setTokenQuantity(e.target.value)}
           />
         </div>
         <div style={button3Style} onClick={purchaseTokens}>
