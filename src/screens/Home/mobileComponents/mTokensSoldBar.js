@@ -10,16 +10,16 @@ const MTokensSoldBar = () => {
     alignItems: 'flex-start',
     display: 'flex',
     flexDirection: 'column',
-    gap: '4px',
+    gap: '4px', // reduce the gap here to reduce space between "Tokens Sold" and the number
     position: 'relative',
-    width: '310px', // adjusted width as per your MTokenPurchaseFrame component
+    width: '100%', // adjusted width as per your desktop code
   };
 
   const rectangleWrapperStyle = {
     backgroundColor: '#dedede',
     borderRadius: '99px',
-    height: '10px', // adjust height here to fit mobile design
-    width: '100%',
+    height: '4px',
+    width: '100%', // changed to width 100% to fit the full width of parent
     position: 'relative',
     display: 'flex',
     alignItems: 'center',
@@ -30,8 +30,8 @@ const MTokensSoldBar = () => {
   const rectangleStyle = {
     background: 'linear-gradient(180deg, rgb(247, 179, 50) 0%, rgb(252.88, 173.7, 20.02) 35.19%, rgb(213.56, 129.21, 2.67) 100%)',
     borderRadius: '99px',
-    height: '100%',
-    width: `${percentageSold}%`,
+    height: '4px',
+    width: `${percentageSold}%`, // keep this to control the "fill" of the health bar
     position: 'absolute',
     top: 0,
     left: 0,
@@ -40,10 +40,10 @@ const MTokensSoldBar = () => {
   const textWrapper9Style = {
     color: '#272624',
     fontFamily: '"TT Firs Neue-Medium", Helvetica',
-    fontSize: '18px', // reducing the font size for mobile layout
+    fontSize: '28px',
     fontWeight: '500',
     letterSpacing: '0',
-    lineHeight: '18px',
+    lineHeight: '28px',
     whiteSpace: 'nowrap',
     position: 'relative',
     top: '0px',
@@ -53,13 +53,13 @@ const MTokensSoldBar = () => {
   const textWrapper10Style = {
     color: '#c6c6c6',
     fontFamily: '"TT Firs Neue-Regular", Helvetica',
-    fontSize: '14px', // reducing the font size for mobile layout
+    fontSize: '16px',
     fontWeight: '400',
     letterSpacing: '0',
-    lineHeight: '14px',
+    lineHeight: '16px',
     whiteSpace: 'nowrap',
     position: 'relative',
-    top: '0px',
+    top: '0px', // set this to zero to bring it closer to "Tokens Sold"
     left: '0',
   };
 
