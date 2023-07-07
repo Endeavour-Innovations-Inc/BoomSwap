@@ -10,16 +10,16 @@ const MTokensSoldBar = () => {
     alignItems: 'flex-start',
     display: 'flex',
     flexDirection: 'column',
-    gap: '4px', // reduce the gap here to reduce space between "Tokens Sold" and the number
+    gap: '4px',
     position: 'relative',
-    width: '100%', // adjusted width as per your desktop code
+    width: '330px', // this width is now the same as .overlap-4's width
   };
 
   const rectangleWrapperStyle = {
     backgroundColor: '#dedede',
     borderRadius: '99px',
     height: '4px',
-    width: '100%', // changed to width 100% to fit the full width of parent
+    width: '100%', // It will now occupy the full width of frame7Style
     position: 'relative',
     display: 'flex',
     alignItems: 'center',
