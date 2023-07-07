@@ -34,6 +34,7 @@ const MConnectToMetamask = () => {
     textAlign: 'center',
     cursor: 'pointer',
     fontSize: '12px', // Add this line to make the font smaller
+    fontFamily: '"TT Firs Neue-Regular", Helvetica', // Add this line to change the font-family
   };
 
   return (
