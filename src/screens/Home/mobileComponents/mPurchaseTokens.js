@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { LiArrowUpRight } from "../../../icons/LiArrowUpRight";
 import { LinearArrowsTransferVertical } from "../../../icons/LinearArrowsTransferVertical";
 
 const MTokenPurchaseFrame = () => {
-  const [amount, setAmount] = useState('');
+  const [bnbAmount, setBnbAmount] = useState('');
+  const [tokenQuantity, setTokenQuantity] = useState('');
+  const [tokenPriceInDollars, setTokenPrice] = useState(10); // assuming a fixed price
+  const maxTokensForPurchase = 1000; // assuming a maximum limit
 
   const frameWrapperStyle = {
     backgroundColor: '#e6e6e6',
@@ -124,6 +127,14 @@ const MTokenPurchaseFrame = () => {
     boxSizing: 'border-box',
   };
 
+  useEffect(() => {
+    if (tokenQuantity) {
+      setBnbAmount(tokenQuantity * tokenPriceInDollars);
+    } else {
+      setBnbAmount('');
+    }
+  }, [tokenQuantity, tokenPriceInDollars]);
+
    const purchaseTokens = async () => {
     try {
       // Add the logic for purchasing tokens here
@@ -145,8 +156,8 @@ const MTokenPurchaseFrame = () => {
             style={inputStyle}
             type="text"
             placeholder="Amount BNB"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
+            value={bnbAmount || ''}
+            readOnly
           />
         </div>
         <div style={frame9Style}>
@@ -154,8 +165,8 @@ const MTokenPurchaseFrame = () => {
             style={inputStyle}
             type="text"
             placeholder="Token Price"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
+            value={`$${tokenPriceInDollars}`}
+            readOnly
           />
         </div>
         <LinearArrowsTransferVertical className="icon-instance-node" />
@@ -164,8 +175,14 @@ const MTokenPurchaseFrame = () => {
             style={inputStyle}
             type="text"
             placeholder="Token Quantity For Purchase"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
+            value={tokenQuantity}
+            onChange={(e) => {
+              const value = e.target.value;
+              // only set the value if it's an integer and doesn't exceed available tokens
+              if (!isNaN(value) && Number.isInteger(Number(value)) && Number(value) <= maxTokensForPurchase) {
+                setTokenQuantity(value);
+              }
+            }}
           />
         </div>
         <div style={button3Style} onClick={purchaseTokens}>
