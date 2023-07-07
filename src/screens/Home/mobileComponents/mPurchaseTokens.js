@@ -5,7 +5,7 @@ import { LinearArrowsTransferVertical } from "../../../icons/LinearArrowsTransfe
 const MTokenPurchaseFrame = () => {
   const [bnbAmount, setBnbAmount] = useState('');
   const [tokenQuantity, setTokenQuantity] = useState('');
-  const [tokenPriceInDollars, setTokenPrice] = useState(10); // assuming a fixed price
+  const [tokenPriceInDollars, setTokenPrice] = useState(0.5); // assuming a fixed price
   const maxTokensForPurchase = 1000; // assuming a maximum limit
 
   const frameWrapperStyle = {
