@@ -149,6 +149,7 @@ export const Home = () => {
                 <div className="frame-8">
                   {/*<div className="text-wrapper-14">© 2023 BoomFinance</div>*/}
                   {/*<MNavbarButtons />*/}
+                  {/*<MNavbarButtons />*/}
                 </div>
               </div>
             </div>
