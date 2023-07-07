@@ -148,6 +148,7 @@ const TokenPurchaseFrame = () => {
             placeholder="Amount BNB"
             value={bnbAmount}
             onChange={(e) => setBnbAmount(e.target.value)}
+            readOnly
           />
         </div>
         <div style={frame9Style}>
@@ -157,6 +158,7 @@ const TokenPurchaseFrame = () => {
             placeholder="Token Price"
             value={tokenPrice}
             onChange={(e) => setTokenPrice(e.target.value)}
+            readOnly
           />
         </div>
         <LinearArrowsTransferVertical className="icon-instance-node" />
