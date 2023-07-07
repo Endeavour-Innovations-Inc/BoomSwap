@@ -2,10 +2,31 @@ import React, { useState } from 'react';
 import { LiArrowUpRight } from "../../../icons/LiArrowUpRight";
 import { LinearArrowsTransferVertical } from "../../../icons/LinearArrowsTransferVertical";
 
+import React, { useState, useEffect } from 'react';
+import { LiArrowUpRight } from "../../../icons/LiArrowUpRight";
+import { LinearArrowsTransferVertical } from "../../../icons/LinearArrowsTransferVertical";
+
 const TokenPurchaseFrame = () => {
   const [bnbAmount, setBnbAmount] = useState('');
   const [tokenPrice, setTokenPrice] = useState('');
   const [tokenQuantity, setTokenQuantity] = useState('');
+
+  const [tokensSold, setTokensSold] = useState(330000000);
+  const totalTokens = 1000000000;
+
+  const tokenPriceInDollars = 0.5;
+  
+  // calculate max tokens available for purchase
+  const maxTokensForPurchase = totalTokens - tokensSold;
+  
+  useEffect(() => {
+    if (tokenQuantity) {
+      setTokenPrice(`$${tokenPriceInDollars}`);
+      setBnbAmount(tokenQuantity * tokenPriceInDollars);
+    } else {
+      setBnbAmount('');
+    }
+  }, [tokenQuantity]);
 
   const frameWrapperStyle = {
     alignItems: 'flex-start',
@@ -147,7 +168,6 @@ const TokenPurchaseFrame = () => {
             type="text"
             placeholder="Amount BNB"
             value={bnbAmount}
-            onChange={(e) => setBnbAmount(e.target.value)}
             readOnly
           />
         </div>
@@ -157,7 +177,6 @@ const TokenPurchaseFrame = () => {
             type="text"
             placeholder="Token Price"
             value={tokenPrice}
-            onChange={(e) => setTokenPrice(e.target.value)}
             readOnly
           />
         </div>
@@ -168,12 +187,17 @@ const TokenPurchaseFrame = () => {
             type="text"
             placeholder="Token Quantity For Purchase"
             value={tokenQuantity}
-            onChange={(e) => setTokenQuantity(e.target.value)}
+            onChange={(e) => {
+              const value = e.target.value;
+              if (!isNaN(value) && Number.isInteger(Number(value)) && Number(value) <= maxTokensForPurchase) {
+                setTokenQuantity(value);
+              }
+            }}
           />
         </div>
         <div style={button3Style} onClick={purchaseTokens}>
-            <div style={textWrapper3Style}>Purchase Tokens</div>
-            <LiArrowUpRight className="icon-instance-node" color="white" />
+          <div style={textWrapper3Style}>Purchase Tokens</div>
+          <LiArrowUpRight className="icon-instance-node" color="white" />
         </div>
       </div>
     </div>

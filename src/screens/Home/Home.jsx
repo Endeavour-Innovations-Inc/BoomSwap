@@ -97,7 +97,7 @@ export const Home = () => {
                 <div className="overlap-group-wrapper-2">
                   <div className="overlap-group-3">
                     <img className="img-2" alt="Group" src="/img/group-34905.png" />
-                    <p className="p">Enter the amount of BNB you want to spend.</p>
+                    <p className="p">Enter the amount of tokens you want to purchase</p>
                   </div>
                 </div>
               </div>
@@ -241,7 +241,7 @@ export const Home = () => {
             <div className="overlap-6">
               <div className="group-9">
                 <div className="overlap-group-3">
-                  <p className="p">Enter the amount of BNB you want to spend.</p>
+                  <p className="p">Enter the amount of tokens you want to purchase</p>
                 </div>
               </div>
               <img className="img-2" alt="Mask group" src="/img/mask-group.png" />
