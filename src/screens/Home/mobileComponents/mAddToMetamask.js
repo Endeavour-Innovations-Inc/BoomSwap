@@ -32,7 +32,7 @@ const MAddToMetamask = () => {
         params: {
           type: 'ERC20',
           options: {
-            address: '0x77D00901BA98F11d8EB87779C5ad69ee3240CB12', // Token Contract Address
+            address: '0xB98964fa34134b9913E54C962EEC9A9578167251', // Token Contract Address
             symbol: 'BOOM', // Token Symbol
             decimals: 18, // Token Decimals
             image: 'https://i.imgur.com/4hLOhhO.png', // Direct link to the token image

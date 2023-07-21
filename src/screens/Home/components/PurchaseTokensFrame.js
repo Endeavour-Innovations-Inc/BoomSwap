@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
-import { LiArrowUpRight } from "../../../icons/LiArrowUpRight";
-import { LinearArrowsTransferVertical } from "../../../icons/LinearArrowsTransferVertical";
-
 import React, { useState, useEffect } from 'react';
 import { LiArrowUpRight } from "../../../icons/LiArrowUpRight";
 import { LinearArrowsTransferVertical } from "../../../icons/LinearArrowsTransferVertical";
+import { ethers } from 'ethers';
+import VendingMachine from './VendingMachine.json';
 
 const TokenPurchaseFrame = () => {
   const [bnbAmount, setBnbAmount] = useState('');
@@ -14,7 +12,43 @@ const TokenPurchaseFrame = () => {
   const [tokensSold, setTokensSold] = useState(330000000);
   const totalTokens = 1000000000;
 
-  const tokenPriceInDollars = 0.5;
+  const tokenPriceInDollars = 0.01;
+
+  const [provider, setProvider] = useState();
+  const [signer, setSigner] = useState();
+
+  useEffect(() => {
+    console.log('window.ethereum', window.ethereum);  // Check if window.ethereum is defined
+    console.log('ethers', ethers);  // Check if ethers is defined
+  
+    if (window.ethereum) {
+      try {
+        setProvider(new ethers.providers.Web3Provider(window.ethereum));
+      } catch (error) {
+        console.error('Error creating Web3Provider:', error);
+      }
+    } else {
+      alert('Please install MetaMask or another Ethereum wallet to continue.');
+    }
+  }, []);
+   
+  
+  useEffect(() => {
+    if (provider) {
+      setSigner(provider.getSigner());
+    }
+  }, [provider]);
+
+  const [contract, setContract] = useState();
+
+  const contractAddress = '0xB5C17af6eF624B67c331Ac65cfB50430Fc104708';  // Replace with your contract address
+
+  useEffect(() => {
+    if (signer) {
+      setContract(new ethers.Contract(contractAddress, VendingMachine.abi, signer));
+    }
+  }, [signer]);
+
   
   // calculate max tokens available for purchase
   const maxTokensForPurchase = totalTokens - tokensSold;
@@ -146,10 +180,14 @@ const TokenPurchaseFrame = () => {
     boxSizing: 'border-box',
 };
 
-   const purchaseTokens = async () => {
+  const purchaseTokens = async () => {
     try {
-      // Add the logic for purchasing tokens here
-      console.log('Purchasing tokens...');
+      const tx = await contract.buyTokens({
+        value: ethers.utils.parseEther(bnbAmount)
+      });
+
+      await tx.wait();  // Wait for the transaction to be mined
+      console.log('Tokens purchased!');
     } catch (error) {
       console.error(error);
     }
@@ -189,10 +227,10 @@ const TokenPurchaseFrame = () => {
             value={tokenQuantity}
             onChange={(e) => {
               const value = e.target.value;
-              if (!isNaN(value) && Number.isInteger(Number(value)) && Number(value) <= maxTokensForPurchase) {
+              if (!isNaN(value) && Number.isInteger(Number(value)) && Number(value) > 0 && Number(value) <= maxTokensForPurchase) {
                 setTokenQuantity(value);
               }
-            }}
+            }}            
           />
         </div>
         <div style={button3Style} onClick={purchaseTokens}>
