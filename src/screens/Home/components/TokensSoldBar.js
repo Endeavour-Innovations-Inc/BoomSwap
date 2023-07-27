@@ -20,10 +20,14 @@ const TokensSoldBar = () => {
           // We don't know window.ethereum exists until after it's injected into window, so we won't reference window.ethereum until useEffect has run
           const web3 = new Web3(window.ethereum);
           const contract = new web3.eth.Contract(ABI, contractAddress);
-          const tokensSold = await contract.methods.getTokensSold().call();
-          const tokensForSale = await contract.methods.getTotalTokensForSale().call();
-          const tokensForSaleLeft = await contract.methods.getTokensForSaleLeft().call();
+          const tokensSoldWei = await contract.methods.getTokensSold().call();
+          const tokensForSaleWei = await contract.methods.getTokensLoadedForSale().call();
+          const tokensForSaleLeftWei = await contract.methods.getTokensForSaleLeft().call();
   
+          const tokensSold = parseFloat(web3.utils.fromWei(tokensSoldWei, 'ether'));
+          const tokensForSale = parseFloat(web3.utils.fromWei(tokensForSaleWei, 'ether'));
+          const tokensForSaleLeft = parseFloat(web3.utils.fromWei(tokensForSaleLeftWei, 'ether'));
+
           console.log("Tokens Sold before conversion: ", tokensSold);
           console.log("Tokens For Sale before conversion: ", tokensForSale);
           console.log("Tokens For Sale Left before conversion: ", tokensForSaleLeft);
@@ -45,10 +49,6 @@ const TokensSoldBar = () => {
   }, []);  
 
   const percentageSold = (tokensSold / tokensForSale) * 100;
-
-  if (error) {
-    return <div>{error}</div>
-  }
 
   const frame7Style = {
     alignItems: 'flex-start',
