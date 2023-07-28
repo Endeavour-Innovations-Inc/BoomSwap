@@ -10,7 +10,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "ethers": "^6.6.4",
+    "ethers": "^5.4.6",
     "i18next": "^23.2.6",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
