@@ -99,23 +99,20 @@ const TokenPurchaseFrame = () => {
   }, []);
   
   useEffect(() => {
-    if (tokenQuantity) {
-      setTokenPrice(`$${tokenPriceInDollars}`);
-      setBnbAmount(tokenQuantity * tokenPriceInDollars);
-    } else {
-      setBnbAmount('');
-    }
-  }, [tokenQuantity]);
-
-  useEffect(() => {
     if (bnbAmount) {
-      if(tokenPriceInDollars !== 0){
-        setTokenQuantity(bnbAmount / tokenPriceInDollars);
-      }
+      setTokenQuantity(bnbAmount * 100000); // If 0.01 BNB is 1000 tokens, then 1 BNB is 100000 tokens
     } else {
       setTokenQuantity('');
     }
   }, [bnbAmount]);
+  
+  useEffect(() => {
+    if (tokenQuantity) {
+      setBnbAmount(tokenQuantity / 100000); // If 1000 tokens is 0.01 BNB, then 1 token is 0.01/1000 = 0.00001 BNB
+    } else {
+      setBnbAmount('');
+    }
+  }, [tokenQuantity]);  
 
   const purchaseTokens = async () => {
     try {  
