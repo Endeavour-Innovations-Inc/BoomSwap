@@ -1,10 +1,54 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Web3 from 'web3';
 
 const MTokensSoldBar = () => {
-  const [tokensSold, setTokensSold] = useState(330000000);
-  const totalTokens = 1000000000;
+  const [tokensSold, setTokensSold] = useState(0);
+  const [tokensForSale, setTokensForSale] = useState(0);
+  const [tokensForSaleLeft, setTokensForSaleLeft] = useState(0);
+  const [error, setError] = useState(null);
 
-  const percentageSold = (tokensSold / totalTokens) * 100;
+  const contractAddress = '0x10C7B45C6052E52061Ed50b042d30726668a28F0'; // Replace with your contract address
+  const ABI = [{"inputs":[{"internalType":"contract IERC20Burnable","name":"_token","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"approveAndLoad","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"burnTokens","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"buyTokens","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"firstWallet","outputs":[{"internalType":"address payable","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"formLPPairs","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"getBNBSpentOnTokens","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getTokensForSaleLeft","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getTokensLoadedForSale","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getTokensSold","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"loadTimestamp","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"loaded","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address payable","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"salesStage","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"secondWallet","outputs":[{"internalType":"address payable","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"token","outputs":[{"internalType":"contract IERC20Burnable","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalBNBSpent","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalTokensForSale","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalTokensSold","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"stateMutability":"payable","type":"receive"}];
+
+  useEffect(() => {
+    const loadBlockchainData = async () => {
+      if (window.ethereum) {
+        try {
+          // Request account access if needed
+          await window.ethereum.enable();
+  
+          // We don't know window.ethereum exists until after it's injected into window, so we won't reference window.ethereum until useEffect has run
+          const web3 = new Web3(window.ethereum);
+          const contract = new web3.eth.Contract(ABI, contractAddress);
+          const tokensSoldWei = await contract.methods.getTokensSold().call();
+          const tokensForSaleWei = await contract.methods.getTokensLoadedForSale().call();
+          const tokensForSaleLeftWei = await contract.methods.getTokensForSaleLeft().call();
+  
+          const tokensSold = parseFloat(web3.utils.fromWei(tokensSoldWei, 'ether'));
+          const tokensForSale = parseFloat(web3.utils.fromWei(tokensForSaleWei, 'ether'));
+          const tokensForSaleLeft = parseFloat(web3.utils.fromWei(tokensForSaleLeftWei, 'ether'));
+
+          console.log("Tokens Sold before conversion: ", tokensSold);
+          console.log("Tokens For Sale before conversion: ", tokensForSale);
+          console.log("Tokens For Sale Left before conversion: ", tokensForSaleLeft);
+  
+          setTokensSold(tokensSold.toString());
+          setTokensForSale(tokensForSale.toString());
+          setTokensForSaleLeft(tokensForSaleLeft.toString());
+        } catch (error) {
+          console.error("Error loading blockchain data: ", error);
+          // handle error here
+        }
+      } else {
+        console.log('MetaMask not found. Please install it from https://metamask.io/download.html');
+        // handle lack of Metamask installation here
+      }
+    }
+  
+    loadBlockchainData();
+  }, []);  
+
+  const percentageSold = (tokensSold / tokensForSale) * 100;
 
   const frame7Style = {
     alignItems: 'flex-start',
@@ -70,7 +114,7 @@ const MTokensSoldBar = () => {
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
         <div style={textWrapper9Style}>Tokens Sold</div>
-        <div style={textWrapper10Style}>{`${tokensSold.toLocaleString()} / ${totalTokens.toLocaleString()}`}</div>
+        <div style={textWrapper10Style}>{`${tokensSold.toLocaleString()} / ${tokensForSale.toLocaleString()}`}</div>
       </div>
     </div>
   );
