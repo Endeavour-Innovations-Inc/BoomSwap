@@ -287,7 +287,7 @@ const TokenPurchaseFrame = () => {
             style={inputStyle}
             type="text"
             placeholder="Token Price"
-            value={tokenPrice}
+            value={`$${tokenPriceInDollars}`}
             readOnly
           />
         </div>
