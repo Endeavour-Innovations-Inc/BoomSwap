@@ -77,7 +77,7 @@ export const Home = () => {
                     We Provide Software Development and Staffing Services. Expand the boundaries of your business using
                     high-tech development services from Top 1 Dubai &amp; Miami Blockchain Development company.
                   </p>
-                  <MAddToMetamask />
+                  {/*<MAddToMetamask />*/} {/* Removing because does not functionally work */} 
                 </div>
               </div>
               <div className="buy-now">Buy Now</div>
