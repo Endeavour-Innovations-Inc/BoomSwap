@@ -122,11 +122,6 @@ const TokenPurchaseFrame = () => {
       // Convert bnbAmount to Wei 
       const amountInWei = ethers.utils.parseEther(bnbAmount.toString());
       
-      // Approve the contract to spend the user's tokens
-      const approveTx = await tokenContract.approve(contract.address, amountInWei);
-      const approveReceipt = await approveTx.wait();
-      console.log('Approval Transaction Receipt: ', approveReceipt);
-      
       // Now we can call the buyTokens function
       const buyTx = await contract.buyTokens({
         value: amountInWei
@@ -139,7 +134,7 @@ const TokenPurchaseFrame = () => {
     } catch (error) {
       console.error('Error purchasing tokens: ', error);
     }
-  };  
+  };
 
   // Below are .css elements
 
