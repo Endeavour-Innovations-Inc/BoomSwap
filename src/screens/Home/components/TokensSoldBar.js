@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import tokenSold from './PurchaseTokensFrame';
 import Web3 from 'web3';
+import { globalTokenSold, setGlobalTokenSold } from './sharedData';
 
 const TokensSoldBar = () => {
   const [tokensSold, setTokensSold] = useState(0);
@@ -7,8 +9,10 @@ const TokensSoldBar = () => {
   const [tokensForSaleLeft, setTokensForSaleLeft] = useState(0);
   const [error, setError] = useState(null);
 
-  const contractAddress = '0x10C7B45C6052E52061Ed50b042d30726668a28F0'; // Replace with your contract address
-  const ABI = [{"inputs":[{"internalType":"contract IERC20Burnable","name":"_token","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"approveAndLoad","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"burnTokens","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"buyTokens","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"firstWallet","outputs":[{"internalType":"address payable","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"formLPPairs","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"getBNBSpentOnTokens","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getTokensForSaleLeft","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getTokensLoadedForSale","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getTokensSold","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"loadTimestamp","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"loaded","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address payable","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"salesStage","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"secondWallet","outputs":[{"internalType":"address payable","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"token","outputs":[{"internalType":"contract IERC20Burnable","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalBNBSpent","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalTokensForSale","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalTokensSold","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"stateMutability":"payable","type":"receive"}];
+  const [tokenSold, setTokenAmount] = useState(null); // Added this line
+
+  const contractAddress = '0xbe80C7dde09E5B93506831795AB023B8dE72Af87'; // Replace with your contract address
+  const ABI = [{"inputs":[{"internalType":"contract IERC20Burnable","name":"_token","type":"address"},{"internalType":"contract IPancakeSwapV2Router","name":"_router","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"approveAndLoad","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"burnTokens","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"buyTokens","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"firstWallet","outputs":[{"internalType":"address payable","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"formLPPairs","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"loadTimestamp","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"loaded","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address payable","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"router","outputs":[{"internalType":"contract IPancakeSwapV2Router","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"salesStage","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"secondWallet","outputs":[{"internalType":"address payable","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"thirdWallet","outputs":[{"internalType":"address payable","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"token","outputs":[{"internalType":"contract IERC20Burnable","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalTokensForSale","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"stateMutability":"payable","type":"receive"}];
 
   useEffect(() => {
     const loadBlockchainData = async () => {
@@ -20,21 +24,13 @@ const TokensSoldBar = () => {
           // We don't know window.ethereum exists until after it's injected into window, so we won't reference window.ethereum until useEffect has run
           const web3 = new Web3(window.ethereum);
           const contract = new web3.eth.Contract(ABI, contractAddress);
-          const tokensSoldWei = await contract.methods.getTokensSold().call();
-          const tokensForSaleWei = await contract.methods.getTokensLoadedForSale().call();
-          const tokensForSaleLeftWei = await contract.methods.getTokensForSaleLeft().call();
+          const tokensForSaleWei = await contract.methods.totalTokensForSale().call();
   
-          const tokensSold = parseFloat(web3.utils.fromWei(tokensSoldWei, 'ether'));
           const tokensForSale = parseFloat(web3.utils.fromWei(tokensForSaleWei, 'ether'));
-          const tokensForSaleLeft = parseFloat(web3.utils.fromWei(tokensForSaleLeftWei, 'ether'));
 
-          console.log("Tokens Sold before conversion: ", tokensSold);
           console.log("Tokens For Sale before conversion: ", tokensForSale);
-          console.log("Tokens For Sale Left before conversion: ", tokensForSaleLeft);
-  
-          setTokensSold(tokensSold.toString());
+
           setTokensForSale(tokensForSale.toString());
-          setTokensForSaleLeft(tokensForSaleLeft.toString());
         } catch (error) {
           console.error("Error loading blockchain data: ", error);
           // handle error here
@@ -114,7 +110,7 @@ const TokensSoldBar = () => {
       </div>
       <div style={{ display: 'flex', justifyContent: 'space-between', width: '1291px' }}>
         <div style={textWrapper9Style}>Tokens Sold</div>
-        <div style={textWrapper10Style}>{`${tokensSold.toLocaleString()} / ${tokensForSale.toLocaleString()}`}</div>
+        <div style={textWrapper10Style}>{`${ globalTokenSold.toLocaleString()} / ${tokensForSale.toLocaleString()}`}</div>
       </div>
     </div>
   );
