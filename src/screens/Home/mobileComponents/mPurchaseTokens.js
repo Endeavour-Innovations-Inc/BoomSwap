@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { LiArrowUpRight } from "../../../icons/LiArrowUpRight";
 import { LinearArrowsTransferVertical } from "../../../icons/LinearArrowsTransferVertical";
 import { ethers } from 'ethers';
+import { globalTokenSold, setGlobalTokenSold } from './mSharedData';
 
 const MTokenPurchaseFrame = () => {
   const [bnbAmount, setBnbAmount] = useState('');
@@ -67,10 +68,6 @@ const MTokenPurchaseFrame = () => {
 
           // Initialize token contract
           const tokenContract = new ethers.Contract(tokenContractAddress, T_ABI, signer); 
-
-          setTokensSold(tokensSold.toString());
-          setTokensForSale(tokensForSale.toString());
-          setTokensForSaleLeft(tokensForSaleLeft.toString());
 
           // Set state
           setContract(contract);
