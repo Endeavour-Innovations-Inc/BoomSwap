@@ -17,8 +17,6 @@ const TokenPurchaseFrame = () => {
   const [tokensForSale, setTokensForSale] = useState(null);
   const [tokensForSaleLeft, setTokensForSaleLeft] = useState(null);
   
-
-
   const tokenContractAddress = '0x06D5e700D749D3503a76A66c49Aa1671ca8D1688'; // Replace with your token contract address
   const contractAddress = '0xbe80C7dde09E5B93506831795AB023B8dE72Af87'; // Replace with your contract address
   

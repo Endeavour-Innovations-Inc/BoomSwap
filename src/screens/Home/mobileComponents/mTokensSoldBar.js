@@ -23,7 +23,7 @@ const MTokensSoldBar = () => {
           const contract = new web3.eth.Contract(ABI, contractAddress);
           const tokensSoldWei = await contract.methods.totalTokensForSale().call();
   
-          const tokensForSale = parseFloat(web3.utils.fromWei(tokensForSaleWei, 'ether'));
+          const tokensForSale = parseFloat(web3.utils.fromWei(tokensSoldWei, 'ether'));
 
           console.log("Tokens For Sale before conversion: ", tokensForSale);
   

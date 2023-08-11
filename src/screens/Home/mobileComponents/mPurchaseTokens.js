@@ -68,15 +68,6 @@ const MTokenPurchaseFrame = () => {
           // Initialize token contract
           const tokenContract = new ethers.Contract(tokenContractAddress, T_ABI, signer); 
 
-          // Fetch blockchain data here
-          const tokensSoldWei = await contract.getTokensSold();
-          const tokensForSaleWei = await contract.getTokensLoadedForSale();
-          const tokensForSaleLeftWei = await contract.getTokensForSaleLeft();
-
-          const tokensSold = parseFloat(ethers.utils.formatEther(tokensSoldWei));
-          const tokensForSale = parseFloat(ethers.utils.formatEther(tokensForSaleWei));
-          const tokensForSaleLeft = parseFloat(ethers.utils.formatEther(tokensForSaleLeftWei));
-
           setTokensSold(tokensSold.toString());
           setTokensForSale(tokensForSale.toString());
           setTokensForSaleLeft(tokensForSaleLeft.toString());
@@ -99,29 +90,48 @@ const MTokenPurchaseFrame = () => {
   }, []);
   
   useEffect(() => {
-    if (tokenQuantity) {
-      setTokenPrice(`$${tokenPriceInDollars}`);
-      setBnbAmount(tokenQuantity * tokenPriceInDollars);
-    } else {
-      setBnbAmount('');
-    }
-  }, [tokenQuantity]);
-
-  useEffect(() => {
     if (bnbAmount) {
-      if(tokenPriceInDollars !== 0){
-        setTokenQuantity(bnbAmount / tokenPriceInDollars);
-      }
+      setTokenQuantity(bnbAmount * 100000); // If 0.01 BNB is 1000 tokens, then 1 BNB is 100000 tokens
     } else {
       setTokenQuantity('');
     }
   }, [bnbAmount]);
+  
+  useEffect(() => {
+    if (tokenQuantity) {
+      setBnbAmount(tokenQuantity / 100000); // If 1000 tokens is 0.01 BNB, then 1 token is 0.01/1000 = 0.00001 BNB
+    } else {
+      setBnbAmount('');
+    }
+  }, [tokenQuantity]); 
 
   const purchaseTokens = async () => {
     try {  
       // Convert bnbAmount to Wei 
       const amountInWei = ethers.utils.parseEther(bnbAmount.toString());
-      
+
+      // Get the current sales stage from the contract
+      const salesStage = await contract.salesStage();
+
+      let rate; 
+      switch(salesStage.toNumber()) {
+        case 1: 
+          rate = ethers.utils.parseEther('1000').div(ethers.utils.parseEther('0.01')); 
+          break;
+        case 2: 
+          rate = ethers.utils.parseEther('1000').div(ethers.utils.parseEther('0.02')); 
+          break;
+        case 3: 
+          rate = ethers.utils.parseEther('1000').div(ethers.utils.parseEther('0.04')); 
+          break;
+        default:
+          throw new Error("Invalid sales stage");
+      }
+
+      const calculatedTokenAmount = amountInWei.mul(rate);
+      setGlobalTokenSold(ethers.utils.formatEther(calculatedTokenAmount)); // Update the global state variable
+      console.log("Value after setting: ", globalTokenSold);
+
       // Now we can call the buyTokens function
       const buyTx = await contract.buyTokens({
         value: amountInWei
