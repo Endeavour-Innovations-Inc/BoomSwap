@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const NavbarButtons = () => {
+const NavbarButtons = () => { // <-- Include the props argument
 
   const [hoveredButton, setHoveredButton] = useState(null);
   const [pressedButton, setPressedButton] = useState(null);
 
+  const navigate = useNavigate(); // using the hook
+
   const redirectToTrade = () => {
     // Add the link or functionality for the Trade button here
+    navigate('/trade');
   };
 
   const redirectToEarn = () => {

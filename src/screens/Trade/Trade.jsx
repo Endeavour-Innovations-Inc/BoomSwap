@@ -1,9 +1,7 @@
 import React from "react";
-import { Ic24Refresh } from "./Ic24Refresh";
-import { Ru } from "./Ru";
 import "./style.css";
 
-export const Converter = () => {
+export const Trade = () => {
   return (
     <div className="converter">
       <div className="div">
@@ -49,7 +47,6 @@ export const Converter = () => {
             </div>
           </div>
           <img className="setting" alt="Setting" src="setting-1.png" />
-          <Ic24Refresh className="refresh" />
         </div>
         <img className="vector" alt="Vector" src="vector.svg" />
         <div className="frame-3">
@@ -77,7 +74,6 @@ export const Converter = () => {
           </div>
           <div className="frame-5">
             <div className="frame-6">
-              <Ru RU="RU-2.svg" className="RU-instance" />
               <img className="vector-3" alt="Vector" src="vector-332.svg" />
             </div>
             <div className="text-wrapper-12">РУС</div>

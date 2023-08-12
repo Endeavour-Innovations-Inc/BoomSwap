@@ -3,23 +3,19 @@ import "./style.css";
 import ConnectToMetamask from './components/MetamaskButton';
 import TelegramButton from './components/TelegramButton';
 import AddToMetamask from "./components/AddToMetamaskButton";
-import MAddToMetamask from "./mobileComponents/mAddToMetamask";
 import TokenPurchaseFrame from "./components/PurchaseTokensFrame";
 import TokensSoldBar from "./components/TokensSoldBar";
 import LanguageSelector from "./components/LangSelector";
 import NavbarButtons from "./components/NavbarButtons";
 import "./mstyle.css";
-import { Ru } from "../../components/Ru";
-import { LiArrowUpRight } from "../../icons/LiArrowUpRight";
-import { LiArrowUpRight2 } from "../../icons/LiArrowUpRight2";
-import { LiMenu1 } from "../../icons/LiMenu1";
-import { LinearArrowsTransferVertical } from "../../icons/LinearArrowsTransferVertical";
 import MConnectToMetamask from "./mobileComponents/mMetamaskButton";
 import MobileTelegramButton from "./mobileComponents/mTelegramButton";
 import MTokenPurchaseFrame from "./mobileComponents/mPurchaseTokens";
 import MLanguageSelector from "./mobileComponents/mLangSelector";
 import MNavbarButtons from "./mobileComponents/mNavbarButtons";
 import MTokensSoldBar from "./mobileComponents/mTokensSoldBar";
+import { Routes, Route } from 'react-router-dom';
+import { Trade } from '../Trade/Trade';
 
 export const Home = () => {
   const isMobile = window.innerWidth <= 768; // You can adjust this value
@@ -30,16 +26,10 @@ export const Home = () => {
         <div className="div">
               <div className="overlap">
                 <div className="rectangle" />
-                {/* Component below is a telegram button */}
                 <div className="group">
                   <MConnectToMetamask />
                   <MobileTelegramButton />
                 </div>
-                {/* removing it for testing
-                <div className="group">
-                  <img className="vector" alt="Vector" src="/img/vector-1.svg" />
-                </div>
-                */}
                 <div className="overlap-wrapper">
                   <div className="overlap-group">
                     <div className="ellipse" />
@@ -76,7 +66,6 @@ export const Home = () => {
                   <p className="we-provide-software">
                   Welcome to Boom Finance: Your Next-Gen DeFi Companion. As an independent DeFi project, we're dedicated to offering sophisticated financial tools. Elevate your DeFi experience and harness maximum utility with the expertise of the Top 1 Seattle Blockchain Development company.
                   </p>
-                  {/*<MAddToMetamask />*/} {/* Removing because does not functionally work */} 
                 </div>
               </div>
               <div className="buy-now">Buy Now</div>
@@ -111,28 +100,6 @@ export const Home = () => {
               <div className="overlap-4">
                 <MTokenPurchaseFrame />
               </div>
-              {/*
-              <div className="overlap-4">
-                <div className="button-2">
-                  <div className="text-wrapper-5">Purchase Tokens</div>
-                  <LiArrowUpRight className="li-arrow-up-right-instance" />
-                </div>
-                <div className="frame-2">
-                  <div className="text-wrapper-6">AmountBNB</div>
-                </div>
-                <div className="frame-3">
-                  <div className="text-wrapper-6">Token Price</div>
-                </div>
-                <LinearArrowsTransferVertical className="linear-arrows" />
-                <div className="frame-4">
-                  <div className="text-wrapper-6">Token Quantity for Purchase</div>
-                </div>
-                <div className="group-10">
-                  <div className="text-wrapper-7">BoomToken</div>
-                  <p className="text-wrapper-8">Trade tokens in an instant</p>
-                </div>
-              </div>
-              */}
               <div className="frame-5">
                   <div className="group-11">
                       <MTokensSoldBar />
@@ -140,15 +107,10 @@ export const Home = () => {
               </div>
               <div className="overlap-5">
                 <div className="frame-6">
-                  {/* <MLanguageSelector /> */}
                   <MNavbarButtons />
                   <div className="text-wrapper-14">© 2023 BoomFinance</div>
-                  {/*<div className="text-wrapper-14">© 2023 BoomFinance</div>*/}
                 </div>
                 <div className="frame-8">
-                  {/*<div className="text-wrapper-14">© 2023 BoomFinance</div>*/}
-                  {/*<MNavbarButtons />*/}
-                  {/*<MNavbarButtons />*/}
                 </div>
               </div>
             </div>
