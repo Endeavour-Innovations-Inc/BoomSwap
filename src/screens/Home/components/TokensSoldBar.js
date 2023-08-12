@@ -109,8 +109,8 @@ const TokensSoldBar = () => {
         <div style={rectangleStyle} />
       </div>
       <div style={{ display: 'flex', justifyContent: 'space-between', width: '1291px' }}>
-        <div style={textWrapper9Style}>Tokens Sold</div>
-        <div style={textWrapper10Style}>{`${ globalTokenSold.toLocaleString()} / ${tokensForSale.toLocaleString()}`}</div>
+        <div style={textWrapper9Style}>Total Tokens For Sale</div>
+        <div style={textWrapper10Style}>{`${tokensForSale.toLocaleString()}`}</div>
       </div>
     </div>
   );

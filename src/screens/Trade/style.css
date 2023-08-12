@@ -1,0 +1,524 @@
+.converter {
+    background-color: #0e0e11;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .converter .div {
+    background-color: #0e0e11;
+    border: 1px none;
+    height: 991px;
+    overflow: hidden;
+    position: relative;
+    width: 1440px;
+  }
+  
+  .converter .overlap {
+    background-color: #09090a;
+    height: 729px;
+    left: -3px;
+    position: absolute;
+    top: 96px;
+    width: 1440px;
+  }
+  
+  .converter .base {
+    height: 456px;
+    left: 396px;
+    object-fit: cover;
+    position: absolute;
+    top: 162px;
+    width: 633px;
+  }
+  
+  .converter .button {
+    align-items: flex-end;
+    background: linear-gradient(
+      180deg,
+      rgb(247, 179, 50) 0%,
+      rgb(252.88, 173.7, 20.02) 35.19%,
+      rgb(213.56, 129.21, 2.67) 100%
+    );
+    border-radius: 8px;
+    display: flex;
+    gap: 6px;
+    height: 56px;
+    justify-content: center;
+    left: 471px;
+    padding: 19px 30px;
+    position: absolute;
+    top: 538px;
+    width: 482px;
+  }
+  
+  .converter .connect-wallet {
+    height: 22.8px;
+    margin-bottom: -5.4px;
+    position: relative;
+    width: 161.2px;
+  }
+  
+  .converter .boom-token {
+    color: #ffffff;
+    font-family: "TT Firs Neue-Medium", Helvetica;
+    font-size: 48px;
+    font-weight: 500;
+    left: 577px;
+    letter-spacing: 0;
+    line-height: 72px;
+    position: absolute;
+    top: 175px;
+    white-space: nowrap;
+  }
+  
+  .converter .frame {
+    height: 309px;
+    left: 435px;
+    overflow: hidden;
+    position: absolute;
+    top: 220px;
+    width: 617px;
+  }
+  
+  .converter .overlap-group {
+    height: 329px;
+    left: -1px;
+    position: relative;
+    top: 7px;
+    width: 564px;
+  }
+  
+  .converter .overlap-wrapper {
+    height: 134px;
+    left: 0;
+    position: absolute;
+    top: 140px;
+    width: 564px;
+  }
+  
+  .converter .overlap-2 {
+    height: 123px;
+    left: 1px;
+    position: relative;
+    width: 563px;
+  }
+  
+  .converter .overlap-group-2 {
+    height: 122px;
+    left: 0;
+    position: absolute;
+    top: 1px;
+    width: 563px;
+  }
+  
+  .converter .rectangle {
+    background-color: #0c0e10;
+    border-radius: 25px;
+    height: 58px;
+    left: 0;
+    position: absolute;
+    top: 50px;
+    width: 542px;
+  }
+  
+  .converter .text-wrapper {
+    color: #848a92;
+    font-family: "TT Firs Neue-Light", Helvetica;
+    font-size: 20px;
+    font-weight: 300;
+    left: 489px;
+    letter-spacing: 0;
+    line-height: 72px;
+    position: absolute;
+    top: 42px;
+    white-space: nowrap;
+    width: 74px;
+  }
+  
+  .converter .text-wrapper-2 {
+    color: #848a92;
+    font-family: "TT Firs Neue-Light", Helvetica;
+    font-size: 20px;
+    font-weight: 300;
+    left: 416px;
+    letter-spacing: 0;
+    line-height: 72px;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    width: 104px;
+  }
+  
+  .converter .text-wrapper-3 {
+    color: #848a92;
+    font-family: "TT Firs Neue-Medium", Helvetica;
+    font-size: 20px;
+    font-weight: 500;
+    left: 500px;
+    letter-spacing: 0;
+    line-height: 72px;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    width: 20px;
+  }
+  
+  .converter .text-wrapper-4 {
+    color: #848a92;
+    font-family: "TT Firs Neue-Light", Helvetica;
+    font-size: 20px;
+    font-weight: 300;
+    left: 21px;
+    letter-spacing: 0;
+    line-height: 72px;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    width: 174px;
+  }
+  
+  .converter .chevron-down {
+    height: 20px;
+    left: 196px;
+    position: absolute;
+    top: 29px;
+    width: 20px;
+  }
+  
+  .converter .text-wrapper-5 {
+    color: #848a92;
+    font-family: "TT Firs Neue-Medium", Helvetica;
+    font-size: 20px;
+    font-weight: 500;
+    left: 480px;
+    letter-spacing: 0;
+    line-height: 72px;
+    position: absolute;
+    top: 249px;
+    white-space: nowrap;
+    width: 74px;
+  }
+  
+  .converter .overlap-group-wrapper {
+    height: 150px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 564px;
+  }
+  
+  .converter .overlap-3 {
+    height: 122px;
+    left: 2px;
+    position: relative;
+    width: 563px;
+  }
+  
+  .converter .select-a-currency {
+    color: #848a92;
+    font-family: "TT Firs Neue-Light", Helvetica;
+    font-size: 20px;
+    font-weight: 300;
+    left: 20px;
+    letter-spacing: 0;
+    line-height: 72px;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    width: 174px;
+  }
+  
+  .converter .overlap-4 {
+    height: 122px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 563px;
+  }
+  
+  .converter .text-wrapper-6 {
+    color: #848a92;
+    font-family: "TT Firs Neue-Light", Helvetica;
+    font-size: 20px;
+    font-weight: 300;
+    left: 415px;
+    letter-spacing: 0;
+    line-height: 72px;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    width: 104px;
+  }
+  
+  .converter .text-wrapper-7 {
+    color: #848a92;
+    font-family: "TT Firs Neue-Medium", Helvetica;
+    font-size: 20px;
+    font-weight: 500;
+    left: 499px;
+    letter-spacing: 0;
+    line-height: 72px;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    width: 20px;
+  }
+  
+  .converter .img {
+    height: 20px;
+    left: 194px;
+    position: absolute;
+    top: 28px;
+    width: 20px;
+  }
+  
+  .converter .frame-2 {
+    height: 55px;
+    left: 238px;
+    position: absolute;
+    top: 122px;
+    width: 56px;
+  }
+  
+  .converter .arrow-wrapper {
+    background-color: #0d0e10;
+    border-radius: 27.5px;
+    height: 55px;
+    left: 1px;
+    position: relative;
+    width: 55px;
+  }
+  
+  .converter .arrow {
+    height: 26px;
+    left: 16px;
+    position: absolute;
+    top: 15px;
+    width: 22px;
+  }
+  
+  .converter .text-wrapper-8 {
+    color: #3c61c0;
+    font-family: "TT Firs Neue-Medium", Helvetica;
+    font-size: 20px;
+    font-weight: 500;
+    left: 21px;
+    letter-spacing: 0;
+    line-height: 72px;
+    position: absolute;
+    top: 247px;
+    white-space: nowrap;
+    width: 190px;
+  }
+  
+  .converter .setting {
+    height: 40px;
+    left: 915px;
+    position: absolute;
+    top: 190px;
+    width: 40px;
+  }
+  
+  .converter .refresh {
+    height: 41px !important;
+    left: 965px !important;
+    position: absolute !important;
+    top: 191px !important;
+    width: 41px !important;
+  }
+  
+  .converter .vector {
+    height: 20px;
+    left: -56px;
+    position: absolute;
+    top: 1004px;
+    width: 20px;
+  }
+  
+  .converter .frame-3 {
+    align-items: center;
+    display: inline-flex;
+    gap: 144px;
+    left: 503px;
+    position: absolute;
+    top: 28px;
+  }
+  
+  .converter .navbar {
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 67px;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .converter .text-wrapper-9 {
+    color: #6f767e;
+    font-family: "TT Firs Neue-Medium", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin-top: -1px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .converter .frame-4 {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 24px;
+    position: relative;
+  }
+  
+  .converter .group {
+    background: linear-gradient(
+      180deg,
+      rgb(247, 179, 50) 0%,
+      rgb(252.88, 173.7, 20.02) 35.19%,
+      rgb(213.56, 129.21, 2.67) 100%
+    );
+    border-radius: 24px;
+    height: 48px;
+    position: relative;
+    width: 48px;
+  }
+  
+  .converter .vector-2 {
+    height: 18px;
+    left: 12px;
+    position: absolute;
+    top: 15px;
+    width: 21px;
+  }
+  
+  .converter .div-wrapper {
+    align-items: center;
+    background-color: #271f15;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 12px 16px;
+    position: relative;
+    width: 224px;
+  }
+  
+  .converter .text-wrapper-10 {
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(
+      180deg,
+      rgb(247, 179, 50) 0%,
+      rgb(252.88, 173.7, 20.02) 35.19%,
+      rgb(213.56, 129.21, 2.67) 100%
+    );
+    background-clip: text;
+    color: transparent;
+    font-family: "TT Firs Neue-Medium", Helvetica;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin-top: -1px;
+    position: relative;
+    text-fill-color: transparent;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .converter .overlap-5 {
+    background-color: #101014;
+    height: 166px;
+    left: 0;
+    position: absolute;
+    top: 825px;
+    width: 1440px;
+  }
+  
+  .converter .menu {
+    align-items: center;
+    display: inline-flex;
+    gap: 175px;
+    justify-content: center;
+    left: 374px;
+    position: absolute;
+    top: 71px;
+  }
+  
+  .converter .text-wrapper-11 {
+    color: #efefef;
+    font-family: "TT Firs Neue-Medium", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin-top: -1px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .converter .frame-5 {
+    align-items: center;
+    display: inline-flex;
+    gap: 11px;
+    left: 75px;
+    position: absolute;
+    top: 71px;
+  }
+  
+  .converter .frame-6 {
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 5px;
+    position: relative;
+  }
+  
+  .converter .RU-instance {
+    height: 13.53px !important;
+    left: unset !important;
+    position: relative !important;
+    top: unset !important;
+    width: 18.94px !important;
+  }
+  
+  .converter .vector-3 {
+    height: 3.16px;
+    position: relative;
+    width: 6.31px;
+  }
+  
+  .converter .text-wrapper-12 {
+    color: #c4c4c4;
+    font-family: "TT Firs Neue-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin-top: -1px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .converter .text-wrapper-13 {
+    color: #6f767e;
+    font-family: "TT Firs Neue-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    left: 1234px;
+    letter-spacing: 0;
+    line-height: 24px;
+    position: absolute;
+    top: 70px;
+    white-space: nowrap;
+  }
+  

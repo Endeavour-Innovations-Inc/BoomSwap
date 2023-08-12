@@ -106,8 +106,8 @@ const MTokensSoldBar = () => {
         <div style={rectangleStyle} />
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-        <div style={textWrapper9Style}>Tokens Sold</div>
-        <div style={textWrapper10Style}>{`${globalTokenSold.toLocaleString()} / ${tokensForSale.toLocaleString()}`}</div>
+        <div style={textWrapper9Style}>Total Tokens For Sale</div>
+        <div style={textWrapper10Style}>{`${tokensForSale.toLocaleString()}`}</div>
       </div>
     </div>
   );
