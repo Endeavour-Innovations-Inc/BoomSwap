@@ -16,6 +16,7 @@ const NavbarButtons = () => { // <-- Include the props argument
 
   const redirectToEarn = () => {
     // Add the link or functionality for the Earn button here
+    navigate('/earn');
   };
 
   const redirectToDashboard = () => {
@@ -24,6 +25,7 @@ const NavbarButtons = () => { // <-- Include the props argument
 
   const redirectToITO = () => {
     // Add the link or functionality for the ITO button here
+    navigate('/ito');
   };
 
   const redirectToOther = () => {
