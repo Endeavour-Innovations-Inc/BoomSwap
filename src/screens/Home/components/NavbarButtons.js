@@ -18,7 +18,7 @@ const NavbarButtons = () => { // <-- Include the props argument
   };
 
   const redirectToDashboard = () => {
-    
+    navigate('/');
   };
 
   const redirectToITO = () => {

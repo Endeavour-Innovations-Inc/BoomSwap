@@ -1,15 +1,14 @@
 import React from "react";
 import "./style.css";
+import NavbarButtons from "../Home/components/NavbarButtons";
+import TelegramButton from "../Home/components/TelegramButton";
+import ConnectToMetamask from "../Home/components/MetamaskButton";
 
 export const Trade = () => {
   return (
     <div className="converter">
       <div className="div">
         <div className="overlap">
-          <img className="base" alt="Base" src="base.png" />
-          <div className="button">
-            <img className="connect-wallet" alt="Connect wallet" src="connect-wallet.png" />
-          </div>
           <div className="boom-token">Boomtoken</div>
           <div className="frame">
             <div className="overlap-group">
@@ -50,28 +49,12 @@ export const Trade = () => {
         </div>
         <img className="vector" alt="Vector" src="vector.svg" />
         <div className="frame-3">
-          <div className="navbar">
-            <div className="text-wrapper-9">Trade</div>
-            <div className="text-wrapper-9">Earn</div>
-            <div className="text-wrapper-9">Dashboard</div>
-            <div className="text-wrapper-9">ITO</div>
-          </div>
-          <div className="frame-4">
-            <div className="group">
-              <img className="vector-2" alt="Vector" src="image.svg" />
-            </div>
-            <div className="div-wrapper">
-              <div className="text-wrapper-10">Connect to MetaMask</div>
-            </div>
-          </div>
+          <NavbarButtons />
+          <TelegramButton />
+          <ConnectToMetamask />
+            
         </div>
         <div className="overlap-5">
-          <div className="menu">
-            <div className="text-wrapper-11">Trade</div>
-            <div className="text-wrapper-9">Earn</div>
-            <div className="text-wrapper-9">Dashboard</div>
-            <div className="text-wrapper-9">ITO</div>
-          </div>
           <div className="frame-5">
             <div className="frame-6">
               <img className="vector-3" alt="Vector" src="vector-332.svg" />

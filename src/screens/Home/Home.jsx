@@ -14,8 +14,6 @@ import MTokenPurchaseFrame from "./mobileComponents/mPurchaseTokens";
 import MLanguageSelector from "./mobileComponents/mLangSelector";
 import MNavbarButtons from "./mobileComponents/mNavbarButtons";
 import MTokensSoldBar from "./mobileComponents/mTokensSoldBar";
-import { Routes, Route } from 'react-router-dom';
-import { Trade } from '../Trade/Trade';
 
 export const Home = () => {
   const isMobile = window.innerWidth <= 768; // You can adjust this value
