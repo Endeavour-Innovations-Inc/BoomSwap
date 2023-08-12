@@ -83,11 +83,12 @@
   }
   
   .converter .overlap-group {
-    height: 329px;
+    background-color: #161618;
+    height: 333px;
     left: -1px;
     position: relative;
     top: 7px;
-    width: 564px;
+    width: 580px;
   }
   
   .converter .overlap-wrapper {
@@ -114,7 +115,7 @@
   }
   
   .converter .rectangle {
-    background-color: #0c0e10;
+    background-color: #202529;
     border-radius: 25px;
     height: 58px;
     left: 0;
@@ -284,7 +285,7 @@
   }
   
   .converter .arrow-wrapper {
-    background-color: #0d0e10;
+    background-color: #24272c;
     border-radius: 27.5px;
     height: 55px;
     left: 1px;
@@ -346,6 +347,33 @@
     position: absolute;
     top: 28px;
   }
+
+  .connect-metamask-wrapper {
+    align-items: center;
+    background-color: #271f15;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 12px 16px;
+    position: relative;
+    width: 224px;
+    z-index: 1000;
+    margin-left: -120px; /* Adjust this value as needed */
+  }
+
+  .home .button {
+    align-items: center;
+    background-color: #271f15;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 12px 16px;
+    position: relative;
+    width: 224px;
+    z-index: 1000;
+  }
   
   .converter .navbar {
     align-items: center;
@@ -400,7 +428,7 @@
   
   .converter .div-wrapper {
     align-items: center;
-    background-color: #271f15;
+    background-color: #2a2117;
     border-radius: 8px;
     display: flex;
     gap: 10px;
@@ -433,7 +461,7 @@
   }
   
   .converter .overlap-5 {
-    background-color: #101014;
+    background-color: #15151a;
     height: 166px;
     left: 0;
     position: absolute;

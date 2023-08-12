@@ -3,13 +3,14 @@ import "./style.css";
 import NavbarButtons from "../Home/components/NavbarButtons";
 import TelegramButton from "../Home/components/TelegramButton";
 import ConnectToMetamask from "../Home/components/MetamaskButton";
+import LanguageSelector from "../Home/components/LangSelector";
 
 export const Trade = () => {
   return (
     <div className="converter">
       <div className="div">
         <div className="overlap">
-          <div className="boom-token">Boomtoken</div>
+          <div className="boom-token">BoomSwap</div>
           <div className="frame">
             <div className="overlap-group">
               <div className="overlap-wrapper">
@@ -51,17 +52,15 @@ export const Trade = () => {
         <div className="frame-3">
           <NavbarButtons />
           <TelegramButton />
-          <ConnectToMetamask />
-            
+          <div className="connect-metamask-wrapper">
+            <ConnectToMetamask />
+          </div>
         </div>
         <div className="overlap-5">
           <div className="frame-5">
-            <div className="frame-6">
-              <img className="vector-3" alt="Vector" src="vector-332.svg" />
-            </div>
-            <div className="text-wrapper-12">РУС</div>
+            <LanguageSelector />
           </div>
-          <div className="text-wrapper-13">© 2023 VierTrust</div>
+          <div className="text-wrapper-13">© 2023 BoomFinance</div>
         </div>
       </div>
     </div>
