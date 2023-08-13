@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const NavbarButtons = () => { // <-- Include the props argument
@@ -6,6 +6,8 @@ const NavbarButtons = () => { // <-- Include the props argument
   const [hoveredButton, setHoveredButton] = useState(null);
   const [pressedButton, setPressedButton] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [buttonPosition, setButtonPosition] = useState({ x: 0, y: 0 });
+
 
   const navigate = useNavigate(); // using the hook
 
@@ -28,7 +30,9 @@ const NavbarButtons = () => { // <-- Include the props argument
     navigate('/ito');
   };
 
-  const redirectToOther = () => {
+  const redirectToOther = (e) => {
+    const rect = e.target.getBoundingClientRect();
+    setButtonPosition({ x: rect.left, y: rect.bottom });
     setIsModalOpen(!isModalOpen);
   };
 
@@ -74,26 +78,88 @@ const NavbarButtons = () => { // <-- Include the props argument
     }
   `;
 
-  const Modal = () => (
-    <div style={{
-      position: 'fixed',
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      zIndex: 1001,
-      background: 'white',
-      padding: '20px',
-      boxShadow: '0px 0px 10px rgba(0,0,0,0.1)'
-    }}>
-      <button onClick={() => setIsModalOpen(false)}>Close</button>
-      <ul>
-        <li><a href="/link1">Link 1</a></li>
-        <li><a href="/link2">Link 2</a></li>
-        <li><a href="/link3">Link 3</a></li>
-        {/* ... add more links or options here */}
-      </ul>
-    </div>
-  );
+  const Modal = () => {
+      const modalRef = useRef(null);
+
+      useEffect(() => {
+          const handleClickOutside = (event) => {
+              if (modalRef.current && !modalRef.current.contains(event.target)) {
+                  setIsModalOpen(false);
+              }
+          };
+
+          // Attach the click event listener
+          document.addEventListener('mousedown', handleClickOutside);
+          return () => {
+              // Remove the click event listener
+              document.removeEventListener('mousedown', handleClickOutside);
+          };
+      }, []);
+
+      return (
+          <div 
+              ref={modalRef}
+              style={{
+                  position: 'fixed',
+                  top: `${buttonPosition.y}px`,
+                  left: `${buttonPosition.x}px`,
+                  zIndex: 1001,
+                  background: '#333335',
+                  padding: '20px',
+                  boxShadow: '0px 0px 10px rgba(0,0,0,0.1)',
+                  borderRadius: '10px'
+              }}>
+              <ul>
+                  <li>
+                      <button 
+                          style={{ 
+                              background: 'none',
+                              border: 'none',
+                              cursor: 'pointer',
+                              color: 'white',
+                              display: 'block',
+                              width: '100%',
+                              textAlign: 'left'
+                          }}
+                      >
+                          Docs
+                      </button>
+                  </li>
+                  <li>
+                      <button 
+                          style={{ 
+                              background: 'none',
+                              border: 'none',
+                              cursor: 'pointer',
+                              color: 'white',
+                              display: 'block',
+                              width: '100%',
+                              textAlign: 'left'
+                          }}
+                      >
+                          Analytics
+                      </button>
+                  </li>
+                  <li>
+                      <button 
+                          style={{ 
+                              background: 'none',
+                              border: 'none',
+                              cursor: 'pointer',
+                              color: 'white',
+                              display: 'block',
+                              width: '100%',
+                              textAlign: 'left'
+                          }}
+                      >
+                          Community
+                      </button>
+                  </li>
+                  {/* ... add more links or options here */}
+              </ul>
+          </div>
+      );
+  };
 
   return (
     <div style={navbarStyle} className="navbar">
@@ -145,7 +211,7 @@ const NavbarButtons = () => { // <-- Include the props argument
         onMouseLeave={() => setHoveredButton(null)}
         onMouseDown={() => setPressedButton('other')}
         onMouseUp={() => setPressedButton(null)}
-        onClick={redirectToOther}
+        onClick={(e) => redirectToOther(e)}
       >
         ...
       </button>
