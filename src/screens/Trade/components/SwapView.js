@@ -41,8 +41,8 @@ const SwapView = () => {
         left: '50%', // Adjusted to move the element's left edge to the center of its container
         transform: 'translateX(-50%)', // Added to pull the element back to the left by half of its width
         width: '564px',
-        position: 'relative', // Changed from absolute to relative
-        top: '140px' // This might need to be adjusted depending on the specific layout and the height of the element above
+        position: 'absolute', // Changed from absolute to relative
+        top: '50px' // Controls the height between the "BoomSwap" and the first line
     };    
 
     const overlap2Style = {
@@ -143,7 +143,7 @@ const SwapView = () => {
         letterSpacing: '0',
         lineHeight: '72px',
         position: 'absolute',
-        top: '249px',
+        top: '50px', // responsible for distance between elements, let's try to reduce it
         whiteSpace: 'nowrap',
         width: '74px'
     };
@@ -273,8 +273,43 @@ const SwapView = () => {
         <div style={overlapStyle}>
           <div style={frameStyle}> {/* I will delete everything below it to style it properly */}
             <div style={boomTokenStyle}>BoomSwap</div>
-              
-          </div>    
+            {/* First Line of the element */}
+            <div style={overlapWrapperStyle}>
+            <div style={overlap2Style}>
+              <div style={overlapGroup2Style}>
+                <div style={rectangleStyle} />
+                <div style={textWrapperStyle}>0.0</div>
+                <div style={textWrapper2Style}>Balance</div>
+                <div style={textWrapper3Style}>0</div>
+              </div>
+              <div style={textWrapper4Style}>Select A Currency</div>
+              <img style={chevronDownStyle} alt="Chevron down" src="chevron-down.svg" />
+            </div>
+            {/* --------------------------- */}
+            <div style={textWrapper5Style}>0%</div> {/* No idea what this does */}
+            {/* Second Line of the element */}
+            <div style={overlapGroupWrapperStyle}>
+            <div style={overlap3Style}>
+              <div style={selectACurrencyStyle}>Select A Currency</div>
+              <div style={overlap4Style}>
+                <div style={textWrapper6Style}>Balance</div>
+                <div style={rectangleStyle} />
+                <div style={textWrapperStyle}>0.0</div>
+                <div style={textWrapper7Style}>0</div>
+              </div>
+              <img style={imgStyle} alt="Chevron down" src="chevron-down-2.svg" />
+            </div>
+          </div>
+          {/*--------------------------- */}
+          <div style={frame2Style}>
+            <div style={arrowWrapperStyle}>
+              <img style={arrowStyle} alt="Arrow" src="arrow-1.svg" />
+            </div>
+          </div>
+          <div style={textWrapper8Style}>Slippage Tolerance</div>
+          </div>
+          </div>
+          <img style={settingStyle} alt="Setting" src="setting-1.png" />    
         </div>
     );    
 }
