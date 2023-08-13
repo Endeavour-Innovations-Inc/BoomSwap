@@ -2,8 +2,7 @@ import React from 'react';
 
 const SwapView = () => {
 
-  // If you have any specific actions or methods related to this component, you can define them here.
-    const overlapStyle = {
+    const overlapStyle = { // responsible for background
         backgroundColor: '#09090a',
         height: '729px',
         left: '-3px',
@@ -12,44 +11,39 @@ const SwapView = () => {
         width: '1440px'
     };
 
+    const frameStyle = {
+        backgroundColor: '#333335',
+        position: 'relative', // This ensures children are positioned relative to this element
+        height: '309px',
+        left: '435px',
+        overflow: 'hidden',
+        top: '220px',
+        width: '617px',
+        borderRadius: '10px'  // Rounded corners
+    };    
+
     const boomTokenStyle = {
         color: '#ffffff',
         fontFamily: '"TT Firs Neue-Medium", Helvetica',
         fontSize: '48px',
         fontWeight: 500,
-        left: '577px',
+        left: '50%',   // Adjusted to align to the center of frameStyle
+        top: '0',      // Remains the same to align to the top of frameStyle
         letterSpacing: '0',
         lineHeight: '72px',
-        position: 'absolute',
-        top: '175px',
-        whiteSpace: 'nowrap'
-    };
-
-    const frameStyle = {
-        height: '309px',
-        left: '435px',
-        overflow: 'hidden',
-        position: 'absolute',
-        top: '220px',
-        width: '617px'
-    };
-
-    const overlapGroupStyle = {
-        backgroundColor: '#161618',
-        height: '333px',
-        left: '-1px',
-        position: 'relative',
-        top: '7px',
-        width: '580px'
-    };
+        position: 'absolute', 
+        whiteSpace: 'nowrap',
+        transform: 'translateX(-50%)'  // Added to ensure perfect centering
+    };    
 
     const overlapWrapperStyle = {
         height: '134px',
-        left: '0',
-        position: 'absolute',
-        top: '140px',
-        width: '564px'
-    };
+        left: '50%', // Adjusted to move the element's left edge to the center of its container
+        transform: 'translateX(-50%)', // Added to pull the element back to the left by half of its width
+        width: '564px',
+        position: 'relative', // Changed from absolute to relative
+        top: '140px' // This might need to be adjusted depending on the specific layout and the height of the element above
+    };    
 
     const overlap2Style = {
         height: '123px',
@@ -277,43 +271,10 @@ const SwapView = () => {
   
     return (
         <div style={overlapStyle}>
-          <div style={boomTokenStyle}>BoomSwap</div>
-          <div style={frameStyle}>
-            <div style={overlapGroupStyle}>
-              <div style={overlapWrapperStyle}>
-                <div style={overlap2Style}>
-                  <div style={overlapGroup2Style}>
-                    <div style={rectangleStyle} />
-                    <div style={textWrapperStyle}>0.0</div>
-                    <div style={textWrapper2Style}>Balance</div>
-                    <div style={textWrapper3Style}>0</div>
-                  </div>
-                  <div style={textWrapper4Style}>Select A Currency</div>
-                  <img style={chevronDownStyle} alt="Chevron down" src="chevron-down.svg" />
-                </div>
-              </div>
-              <div style={textWrapper5Style}>0%</div>
-              <div style={overlapGroupWrapperStyle}>
-                <div style={overlap3Style}>
-                  <div style={selectACurrencyStyle}>Select A Currency</div>
-                  <div style={overlap4Style}>
-                    <div style={textWrapper6Style}>Balance</div>
-                    <div style={rectangleStyle} />
-                    <div style={textWrapperStyle}>0.0</div>
-                    <div style={textWrapper7Style}>0</div>
-                  </div>
-                  <img style={imgStyle} alt="Chevron down" src="chevron-down-2.svg" />
-                </div>
-              </div>
-              <div style={frame2Style}>
-                <div style={arrowWrapperStyle}>
-                  <img style={arrowStyle} alt="Arrow" src="arrow-1.svg" />
-                </div>
-              </div>
-              <div style={textWrapper8Style}>Slippage Tolerance</div>
-            </div>
-          </div>
-          <img style={settingStyle} alt="Setting" src="setting-1.png" />
+          <div style={frameStyle}> {/* I will delete everything below it to style it properly */}
+            <div style={boomTokenStyle}>BoomSwap</div>
+              
+          </div>    
         </div>
     );    
 }
