@@ -14,7 +14,7 @@ const styles = {
       minWidth: '300px', // Adjusted minWidth for less width
       padding: '19px 30px',
       position: 'relative',
-      width: '80%'  // Adjusted width to take 80% of the parent container's width
+      width: '90%'  // Adjusted width to take 80% of the parent container's width
     },
     connectWallet: {
       height: '22.8px',

@@ -6,7 +6,10 @@ const styles = {
         height: '309px',
         overflow: 'hidden',
         position: 'relative',
-        width: '617px'
+        width: '617px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     overlap: {
         height: '329px',

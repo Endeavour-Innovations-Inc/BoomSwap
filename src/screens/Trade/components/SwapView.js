@@ -21,10 +21,13 @@ const SwapView = () => {
         flexDirection: 'column', // Stack children vertically
         alignItems: 'center',    // Center children horizontally
         backgroundColor: '#333335',
-        height: '400px',
+        height: 'auto',         // Dynamic height based on content
+        minHeight: '300px',     // Optional: minimum height
+        maxHeight: '600px',     // Optional: maximum height
         width: '617px',
-        borderRadius: '10px'
-    };
+        borderRadius: '10px',
+        padding: '10px'         // Added padding to ensure content doesn't touch the edges
+    };    
     
     const boomTokenStyle = {
         color: '#ffffff',
@@ -34,7 +37,7 @@ const SwapView = () => {
         marginTop: '0',  // Adjust as needed to position from the top of frameStyle
         letterSpacing: '0',
         lineHeight: '72px',
-        whiteSpace: 'nowrap'
+        whiteSpace: 'nowrap',
     }; 
   
     // This code is responsible for the window for trading
