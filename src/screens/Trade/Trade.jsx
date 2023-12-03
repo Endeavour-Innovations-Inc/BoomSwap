@@ -9,10 +9,13 @@ import Card from "./components/Card/Card"; // trade view component
 
 // A recycleable component, SwapView defines the difference
 export const Trade = () => {
+
   return (
     <div className="converter">
       <div className="div">
-        <Card />
+        <div className="body">
+            <Card />
+        </div>
         <img className="vector" alt="Vector" src="vector.svg" />
         <div className="frame-3">
           <NavbarButtons /> 

@@ -549,3 +549,8 @@
     white-space: nowrap;
   }
   
+  .converter .body {
+    display: flex;
+    justify-content: center;
+    padding: 200px 0;
+}
