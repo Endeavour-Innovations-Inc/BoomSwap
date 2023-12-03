@@ -18,7 +18,6 @@ const Card = () => {
     return (
         <>
         <div className="card">
-            <div className="cardHeading">
                 <div className="cardHeadingPrimary">
                     <div className="Primary1">
                         <h2>BoomSwap</h2>
@@ -173,6 +172,7 @@ const Card = () => {
                 <span className="arrow">
                     <AiOutlineArrowDown />
                 </span>
+
                 <div className="label" onClick={() => {setButtonPopUp(true)}}>
                 <label htmlFor="inpuText">Select a currency</label>
                 <AiOutlineDown />
@@ -199,7 +199,6 @@ const Card = () => {
                 onClick={() => {setButtonPopUp3(true)}}
                 />
             </div>
-        </div>
         </>
     )
 }

@@ -9,7 +9,7 @@ import './index.css';
 
 const app = document.getElementById("app");
 const root = ReactDOMClient.createRoot(app);
-root.render(
+root.render( 
   <Router>
     <Routes>
       <Route path="/" element={<Home />} />
