@@ -1,0 +1,43 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--colorPrimary);
+    padding: 5px 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    height: 56px;
+}
+.logo img {
+    height: 40px;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.navIcons {
+    color: var(--colorLightGrey) !important;
+}
+
+.navText {
+    background-color: var(--colorOrangeBright);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+}

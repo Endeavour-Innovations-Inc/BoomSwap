@@ -1,0 +1,57 @@
+.heroText {
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.heroTextBody {
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    
+}
+.heroH1 {
+    padding: 0;
+    margin: 0;
+    font-weight: 700;
+    font-size: 45px;
+}
+
+.heroP {
+    font-size: 18px;
+}
+#twinButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+#twinButtons .heroB1 .btn {
+    background-color: var(--colorYellow);
+    color: var(--colorDark);
+    border-radius: 0;
+    padding: 15px 35px;
+    font-weight: 600;
+    cursor: pointer;
+}
+#twinButtons .heroB2 .btn {
+    background-color: transparent;
+    border: 2px solid var(--colorYellow);
+    color: var(--colorYellow);
+    border-radius: 0;
+    padding: 15px 35px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.heroSvg svg{
+    width: 114px;
+}
+
+.block {
+    display: block;
+}
