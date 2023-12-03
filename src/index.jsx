@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Trade } from "./screens/Trade/Trade";
 import { Earn } from "./screens/Earn/Earn";
 import { ITO } from "./screens/ITO/ITO";
+import './index.css';
 
 const app = document.getElementById("app");
 const root = ReactDOMClient.createRoot(app);
