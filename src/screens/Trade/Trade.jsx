@@ -4,14 +4,15 @@ import NavbarButtons from "../Home/components/NavbarButtons";
 import TelegramButton from "../Home/components/TelegramButton";
 import ConnectToMetamask from "../Home/components/MetamaskButton";
 import LanguageSelector from "../Home/components/LangSelector";
-import SwapView from "./components/SwapView";
+// import SwapView from "./components/SwapView";
+import Card from "./components/Card/Card"; // trade view component
 
 // A recycleable component, SwapView defines the difference
 export const Trade = () => {
   return (
     <div className="converter">
       <div className="div">
-        <SwapView />
+        <Card />
         <img className="vector" alt="Vector" src="vector.svg" />
         <div className="frame-3">
           <NavbarButtons /> 

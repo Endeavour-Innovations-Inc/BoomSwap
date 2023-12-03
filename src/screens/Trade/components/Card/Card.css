@@ -1,0 +1,238 @@
+.card {
+    width: 328px;
+    padding: 10px 30px;
+    background-color: var(--colorPrimary);
+    border-radius: 10px;
+    position: relative;
+}
+
+.coinImg img {
+    width: 150px;
+}
+
+.coinImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-45%, -34%);
+}
+.cardHeadingPrimary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: var(--white);
+}
+
+.Primary1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.Primary1 h2 {
+    margin: 5px 0 ;
+    font-size: 20px;
+}
+.Primary2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.cardHeadingSecondary {
+    margin-bottom: 40px;
+}
+
+.secondaryText {
+    color: var(--colorLightGrey);
+}
+
+.arrow {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    background-color: var(--colorBodyBackground);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    font-size: 1rem;
+    color: var(--white);
+}
+
+.slipTolerance {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.slipText {
+    color: var(--colorPurple);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.slipPercent {
+    color: var(--colorOrangeBright);
+    font-weight: 800;
+}
+
+.popHeading {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.popHeadingText {
+    font-size: 20px;
+}
+
+.popBody input{
+    text-align: left !important;
+}
+
+.popBody input:focus {
+    border:1px solid var(--colorOrangeBright);
+}
+
+.label {
+    color: var(--white);
+    cursor: pointer;   
+    padding-bottom: 5px;
+    text-align: left;
+}
+
+.label label { 
+    cursor: pointer;
+    font-weight: 700;
+    font-size: .95rem;
+}
+
+.label svg {
+    margin-left: 5px;
+    height: 0.8rem;
+    font-weight: 700;
+    stroke-width: 60;
+}
+
+.tokens {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.tokenImgName {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.tokenImg img{
+    width: 30px;
+    height: 30px;
+}
+
+.tokenNonFade span {
+    font-weight: 700;
+}
+
+.tokenFade span {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--colorLightGrey);
+}
+.slipCaption {
+    text-align: left;
+}
+
+
+.question {
+    color: var(--colorLightGrey);
+    margin-left: 10px;
+}
+.settingsTxt {
+    font-weight: 500;
+}
+.tolerancePercent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 30px 0;
+}
+
+.tolerancePercent span:not(:last-child) {
+    background-color: var(--colorTertiary);
+    
+    border-radius: 25px;
+}
+.tolerancePercent span {
+    padding: 10px 20px;
+    color: var(--colorOrangeBright);
+    font-weight: 700;
+}
+.tolerancePercent input {
+    border-radius: 25px !important;
+    height: 0px !important;
+
+}
+
+.deadline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 36px;
+    padding: 10px 0;
+}
+
+.deadlineTxt {
+    display: flex;
+    justify-content: space-between;
+}
+
+.settingsInputDeadline {
+    width: 30px;
+}
+
+.settingsInputDeadline input {
+    padding: 5px 10px !important;
+}
+
+.expertMode {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    margin-right: 14px;
+}
+
+.swap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.priceImg {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.priceImg img {
+    width: 20px;
+}
+
+.arrDown {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px 0;
+}

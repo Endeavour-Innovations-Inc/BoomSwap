@@ -1,6 +1,7 @@
 import React from 'react';
 import SwapElements from './SwapElements';
 import { Button } from './Button';
+import Card from './Card/Card';
 
 const SwapView = () => {
 
@@ -24,9 +25,11 @@ const SwapView = () => {
         height: 'auto',         // Dynamic height based on content
         minHeight: '300px',     // Optional: minimum height
         maxHeight: '600px',     // Optional: maximum height
-        width: '617px',
+        width: 'auto',
+        minWidth: '300px',
+        maxWidth: '700px',
         borderRadius: '10px',
-        padding: '10px'         // Added padding to ensure content doesn't touch the edges
+        padding: '15px'         // Added padding to ensure content doesn't touch the edges
     };    
     
     const boomTokenStyle = {
@@ -44,13 +47,7 @@ const SwapView = () => {
     // Swap Elements 
 
     return (
-        <div style={overlapStyle}>
-          <div style={frameStyle}> {/* I will delete everything below it to style it properly */}
-            <div style={boomTokenStyle}>BoomSwap</div>
-              <SwapElements />
-              <Button />
-          </div>    
-        </div>
+        <Card />      
     );    
 }
 
