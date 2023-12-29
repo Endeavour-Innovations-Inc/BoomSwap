@@ -11,6 +11,7 @@ import croImg from "../images/cro.png"
 import Popup from "../Popup/Popup";
 import Toggle from "../Toggle/Toggle";
 import { useState } from "react";
+
 const Card = () => {
     const [buttonPopUp, setButtonPopUp] = useState(false)
     const [buttonPopUp2, setButtonPopUp2] = useState(false)
@@ -25,10 +26,8 @@ const Card = () => {
                     <div className="Primary2">
                         <AiTwotoneSetting
                         onClick={() => {setButtonPopUp2(true)}}
-                         />
-                        <IoRefreshSharp
-                        
-                         />
+                        />
+                        <IoRefreshSharp/>
                     </div>
                     <Popup trigger={buttonPopUp2} setTrigger={setButtonPopUp2}>
                     <div className="popHeading">

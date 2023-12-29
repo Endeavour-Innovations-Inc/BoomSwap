@@ -1,6 +1,6 @@
 .card {
     width: 428px;
-    height: 400px;
+    height:470px;
     padding: 10px 30px;
     background-color: var(--colorPrimary);
     border-radius: 10px;
@@ -55,17 +55,19 @@
 }
 
 .arrow {
-    height: 30px;
-    width: 30px;
-    border-radius: 100%;
-    background-color: var(--colorBodyBackground);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px auto;
-    font-size: 1rem;
-    color: var(--white);
-}
+    height: 30px !important;
+    width: 30px !important;
+    border-radius: 100% !important;
+    background-color: var(--colorBodyBackground) !important; /* Ensure this variable is defined */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 20px auto !important; /* Centers the button horizontally */
+    font-size: 1rem !important;
+    color: var(--white) !important; /* Ensure this variable is defined */
+    position: static !important; /* Ensures the button is in the normal document flow */
+  }
+  
 
 .slipTolerance {
     display: flex;
@@ -104,7 +106,7 @@
 .label {
     color: var(--white);
     cursor: pointer;   
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     text-align: left;
 }
 
@@ -152,7 +154,6 @@
 .slipCaption {
     text-align: left;
 }
-
 
 .question {
     color: var(--colorLightGrey);
@@ -238,3 +239,16 @@
     justify-content: flex-start;
     padding: 20px 0;
 }
+
+.arrowDownImageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0; /* Adjust margin as needed */
+  }
+  
+.arrowDownImageContainer img {
+    width: 30px; /* Adjust width as needed */
+    height: auto;
+}
+  
