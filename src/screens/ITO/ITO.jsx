@@ -3,15 +3,24 @@ import "./style.css";
 import NavbarButtons from "../Home/components/NavbarButtons";
 import TelegramButton from "../Home/components/TelegramButton";
 import ConnectToMetamask from "../Home/components/MetamaskButton";
-import LanguageSelector from "../Home/components/LangSelector";
+import SlideSwitch from "./components/SlideSwitch"; // Make sure this path is correct
+import CommonFooter from "../CommonComp/CommonFooter"; // Adjust the path according to your project structure
 
-// A recycleable component, SwapView defines the difference
 export const ITO = () => {
   return (
     <div className="converter">
       <div className="div">
-        <p>Coming Soon: ITO</p>
-        <img className="vector" alt="Vector" src="vector.svg" />
+        <div className="ito-header">
+          <h1>Initial Token Offering</h1>
+          <p>Join the Latest Project Launches</p>
+        </div>
+
+        <SlideSwitch />
+
+        <div className="content-box">
+          {/* Content of the rectangle goes here */}
+        </div>
+
         <div className="frame-3">
           <NavbarButtons /> 
           <TelegramButton />
@@ -19,12 +28,9 @@ export const ITO = () => {
             <ConnectToMetamask />
           </div>
         </div>
-        <div className="overlap-5">
-          <div className="frame-5">
-            <LanguageSelector />
-          </div>
-          <div className="text-wrapper-13">© 2023 BoomFinance</div>
-        </div>
+
+        {/* Footer */}
+        <CommonFooter />
       </div>
     </div>
   );

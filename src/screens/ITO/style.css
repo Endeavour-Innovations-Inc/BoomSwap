@@ -536,16 +536,41 @@
     width: fit-content;
   }
   
-  .converter .text-wrapper-13 {
-    color: #6f767e;
-    font-family: "TT Firs Neue-Regular", Helvetica;
-    font-size: 16px;
-    font-weight: 400;
-    left: 1234px;
-    letter-spacing: 0;
-    line-height: 24px;
+  .converter .frame-5 {
+    align-items: center;
+    display: inline-flex;
+    gap: 11px;
+    left: 75px;
     position: absolute;
-    top: 70px;
-    white-space: nowrap;
+    top: 71px;
+  }
+  
+  .slide-switch {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .slide-switch button {
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .slide-switch button.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  /* Optionally, you can add hover effects */
+  .slide-switch button:hover {
+    background-color: #0056b3;
+    color: #fff;
   }
   

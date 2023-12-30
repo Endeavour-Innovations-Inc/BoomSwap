@@ -140,12 +140,12 @@ const Card = () => {
                         <div className="swap">
                             
                             <div className="priceImg">
-                                <img src={logoImg} alt="" />
+                                <img src={croImg} alt="" />
                                 <span>0.99393</span>
                             </div>                
                             
                             <div className="swapName">
-                                TROLL
+                                CRO
                             </div>
                         </div> 
                         <Button 
