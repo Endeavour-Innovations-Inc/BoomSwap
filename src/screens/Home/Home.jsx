@@ -11,7 +11,6 @@ import "./mstyle.css";
 import MConnectToMetamask from "./mobileComponents/mMetamaskButton";
 import MobileTelegramButton from "./mobileComponents/mTelegramButton";
 import MTokenPurchaseFrame from "./mobileComponents/mPurchaseTokens";
-import MLanguageSelector from "./mobileComponents/mLangSelector";
 import MNavbarButtons from "./mobileComponents/mNavbarButtons";
 import MTokensSoldBar from "./mobileComponents/mTokensSoldBar";
 

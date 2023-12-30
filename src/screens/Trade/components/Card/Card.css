@@ -67,24 +67,6 @@
     color: var(--white) !important; /* Ensure this variable is defined */
     position: static !important; /* Ensures the button is in the normal document flow */
   }
-  
-
-.slipTolerance {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 0;
-}
-
-.slipText {
-    color: var(--colorPurple);
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.slipPercent {
-    color: var(--colorOrangeBright);
-    font-weight: 800;
-}
 
 .popHeading {
     display: flex;

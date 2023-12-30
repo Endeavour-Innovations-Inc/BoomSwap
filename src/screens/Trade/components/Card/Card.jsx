@@ -6,11 +6,13 @@ import {AiOutlineArrowDown, AiTwotoneSetting, AiOutlineQuestionCircle, AiOutline
 
 import Input from "../Input/Input";
 import Button from "../Button/Button";
-import logoImg from "../images/logo.png"
 import croImg from "../images/cro.png"
 import Popup from "../Popup/Popup";
 import Toggle from "../Toggle/Toggle";
 import { useState } from "react";
+
+import SlippageTolerance from "./components/SlippageTolerance"; // Adjust the path according to your project structure
+import SettingsPopup from "./components/SettingsPopup"; // Adjust the path according to your project structure
 
 const Card = () => {
     const [buttonPopUp, setButtonPopUp] = useState(false)
@@ -29,61 +31,10 @@ const Card = () => {
                         />
                         <IoRefreshSharp/>
                     </div>
+                    {/* Settings window is defined here */}
                     <Popup trigger={buttonPopUp2} setTrigger={setButtonPopUp2}>
-                    <div className="popHeading">
-                        <h2 className="popHeadingText">Settings</h2>
-                    </div>
-                    <div className="popBody">
-                        <div className="slipCaption">
-                            <span className="settingsTxt">Slippage Tolerance 
-                                <span className="question"><AiOutlineQuestionCircle /></span></span>
-                        </div>
-                        <div className="tolerancePercent">
-                            <span>0.1%</span>
-                            <span>0.5%</span>
-                            <span>1.5%</span>
-                            <Input placeholder="0.50" numbersOnly={true} />
-                            <span>%</span>
-                        </div>
-                        <div className="deadline">
-                            <div className="deadlineTxt">
-                            <span className="settingsTxt">
-                                Tx deadline (mins) 
-                                
-                            </span>
-                            <span className="question"><AiOutlineQuestionCircle /></span>
-                            </div>
-                            <div className="settingsInputDeadline">
-                                <Input />
-                            </div>
-                            
-                        </div>
-                        <div className="expertMode">
-                        <div className="deadlineTxt">
-                            <span className="settingsTxt">
-                            Expert Mode
-                                
-                            </span>
-                            <span className="question"><AiOutlineQuestionCircle /></span>
-                            </div>
-                            <div className="toggleCustom">
-                            <Toggle id="toggle1" />
-                            </div>
-                        </div>
-                        <div className="expertMode">
-                        <div className="deadlineTxt">
-                            <span className="settingsTxt">
-                            Disable Multihops
-                                
-                            </span>
-                            <span className="question"><AiOutlineQuestionCircle /></span>
-                            </div>
-                            <div className="toggleCustom">
-                            <Toggle id="toggle2" />
-                            </div>
-                        </div>
-                    </div>
-                </Popup>
+                        <SettingsPopup />
+                    </Popup>
                 <Popup trigger={buttonPopUp} setTrigger={setButtonPopUp}>
                     <div className="popHeading">
                         <h2 className="popHeadingText">Select a Token</h2>
@@ -176,27 +127,9 @@ const Card = () => {
                 <label htmlFor="inpuText">Select a currency</label>
                 <AiOutlineDown />
             </div>
-                <Input
-                placeholder="0.0"
-                numbersOnly={true}
-                 />
-
-                <div className="slipTolerance">
-                    <div className="slipText">
-                        <span>
-                            Slippage Tolerance
-                        </span>
-                    </div>
-                    <div className="slipPercent">
-                        <span >
-                            0.5%
-                        </span>
-                    </div>
-                </div>
-                <Button 
-                name="swap"
-                onClick={() => {setButtonPopUp3(true)}}
-                />
+                <Input placeholder="0.0" numbersOnly={true}/>
+                <SlippageTolerance />
+                <Button name="swap" onClick={() => {setButtonPopUp3(true)}}/>
             </div>
         </>
     )
