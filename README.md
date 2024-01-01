@@ -46,3 +46,5 @@ You can build your storybook for release with:
 ```
 npm run build-storybook
 ```
+
+CNTR + F

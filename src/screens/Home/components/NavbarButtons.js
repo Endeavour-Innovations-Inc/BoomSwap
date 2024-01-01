@@ -111,19 +111,20 @@ const NavbarButtons = () => { // <-- Include the props argument
               }}>
               <ul>
                   <li>
-                      <button 
-                          style={{ 
-                              background: 'none',
-                              border: 'none',
-                              cursor: 'pointer',
-                              color: 'white',
-                              display: 'block',
-                              width: '100%',
-                              textAlign: 'left'
-                          }}
-                      >
-                          Docs
-                      </button>
+                  <button 
+                      style={{ 
+                          background: 'none',
+                          border: 'none',
+                          cursor: 'pointer',
+                          color: 'white',
+                          display: 'block',
+                          width: '100%',
+                          textAlign: 'left'
+                      }}
+                      onClick={() => window.open('https://wsu-1.gitbook.io/untitled/', '_blank')}
+                  >
+                      Docs
+                  </button>
                   </li>
                   <li>
                       <button 
