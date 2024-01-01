@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
 
-const LiquiditySwitch = () => {
-  const [active, setActive] = useState('latest');
-
-  const toggleSwitch = (value) => {
-    setActive(value);
-  };
-
+const LiquiditySwitch = ({ active, onToggle }) => {
   const slideSwitchStyle = {
     display: 'flex',
     border: '1px solid #ccc', // Border color
@@ -28,10 +22,10 @@ const LiquiditySwitch = () => {
 
   return (
     <div style={slideSwitchStyle}>
-      <div style={buttonStyle(active === 'latest')} onClick={() => toggleSwitch('latest')}>
+      <div style={buttonStyle(active === 'swap')} onClick={() => onToggle('swap')}>
         Swap
       </div>
-      <div style={buttonStyle(active === 'finished')} onClick={() => toggleSwitch('finished')}>
+      <div style={buttonStyle(active === 'liquidity')} onClick={() => onToggle('liquidity')}>
         Liquidity
       </div>
     </div>
