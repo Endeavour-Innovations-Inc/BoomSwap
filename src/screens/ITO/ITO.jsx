@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-// import SlideSwitch from "./components/SlideSwitch"; // Make sure this path is correct
+import SlideSwitch from "./components/SlideSwitch"; // Make sure this path is correct
 import CommonFooter from "../CommonComp/CommonFooter"; // Adjust the path according to your project structure
 import CommonHeader from "../CommonComp/CommonHeader";
 
