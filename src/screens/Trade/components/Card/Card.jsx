@@ -15,11 +15,20 @@ import SlippageTolerance from "./components/SlippageTolerance"; // Adjust the pa
 import SettingsPopup from "./components/SettingsPopup"; // Adjust the path according to your project structure
 import { SelectTokenPopup } from "./components/SelectTokenPopup";
 import ConfirmSwapPopup from "./components/ConfirmSwapPopup";
+import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai';
+import { FaArrowUp, FaArrowDown } from 'react-icons/fa'; // Font Awesome icons
 
 const Card = () => {
+    const [hover, setHover] = useState(false);
+    const [clicked, setClicked] = useState(false);
     const [buttonPopUp, setButtonPopUp] = useState(false)
     const [buttonPopUp2, setButtonPopUp2] = useState(false)
     const [buttonPopUp3, setButtonPopUp3] = useState(false)
+
+    const handleClick = () => {
+        setClicked(!clicked);
+    };
+
     return (
         <>
         <div className="card">
@@ -60,8 +69,19 @@ const Card = () => {
                 numbersOnly={true}
                 />
 
-                <span className="arrow">
-                    <AiOutlineArrowDown />
+                {/* Arrow Button */}
+                <span 
+                className="arrow"
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
+                onClick={handleClick}
+                >
+                {hover 
+                    ? (<><FaArrowUp /><FaArrowDown /></>) // Two-sided arrow with one arrow pointing up and the other pointing down
+                    : clicked 
+                    ? <AiOutlineArrowUp />
+                    : <AiOutlineArrowDown />
+                }
                 </span>
 
                 <div className="label" onClick={() => {setButtonPopUp(true)}}>

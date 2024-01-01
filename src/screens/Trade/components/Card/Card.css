@@ -68,6 +68,10 @@
     position: static !important; /* Ensures the button is in the normal document flow */
   }
 
+  .arrow:hover {
+    color: white;
+  }
+
 .popHeading {
     display: flex;
     justify-content: flex-start;
