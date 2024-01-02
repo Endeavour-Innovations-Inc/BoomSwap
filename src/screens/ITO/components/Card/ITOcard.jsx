@@ -9,13 +9,25 @@ const ITOcard = () => {
         setIsExpanded(!isExpanded);
     };
 
+    const footerStyle = {
+        backgroundColor: 'black',
+        color: 'white', // Text color for visibility on the black background
+        textAlign: 'center',
+        padding: '10px',
+        borderRadius: '0 0 10px 10px', // Rounded bottom corners
+    };
+
     const contentStyle = {
         marginTop: '156.67px', // Offset for the header height
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: isExpanded ? 'space-between' : 'flex-start',
         height: isExpanded ? '313.33px' : '0px', // Remaining height when expanded
         backgroundColor: 'gray', // This will overlay the background image
         transition: 'height 0.3s ease',
         position: 'relative',
         zIndex: 1,
+        overflow: 'hidden', // Hide overflow
     };
 
     const cardStyle = {
@@ -33,7 +45,7 @@ const ITOcard = () => {
         right: '10px', // Button on the right side
         top: '50%',
         transform: 'translateY(-50%)',
-        padding: '20px', // size of btn
+        padding: '10px 30px',
         cursor: 'pointer',
         borderRadius: '20%', // Rounded edges
         border: '1px solid black', // Thin border
@@ -78,12 +90,14 @@ const ITOcard = () => {
                 <div style={headerBackgroundStyle}></div>
                 {/* Header Content */}
                 <div style={buttonStyle}>
-                    {isExpanded ? 'v' : '^'} {/* Button content */}
+                    {isExpanded ? 'v' : '^'}
                 </div>
             </div>
             <div style={contentStyle}>
                 <div>Body Content</div>
-                <div>Footer Content</div>
+                <div style={footerStyle}>
+                    <div onClick={handleToggleExpand}>Close ^</div>
+                </div>
             </div>
         </div>
     );
