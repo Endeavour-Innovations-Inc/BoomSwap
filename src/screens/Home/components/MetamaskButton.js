@@ -1,33 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useWallet } from '../../CommonComp/WalletContext'; // Adjust the import path as needed
 
 const ConnectToMetamask = () => {
-  const [account, setAccount] = useState('');
-
-  const connectWallet = async () => {
-    if (window.ethereum) {
-      try {
-        // Request account access
-        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-        setAccount(accounts[0]);
-      } catch (error) {
-        console.error(error);
-      }
-    } else {
-      alert('Please install MetaMask to use this feature!');
-    }
-  };
+  const { account, connectWallet } = useWallet();
 
   const buttonStyle = {
     alignItems: 'center',
     backgroundColor: '#271f15',
     borderRadius: '8px',
     display: 'flex',
-    gap: '6px', // Reduced gap
+    gap: '6px',
     justifyContent: 'center',
-    padding: '8px 10px', // Reduced padding
+    padding: '8px 10px',
     position: 'relative',
-    width: '200px', // Reduced width
-    height: '22px', // Set the height to match the token
+    width: '200px',
+    height: '22px',
   };
 
   const textStyle = {
