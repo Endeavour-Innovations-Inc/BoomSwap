@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ITOcard.css";
+import backgroundImage from '../../../../../static/img/ItoTestBackground.png';
 
 const ITOcard = () => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -16,6 +17,7 @@ const ITOcard = () => {
         borderRadius: '10px',
         position: 'relative',
         transition: 'height 0.3s ease', // Smooth transition for height
+        backgroundImage: `url(${backgroundImage})`, // Set background image
     };
 
     const buttonStyle = {
