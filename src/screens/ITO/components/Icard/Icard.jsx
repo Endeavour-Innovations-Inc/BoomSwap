@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./ITOcard.css";
+import "./Icard.css";
 
-const ITOcard = () => {
+const Icard = () => {
     const [isExpanded, setIsExpanded] = useState(false);
     
     const handleToggleExpand = () => {
@@ -16,6 +16,7 @@ const ITOcard = () => {
         borderRadius: '10px',
         position: 'relative',
         transition: 'height 0.3s ease', // Smooth transition for height
+        marginBottom: '30px', // Add bottom margin
     };
 
     const buttonStyle = {
@@ -36,7 +37,7 @@ const ITOcard = () => {
     };
 
     return (
-        <div style={cardStyle} className="ITOcard">
+        <div style={cardStyle} className="Icard">
             <div style={buttonStyle} onClick={handleToggleExpand}>
                 {isExpanded ? 'v' : '^'}
             </div>
@@ -44,4 +45,4 @@ const ITOcard = () => {
     );
 };
 
-export default ITOcard;
+export default Icard;

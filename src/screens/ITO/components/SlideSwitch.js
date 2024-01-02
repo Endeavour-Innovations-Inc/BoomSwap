@@ -1,11 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const SlideSwitch = () => {
-  const [active, setActive] = useState('latest');
-
-  const toggleSwitch = (value) => {
-    setActive(value);
-  };
+const SlideSwitch = ({ active, onToggle }) => {
 
   const slideSwitchStyle = {
     display: 'flex',
@@ -28,10 +23,10 @@ const SlideSwitch = () => {
 
   return (
     <div style={slideSwitchStyle}>
-      <div style={buttonStyle(active === 'latest')} onClick={() => toggleSwitch('latest')}>
+      <div style={buttonStyle(active === 'latest')} onClick={() => onToggle('latest')}>
         Latest
       </div>
-      <div style={buttonStyle(active === 'finished')} onClick={() => toggleSwitch('finished')}>
+      <div style={buttonStyle(active === 'finished')} onClick={() => onToggle('finished')}>
         Finished
       </div>
     </div>
