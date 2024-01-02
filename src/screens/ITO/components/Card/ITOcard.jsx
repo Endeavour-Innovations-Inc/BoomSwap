@@ -1,15 +1,15 @@
 import React from "react";
-import "./Card.css"
+import "./ITOcard.css"
 
-const Card = () => {
+const ITOcard = () => {
 
     return (
         <>
-        <div className="card">
+        <div className="ITOcard">
                
         </div>
         </>
     )
 }
 
-export default Card
+export default ITOcard

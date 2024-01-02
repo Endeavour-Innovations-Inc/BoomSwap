@@ -585,5 +585,12 @@
     width: 100%;
     margin-top: 100px; /* Replace [YourValue] with an appropriate value */
   }
+
+  .converter .body {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    margin-top: 1px; /* Replace [YourValue] with an appropriate value */
+}
   
   
