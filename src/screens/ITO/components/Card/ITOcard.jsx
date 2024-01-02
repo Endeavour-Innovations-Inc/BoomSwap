@@ -52,6 +52,7 @@ const ITOcard = () => {
         top: 0,
         left: 0, // Add left: 0 to ensure it aligns properly
         zIndex: 2,
+        cursor: 'pointer', // Make the header look clickable
         // Padding can be adjusted or removed here if it's affecting the layout
     };
 
@@ -73,16 +74,14 @@ const ITOcard = () => {
 
     return (
         <div style={cardStyle} className="ITOcard">
-            <div style={headerStyle}>
-                <div style={headerBackgroundStyle}>
-                    
-                </div>
+            <div style={headerStyle} onClick={handleToggleExpand}>
+                <div style={headerBackgroundStyle}></div>
                 {/* Header Content */}
+                <div style={buttonStyle}>
+                    {isExpanded ? 'v' : '^'} {/* Button content */}
+                </div>
             </div>
             <div style={contentStyle}>
-                <div style={buttonStyle} onClick={handleToggleExpand}>
-                    {isExpanded ? 'v' : '^'}
-                </div>
                 <div>Body Content</div>
                 <div>Footer Content</div>
             </div>
