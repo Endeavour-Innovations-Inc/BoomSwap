@@ -17,6 +17,7 @@ import { SelectTokenPopup } from "./components/SelectTokenPopup";
 import ConfirmSwapPopup from "./components/ConfirmSwapPopup";
 import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai';
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa'; // Font Awesome icons
+import { LinearArrowsTransferVertical } from "../../../../icons/LinearArrowsTransferVertical";
 
 
 const Card = () => {
@@ -78,7 +79,7 @@ const Card = () => {
                 onClick={handleClick}
                 >
                 {hover 
-                    ? (<><FaArrowUp /><FaArrowDown /></>) // Two-sided arrow with one arrow pointing up and the other pointing down
+                    ? (<><LinearArrowsTransferVertical/></>) // Two-sided arrow with one arrow pointing up and the other pointing down
                     : clicked 
                     ? <AiOutlineArrowUp />
                     : <AiOutlineArrowDown />
