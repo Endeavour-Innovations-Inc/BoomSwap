@@ -3,7 +3,7 @@ import { AiOutlineQuestionCircle } from "react-icons/ai";
 import Input from '../../Input/Input'; // Adjust the path as needed
 import Toggle from "../../Toggle/Toggle"; // Adjust the path as needed
 
-const SettingsPopup = () => {
+const SettingsPopup = ({ width = 'auto', height = 'auto' }) => {
   const popHeadingStyle = {
     display: "flex",
     justifyContent: "flex-start",
@@ -67,10 +67,16 @@ const SettingsPopup = () => {
     marginRight: "14px",
   };
 
+  const containerStyle = {
+    width: width,  // Use width from props
+    height: height, // Use height from props
+    overflow: 'auto',
+  };  
+
   // Remaining styles (e.g., popBodyInputStyle, popBodyInputFocusStyle) can be defined here
 
   return (
-    <div>
+    <div style={containerStyle}>
       <div className="popHeading" style={popHeadingStyle}>
         <h2 className="popHeadingText" style={popHeadingTextStyle}>Settings</h2>
       </div>
