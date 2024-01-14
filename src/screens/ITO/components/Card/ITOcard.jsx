@@ -84,21 +84,30 @@ const ITOcard = () => {
         borderRadius: '10px 10px 0 0', // Rounded top corners
     }
 
+    const footerButtonStyle = {
+        width: '100%', // Full width of the footer
+        padding: '10px 0', // Vertical padding
+        cursor: 'pointer',
+        textAlign: 'center', // Center the text
+        fontSize: '20px',
+        // You can add more styling as needed
+    };    
+
     return (
         <div style={cardStyle} className="ITOcard">
-            <div style={headerStyle} onClick={handleToggleExpand}>
-                <div style={headerBackgroundStyle}></div>
-                {/* Header Content */}
-                <div style={buttonStyle}>
-                    {isExpanded ? 'v' : '^'}
-                </div>
+        <div style={headerStyle} onClick={handleToggleExpand}>
+            <div style={headerBackgroundStyle}></div>
+            {/* Header Content */}
+            <div style={buttonStyle}>
+                {isExpanded ? 'v' : '^'}
             </div>
-            <div style={contentStyle}>
-                <div>Body Content</div>
-                <div style={footerStyle}>
-                    <div onClick={handleToggleExpand}>Close ^</div>
-                </div>
+        </div>
+        <div style={contentStyle}>
+            <div>Body Content</div>
+            <div style={footerStyle}>
+                <div style={footerButtonStyle} onClick={handleToggleExpand}>Close ^</div>
             </div>
+        </div>
         </div>
     );
 };

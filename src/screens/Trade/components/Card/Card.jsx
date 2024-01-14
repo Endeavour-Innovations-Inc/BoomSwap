@@ -18,6 +18,7 @@ import ConfirmSwapPopup from "./components/ConfirmSwapPopup";
 import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai';
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa'; // Font Awesome icons
 
+
 const Card = () => {
     const [hover, setHover] = useState(false);
     const [clicked, setClicked] = useState(false);
@@ -88,7 +89,11 @@ const Card = () => {
                 <label htmlFor="inpuText">Select a currency</label>
                 <AiOutlineDown />
             </div>
-                <Input placeholder="0.0" numbersOnly={true}/>
+            <Input 
+                className="leftAlignedPlaceholder"
+                placeholder="0.0"
+                numbersOnly={true}
+            />
                 <SlippageTolerance />
                 <Button name="swap" onClick={() => {setButtonPopUp3(true)}}/>
             </div>

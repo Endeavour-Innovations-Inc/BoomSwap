@@ -237,4 +237,8 @@
     width: 30px; /* Adjust width as needed */
     height: auto;
 }
+.leftAlignedPlaceholder input {
+    text-align: left;
+}
+
   
