@@ -18,7 +18,7 @@ const Popup = (props) => {
         position: 'relative',
         padding: '32px',
         width: '100%',
-        maxWidth: '440px',
+        maxWidth: '400px',
         backgroundColor: 'var(--colorPrimary)',
         borderRadius: '25px'
     };

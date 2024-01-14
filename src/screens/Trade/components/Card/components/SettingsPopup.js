@@ -2,6 +2,7 @@ import React from "react";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 import Input from '../../Input/Input'; // Adjust the path as needed
 import Toggle from "../../Toggle/Toggle"; // Adjust the path as needed
+import '../Card.css'; // Adjust the path as needed
 
 const SettingsPopup = ({ width = 'auto', height = 'auto' }) => {
   const popHeadingStyle = {
@@ -73,6 +74,8 @@ const SettingsPopup = ({ width = 'auto', height = 'auto' }) => {
     overflow: 'auto',
   };  
 
+  
+
   // Remaining styles (e.g., popBodyInputStyle, popBodyInputFocusStyle) can be defined here
 
   return (
@@ -93,8 +96,7 @@ const SettingsPopup = ({ width = 'auto', height = 'auto' }) => {
           <span style={toleranceSpanStyle}>0.1%</span>
           <span style={toleranceSpanStyle}>0.5%</span>
           <span style={toleranceSpanStyle}>1.5%</span>
-          <Input placeholder="0.50" numbersOnly={true} />
-          <span>%</span>
+          <Input placeholder="0.50%" />
         </div>
         <div className="deadline" style={deadlineStyle}>
           <div className="deadlineTxt" style={deadlineTxtStyle}>
@@ -106,7 +108,7 @@ const SettingsPopup = ({ width = 'auto', height = 'auto' }) => {
             </span>
           </div>
           <div className="settingsInputDeadline" style={settingsInputDeadlineStyle}>
-            <Input />
+            <Input placeholder="0" />
           </div>
         </div>
         <div className="expertMode" style={expertModeStyle}>

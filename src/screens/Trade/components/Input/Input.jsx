@@ -5,8 +5,8 @@ const Input = (props) => {
 
     const handleInputChange = (e) => {
         if (props.numbersOnly) {
-            // Only allow numbers
-            const regex = /^[0-9]*$/;
+            // Allow numbers and decimals (but not just a standalone decimal point)
+            const regex = /^\d*\.?\d*$/;
             if (regex.test(e.target.value)) {
                 setVal(e.target.value);
             }
