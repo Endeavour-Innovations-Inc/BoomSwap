@@ -82,8 +82,6 @@ const SettingsPopup = ({ width = 'auto', height = 'auto' }) => {
     overflow: 'auto',
   };  
 
-  
-
   // Remaining styles (e.g., popBodyInputStyle, popBodyInputFocusStyle) can be defined here
 
   return (
@@ -104,7 +102,7 @@ const SettingsPopup = ({ width = 'auto', height = 'auto' }) => {
           <button style={toleranceSpanStyle} onClick={() => handleToleranceSelect(0.1)}>0.1%</button>
           <button style={toleranceSpanStyle} onClick={() => handleToleranceSelect(0.5)}>0.5%</button>
           <button style={toleranceSpanStyle} onClick={() => handleToleranceSelect(1.5)}>1.5%</button>
-          <Input placeholder="0.50%" />
+          <Input placeholder="0.50%" numbersOnly={true} />
         </div>
         <div className="deadline" style={deadlineStyle}>
           <div className="deadlineTxt" style={deadlineTxtStyle}>
@@ -116,7 +114,7 @@ const SettingsPopup = ({ width = 'auto', height = 'auto' }) => {
             </span>
           </div>
           <div className="settingsInputDeadline" style={settingsInputDeadlineStyle}>
-            <Input placeholder="0" />
+            <Input placeholder="0" numbersOnly={true}/>
           </div>
         </div>
         <div className="expertMode" style={expertModeStyle}>
