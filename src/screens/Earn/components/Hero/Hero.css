@@ -1,0 +1,105 @@
+.hero {
+    height: 65vh;
+    width: 100%;
+    background-size: 100%;
+    color: var(--colorWhite);
+}
+
+.heroBody {
+    padding: 20px 50px;
+}
+
+.textHeading1 {
+    font-size: 80px;
+}
+
+.heroItemsMany {
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+.heroItemsLeft {
+    gap: 30px;
+}
+
+.heroItemsLeft span {
+    font-weight: 700;
+}
+.heroItemsLeft svg{
+    height: 30px;
+    width: 30px;    
+    fill: var(--colorBrown);
+}
+
+.heroItemsRight input {
+    text-align: left;
+}
+
+.liveFinished {
+    background-color: var(--colorBrightGrey);
+    padding: 10px 0px;
+    border-radius: 20px;
+}
+
+.round {
+    padding: 10px 15px 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* ... (existing styles) */
+
+/* Background transition effect */
+.live, .finished {
+    transition: background-color 0.3s ease;
+    background-color: transparent; /* Default to transparent */
+}
+
+/* Style for selected label */
+.selected {
+    background-color: var(--colorBrownLight);
+}
+
+.heroItemsRight {
+    justify-content: space-between;
+    gap: 50px;
+}
+
+#sort .collapsible {
+    background-color: var(--colorBrightGrey);
+    height: 10px;
+}
+
+
+.rightH1 {
+    justify-content: space-between;
+}
+
+.rightH2 {
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.spanSortBy {
+    color: var(--colorLightPink);
+    
+}
+
+.spanSort {
+    color: var(--colorBrownLight);
+}
+
+.sortUl {
+    text-align: left;
+}
+
+.sortUl li {
+    padding:12px 12px;
+}
+
+
+
+#inputHero input {
+    border-radius: 10px;
+    height: 5px;
+}

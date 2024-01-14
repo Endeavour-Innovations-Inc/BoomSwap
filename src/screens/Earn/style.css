@@ -15,537 +15,198 @@
     width: 1440px;
   }
   
-  .converter .overlap {
-    background-color: #09090a;
-    height: 729px;
-    left: -3px;
-    position: absolute;
-    top: 96px;
-    width: 1440px;
-  }
-  
-  .converter .base {
-    height: 456px;
-    left: 396px;
-    object-fit: cover;
-    position: absolute;
-    top: 162px;
-    width: 633px;
-  }
-  
-  .converter .button {
-    align-items: flex-end;
-    background: linear-gradient(
-      180deg,
-      rgb(247, 179, 50) 0%,
-      rgb(252.88, 173.7, 20.02) 35.19%,
-      rgb(213.56, 129.21, 2.67) 100%
-    );
-    border-radius: 8px;
+  .parentContainer {
+    padding: 50px 100px;
+}
+
+#parentCont .collapsible-container {
+    display: block;
+    background-color: var(--colorDarkBg);
+    
+}
+
+#parentCont .collapsible {
+    background-color: var(--colorDarkBg);
+    border-bottom: 1px solid  var(--colorPrimary3);
+}
+
+.series > div {
+    color: var(--colorLightPink);
+}
+
+.svgCollapse {
+    fill: var(--colorLightPink);
+    width: 20px;
+    height: 20px;
+}
+
+.series {
+    gap: 150px;
+}
+
+.earned {
+    flex-direction: column;
+}
+
+.start {
+    align-self: flex-start;
+}
+
+.earnText {
+    color: var(--colorBrownLight);
+}
+
+.walletNone {
+    background-color: var(--colorPrimary1);
+    width: 100%;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.earningsWallet {
+    background-color: var(--colorPrimary2);
+}
+
+/* #parentCont .content {
+    padding: 0;
+} */
+
+.LinksOnly {
+    width: 100%;
+    
+}
+.LinksOnly1 {
     display: flex;
-    gap: 6px;
-    height: 56px;
-    justify-content: center;
-    left: 471px;
-    padding: 19px 30px;
-    position: absolute;
-    top: 538px;
-    width: 482px;
-  }
-  
-  .converter .connect-wallet {
-    height: 22.8px;
-    margin-bottom: -5.4px;
-    position: relative;
-    width: 161.2px;
-  }
-  
-  .converter .boom-token {
-    color: #ffffff;
-    font-family: "TT Firs Neue-Medium", Helvetica;
-    font-size: 48px;
-    font-weight: 500;
-    left: 577px;
-    letter-spacing: 0;
-    line-height: 72px;
-    position: absolute;
-    top: 175px;
-    white-space: nowrap;
-  }
-  
-  .converter .frame {
-    height: 309px;
-    left: 435px;
-    overflow: hidden;
-    position: absolute;
-    top: 220px;
-    width: 617px;
-  }
-  
-  .converter .overlap-group {
-    background-color: #161618;
-    height: 333px;
-    left: -1px;
-    position: relative;
-    top: 7px;
-    width: 580px;
-  }
-  
-  .converter .overlap-wrapper {
-    height: 134px;
-    left: 0;
-    position: absolute;
-    top: 140px;
-    width: 564px;
-  }
-  
-  .converter .overlap-2 {
-    height: 123px;
-    left: 1px;
-    position: relative;
-    width: 563px;
-  }
-  
-  .converter .overlap-group-2 {
-    height: 122px;
-    left: 0;
-    position: absolute;
-    top: 1px;
-    width: 563px;
-  }
-  
-  .converter .rectangle {
-    background-color: #202529;
+    justify-content: space-between;
+
+}
+.LinksOnly1 a {
+    text-decoration: none;
+    color: var(--colorBrown);
+
+}
+
+.LinksOnly1  {
+    padding-bottom: 10px;
+}
+.LinksOnly1 svg {
+    fill: var(--colorBrown);
+    height: 20px;
+    padding-left: 10px;
+    width: 20px;
+}
+
+
+
+.core svg {
+    fill: var(--colorWhite);
+}
+
+.core {
+    align-self: flex-start;
+    padding: 5px 10px;
+    border: 2px solid var(--colorWhite);
     border-radius: 25px;
-    height: 58px;
-    left: 0;
-    position: absolute;
-    top: 50px;
-    width: 542px;
-  }
-  
-  .converter .text-wrapper {
-    color: #848a92;
-    font-family: "TT Firs Neue-Light", Helvetica;
-    font-size: 20px;
-    font-weight: 300;
-    left: 489px;
-    letter-spacing: 0;
-    line-height: 72px;
-    position: absolute;
-    top: 42px;
-    white-space: nowrap;
-    width: 74px;
-  }
-  
-  .converter .text-wrapper-2 {
-    color: #848a92;
-    font-family: "TT Firs Neue-Light", Helvetica;
-    font-size: 20px;
-    font-weight: 300;
-    left: 416px;
-    letter-spacing: 0;
-    line-height: 72px;
-    position: absolute;
-    top: 0;
-    white-space: nowrap;
-    width: 104px;
-  }
-  
-  .converter .text-wrapper-3 {
-    color: #848a92;
-    font-family: "TT Firs Neue-Medium", Helvetica;
-    font-size: 20px;
-    font-weight: 500;
-    left: 500px;
-    letter-spacing: 0;
-    line-height: 72px;
-    position: absolute;
-    top: 0;
-    white-space: nowrap;
-    width: 20px;
-  }
-  
-  .converter .text-wrapper-4 {
-    color: #848a92;
-    font-family: "TT Firs Neue-Light", Helvetica;
-    font-size: 20px;
-    font-weight: 300;
-    left: 21px;
-    letter-spacing: 0;
-    line-height: 72px;
-    position: absolute;
-    top: 0;
-    white-space: nowrap;
-    width: 174px;
-  }
-  
-  .converter .chevron-down {
-    height: 20px;
-    left: 196px;
-    position: absolute;
-    top: 29px;
-    width: 20px;
-  }
-  
-  .converter .text-wrapper-5 {
-    color: #848a92;
-    font-family: "TT Firs Neue-Medium", Helvetica;
-    font-size: 20px;
-    font-weight: 500;
-    left: 480px;
-    letter-spacing: 0;
-    line-height: 72px;
-    position: absolute;
-    top: 249px;
-    white-space: nowrap;
-    width: 74px;
-  }
-  
-  .converter .overlap-group-wrapper {
-    height: 150px;
-    left: 0;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    width: 564px;
-  }
-  
-  .converter .overlap-3 {
-    height: 122px;
-    left: 2px;
-    position: relative;
-    width: 563px;
-  }
-  
-  .converter .select-a-currency {
-    color: #848a92;
-    font-family: "TT Firs Neue-Light", Helvetica;
-    font-size: 20px;
-    font-weight: 300;
-    left: 20px;
-    letter-spacing: 0;
-    line-height: 72px;
-    position: absolute;
-    top: 0;
-    white-space: nowrap;
-    width: 174px;
-  }
-  
-  .converter .overlap-4 {
-    height: 122px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 563px;
-  }
-  
-  .converter .text-wrapper-6 {
-    color: #848a92;
-    font-family: "TT Firs Neue-Light", Helvetica;
-    font-size: 20px;
-    font-weight: 300;
-    left: 415px;
-    letter-spacing: 0;
-    line-height: 72px;
-    position: absolute;
-    top: 0;
-    white-space: nowrap;
-    width: 104px;
-  }
-  
-  .converter .text-wrapper-7 {
-    color: #848a92;
-    font-family: "TT Firs Neue-Medium", Helvetica;
-    font-size: 20px;
-    font-weight: 500;
-    left: 499px;
-    letter-spacing: 0;
-    line-height: 72px;
-    position: absolute;
-    top: 0;
-    white-space: nowrap;
-    width: 20px;
-  }
-  
-  .converter .img {
-    height: 20px;
-    left: 194px;
-    position: absolute;
-    top: 28px;
-    width: 20px;
-  }
-  
-  .converter .frame-2 {
-    height: 55px;
-    left: 238px;
-    position: absolute;
-    top: 122px;
-    width: 56px;
-  }
-  
-  .converter .arrow-wrapper {
-    background-color: #24272c;
-    border-radius: 27.5px;
-    height: 55px;
-    left: 1px;
-    position: relative;
-    width: 55px;
-  }
-  
-  .converter .arrow {
-    height: 26px;
-    left: 16px;
-    position: absolute;
-    top: 15px;
-    width: 22px;
-  }
-  
-  .converter .text-wrapper-8 {
-    color: #3c61c0;
-    font-family: "TT Firs Neue-Medium", Helvetica;
-    font-size: 20px;
-    font-weight: 500;
-    left: 21px;
-    letter-spacing: 0;
-    line-height: 72px;
-    position: absolute;
-    top: 247px;
-    white-space: nowrap;
-    width: 190px;
-  }
-  
-  .converter .setting {
-    height: 40px;
-    left: 915px;
-    position: absolute;
-    top: 190px;
-    width: 40px;
-  }
-  
-  .converter .refresh {
-    height: 41px !important;
-    left: 965px !important;
-    position: absolute !important;
-    top: 191px !important;
-    width: 41px !important;
-  }
-  
-  .converter .vector {
-    height: 20px;
-    left: -56px;
-    position: absolute;
-    top: 1004px;
-    width: 20px;
-  }
-  
-  .converter .frame-3 {
-    align-items: center;
-    display: inline-flex;
-    gap: 144px;
-    left: 503px;
-    position: absolute;
-    top: 28px;
-  }
+}
 
-  .connect-metamask-wrapper {
-    align-items: center;
-    background-color: #271f15;
-    border-radius: 8px;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    padding: 12px 16px;
-    position: relative;
-    width: 224px;
-    z-index: 1000;
-    margin-left: -120px; /* Adjust this value as needed */
-  }
+.roundBox {
+    border: 3px solid var(--colorBrown);
+    border-radius: 25px;
+    padding: 10px 15px;
+    width: 50%;
+    height: 80px;
+}
 
-  .home .button {
-    align-items: center;
-    background-color: #271f15;
-    border-radius: 8px;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    padding: 12px 16px;
-    position: relative;
-    width: 224px;
-    z-index: 1000;
-  }
-  
-  .converter .navbar {
-    align-items: center;
-    display: inline-flex;
-    flex: 0 0 auto;
-    gap: 67px;
-    justify-content: center;
-    position: relative;
-  }
-  
-  .converter .text-wrapper-9 {
-    color: #6f767e;
-    font-family: "TT Firs Neue-Medium", Helvetica;
+.wallets {
+    justify-content: space-between;
+    width: 70%;
+}
+
+.wallet2 {
+    gap: 80px;
+}
+
+.wallet1 {
+    width: 180px;
+}
+
+.textHeading4 {
     font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0;
-    line-height: 24px;
-    margin-top: -1px;
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
-  }
-  
-  .converter .frame-4 {
-    align-items: flex-start;
-    display: inline-flex;
-    flex: 0 0 auto;
-    gap: 24px;
-    position: relative;
-  }
-  
-  .converter .group {
-    background: linear-gradient(
-      180deg,
-      rgb(247, 179, 50) 0%,
-      rgb(252.88, 173.7, 20.02) 35.19%,
-      rgb(213.56, 129.21, 2.67) 100%
-    );
-    border-radius: 24px;
-    height: 48px;
-    position: relative;
-    width: 48px;
-  }
-  
-  .converter .vector-2 {
-    height: 18px;
-    left: 12px;
-    position: absolute;
-    top: 15px;
-    width: 21px;
-  }
-  
-  .converter .div-wrapper {
-    align-items: center;
-    background-color: #2a2117;
-    border-radius: 8px;
-    display: flex;
-    gap: 10px;
+    font-weight: 800;
+}
+
+.mmfAmt {
+    align-self: flex-start;
+}
+
+.wallet3 .textHeading4 {
+    align-self: flex-start;
+    padding-bottom: 10px;
+}
+.wallet3 .button {
+    width: 100%;
+}
+
+.earningsWallet {
+    width: 100%;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.boxOuter {
+    height: 110px;
+    width: 110px;
+    background: linear-gradient(0.25turn, rgb(209, 107, 165), rgb(134, 168, 231), rgb(95, 251, 241));
     justify-content: center;
-    padding: 12px 16px;
-    position: relative;
-    width: 224px;
-  }
-  
-  .converter .text-wrapper-10 {
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent;
-    background: linear-gradient(
-      180deg,
-      rgb(247, 179, 50) 0%,
-      rgb(252.88, 173.7, 20.02) 35.19%,
-      rgb(213.56, 129.21, 2.67) 100%
-    );
-    background-clip: text;
-    color: transparent;
-    font-family: "TT Firs Neue-Medium", Helvetica;
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: 0;
-    line-height: 24px;
-    margin-top: -1px;
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
-  }
-  
-  .converter .overlap-5 {
-    background-color: #15151a;
-    height: 166px;
-    left: 0;
-    position: absolute;
-    top: 825px;
-    width: 1440px;
-  }
-  
-  .converter .menu {
-    align-items: center;
-    display: inline-flex;
-    gap: 175px;
-    justify-content: center;
-    left: 374px;
-    position: absolute;
-    top: 71px;
-  }
-  
-  .converter .text-wrapper-11 {
-    color: #efefef;
-    font-family: "TT Firs Neue-Medium", Helvetica;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0;
-    line-height: 24px;
-    margin-top: -1px;
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
-  }
-  
-  .converter .frame-5 {
-    align-items: center;
-    display: inline-flex;
-    gap: 11px;
-    left: 75px;
-    position: absolute;
-    top: 71px;
-  }
-  
-  .converter .frame-6 {
-    align-items: center;
-    display: inline-flex;
-    flex: 0 0 auto;
-    gap: 5px;
-    position: relative;
-  }
-  
-  .converter .RU-instance {
-    height: 13.53px !important;
-    left: unset !important;
-    position: relative !important;
-    top: unset !important;
-    width: 18.94px !important;
-  }
-  
-  .converter .vector-3 {
-    height: 3.16px;
-    position: relative;
-    width: 6.31px;
-  }
-  
-  .converter .text-wrapper-12 {
-    color: #c4c4c4;
-    font-family: "TT Firs Neue-Regular", Helvetica;
+    border-radius: 10px;
+}
+.box {
+    height: 100px;
+    width: 100px;
+    background: center center / cover rgb(54, 67, 79);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.box:hover {
+    background-color: rgb(24, 24, 25);
+}
+
+.span1Earn {
+    color: var(--colorLightPink);
     font-size: 16px;
-    font-weight: 400;
-    letter-spacing: 0;
-    line-height: 24px;
-    margin-top: -1px;
+    font-weight: 700;
+}
+.span2Earn {
+    color: var(--colorBrown);
+}
+
+.span2C {
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.span3C {
+    font-size:  35px;
+    font-weight: 700;
+}
+
+.imgToken {
+    border-radius: 50%;
+}
+
+.imgTokenName {
     position: relative;
-    white-space: nowrap;
-    width: fit-content;
-  }
-  
-  .converter .text-wrapper-13 {
-    color: #6f767e;
-    font-family: "TT Firs Neue-Regular", Helvetica;
-    font-size: 16px;
-    font-weight: 400;
-    left: 1234px;
-    letter-spacing: 0;
-    line-height: 24px;
+}
+
+.imgSmall {
+    height: 20px;
     position: absolute;
-    top: 70px;
-    white-space: nowrap;
-  }
-  
+    top: -9px;
+}
+
+.imgBig {
+    height: 30px;
+    z-index: 3;
+    position: relative;
+}
