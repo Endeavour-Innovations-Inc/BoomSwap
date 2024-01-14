@@ -7,6 +7,10 @@
     position: relative;
 }
 
+.card input {
+    text-align: left !important;
+}
+
 .coinImg img {
     width: 150px;
 }
@@ -237,6 +241,9 @@
     width: 30px; /* Adjust width as needed */
     height: auto;
 }
+
+.leftAlignedPlaceholder > input, /* Direct child selector */
+
 .leftAlignedPlaceholder input {
     text-align: left;
 }

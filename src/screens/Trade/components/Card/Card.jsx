@@ -91,7 +91,7 @@ const Card = () => {
                 <AiOutlineDown />
             </div>
             <Input 
-                className="leftAlignedPlaceholder"
+                style={{ textAlign: 'left' }}
                 placeholder="0.0"
                 numbersOnly={true}
             />
