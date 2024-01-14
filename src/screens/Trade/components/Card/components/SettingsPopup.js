@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 import Input from '../../Input/Input'; // Adjust the path as needed
 import Toggle from "../../Toggle/Toggle"; // Adjust the path as needed
 import '../Card.css'; // Adjust the path as needed
 
 const SettingsPopup = ({ width = 'auto', height = 'auto' }) => {
+  // State to store the selected slippage tolerance
+  const [selectedTolerance, setSelectedTolerance] = useState(null);
+
+  // Handle slippage tolerance selection
+  const handleToleranceSelect = (value) => {
+    setSelectedTolerance(value);
+  };
+
   const popHeadingStyle = {
     display: "flex",
     justifyContent: "flex-start",
@@ -93,9 +101,9 @@ const SettingsPopup = ({ width = 'auto', height = 'auto' }) => {
           </span>
         </div>
         <div className="tolerancePercent" style={tolerancePercentStyle}>
-          <span style={toleranceSpanStyle}>0.1%</span>
-          <span style={toleranceSpanStyle}>0.5%</span>
-          <span style={toleranceSpanStyle}>1.5%</span>
+          <button style={toleranceSpanStyle} onClick={() => handleToleranceSelect(0.1)}>0.1%</button>
+          <button style={toleranceSpanStyle} onClick={() => handleToleranceSelect(0.5)}>0.5%</button>
+          <button style={toleranceSpanStyle} onClick={() => handleToleranceSelect(1.5)}>1.5%</button>
           <Input placeholder="0.50%" />
         </div>
         <div className="deadline" style={deadlineStyle}>
