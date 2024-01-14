@@ -10,6 +10,8 @@ node -v
 
 Website: eboom.finance
 
+To copy the code: git clone https://github.com/Endeavour-Innovations-Inc/BoomSwap.git
+
 To install: npm install
 
 To run: npm run dev
