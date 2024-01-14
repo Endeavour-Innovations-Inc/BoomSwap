@@ -13,6 +13,12 @@ const SettingsPopup = ({ width = 'auto', height = 'auto' }) => {
     setSelectedTolerance(value);
   };
 
+  const handleToleranceInputChange = (event) => {
+    // Assuming the input value is a string like "0.5%"
+    const value = event.target.value.replace('%', ''); // Remove '%' if present
+    setSelectedTolerance(value);
+  };
+
   const popHeadingStyle = {
     display: "flex",
     justifyContent: "flex-start",
@@ -102,7 +108,12 @@ const SettingsPopup = ({ width = 'auto', height = 'auto' }) => {
           <button style={toleranceSpanStyle} onClick={() => handleToleranceSelect(0.1)}>0.1%</button>
           <button style={toleranceSpanStyle} onClick={() => handleToleranceSelect(0.5)}>0.5%</button>
           <button style={toleranceSpanStyle} onClick={() => handleToleranceSelect(1.5)}>1.5%</button>
-          <Input placeholder="0.50%" numbersOnly={true} />
+          <Input 
+            placeholder="0.50%" 
+            numbersOnly={true} 
+            value={selectedTolerance} 
+            onChange={handleToleranceInputChange}
+          />
         </div>
         <div className="deadline" style={deadlineStyle}>
           <div className="deadlineTxt" style={deadlineTxtStyle}>

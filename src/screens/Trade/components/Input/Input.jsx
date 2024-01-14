@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 
 const Input = (props) => {
-    const [val, setVal] = useState("")
-
     const handleInputChange = (e) => {
-        if (props.numbersOnly) {
-            // Allow numbers and decimals (but not just a standalone decimal point)
-            const regex = /^\d*\.?\d*$/;
-            if (regex.test(e.target.value)) {
-                setVal(e.target.value);
-            }
-        } else {
-            setVal(e.target.value);
+        // Check if the value matches the regex
+        if (props.numbersOnly && !/^\d*\.?\d*$/.test(e.target.value)) {
+            return; // If not, do not update
         }
-    }
+
+        // Call props.onChange if it is a function
+        if (typeof props.onChange === 'function') {
+            props.onChange(e);
+        }
+    };
 
     // Inline styles
     const inputsStyle = {
@@ -47,7 +45,7 @@ const Input = (props) => {
                         autoComplete="off" 
                         autoCorrect="off" 
                         pattern="^[0-9]*[.,]?[0-9]*$"
-                        value={val} 
+                        value={props.value}  // Use value from props
                         onChange={handleInputChange}
                         style={{...inputStyle, ...(props.focused && inputFocusStyle)}}
                     />
