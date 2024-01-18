@@ -1,6 +1,6 @@
 import React from "react";
 import Input from '../../Input/Input'; // Adjust the path as needed
-import croImg from "../../images/cro.png"
+import croImg from "../../images/cro.png";
 import TokenView from "./TokenView";
 
 export const SelectTokenPopup = () => {
@@ -17,11 +17,15 @@ export const SelectTokenPopup = () => {
     textAlign: 'left',
   };
 
+  // Adjusting the style for vertical layout with scrollable feature
   const tokensStyle = {
     display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    gap: '10px',
     padding: '30px 0',
+    maxHeight: '400px', // Set a maximum height for the container
+    overflowY: 'auto', // Enable vertical scrolling
   };
 
   return (
@@ -34,8 +38,28 @@ export const SelectTokenPopup = () => {
           placeholder="Search name or paste address"
           style={{ textAlign: 'left' }}
         />
-        <div style={tokensStyle} className="tokens"> { /* Should be the token list available on DEX */}
+        <div style={tokensStyle} className="tokens">
+          <TokenView croImg={croImg} price="0.000010" />
+          <TokenView croImg={croImg} price="0.000010" />
+          <TokenView croImg={croImg} price="0.000010" />
           <TokenView croImg={croImg} price="0.000009" />
+          <TokenView croImg={croImg} price="0.000010" />
+          <TokenView croImg={croImg} price="0.000010" />
+          <TokenView croImg={croImg} price="0.000010" />
+          <TokenView croImg={croImg} price="0.000010" />
+          <TokenView croImg={croImg} price="0.000009" />
+          <TokenView croImg={croImg} price="0.000010" />
+          <TokenView croImg={croImg} price="0.000010" />
+          <TokenView croImg={croImg} price="0.000010" />
+          <TokenView croImg={croImg} price="0.000010" />
+          <TokenView croImg={croImg} price="0.000009" />
+          <TokenView croImg={croImg} price="0.000010" />
+          <TokenView croImg={croImg} price="0.000010" />
+          <TokenView croImg={croImg} price="0.000010" />
+          <TokenView croImg={croImg} price="0.000010" />
+          <TokenView croImg={croImg} price="0.000009" />
+          <TokenView croImg={croImg} price="0.000010" />
+          {/* Add more tokens as needed */}
         </div>
       </div>
     </>
