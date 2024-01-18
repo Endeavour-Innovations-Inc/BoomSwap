@@ -1,6 +1,7 @@
 import React from "react";
 import Input from '../../Input/Input'; // Adjust the path as needed
 import croImg from "../../images/cro.png"
+import TokenView from "./TokenView";
 
 export const SelectTokenPopup = () => {
   const popHeadingStyle = {
@@ -23,28 +24,6 @@ export const SelectTokenPopup = () => {
     padding: '30px 0',
   };
 
-  const tokenImgNameStyle = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    gap: '20px',
-    cursor: 'pointer',
-  };
-
-  const tokenImgStyle = {
-    width: '30px',
-    height: '30px',
-  };
-
-  const tokenNonFadeStyle = {
-    fontWeight: 700,
-  };
-
-  const tokenFadeStyle = {
-    fontWeight: 400,
-    fontSize: '14px',
-    color: 'var(--colorLightGrey)',
-  };
-
   return (
     <>
       <div style={popHeadingStyle} className="popHeading">
@@ -55,23 +34,8 @@ export const SelectTokenPopup = () => {
           placeholder="Search name or paste address"
           style={{ textAlign: 'left' }}
         />
-        <div style={tokensStyle} className="tokens">
-          <div style={tokenImgNameStyle} className="tokenImgName">
-            <div style={tokenImgStyle} className="tokenImg">
-              <img src={croImg} alt="" style={{ width: '100%', height: '100%' }} />
-            </div>
-            <div className="tokenName">
-              <div style={tokenNonFadeStyle} className="tokenNonFade">
-                <span>CRO</span>
-              </div>
-              <div style={tokenFadeStyle} className="tokenFade">
-                <span>CRO</span>
-              </div>
-            </div>
-          </div>
-          <div className="tokenPrice">
-            <span>0.000009</span>
-          </div>
+        <div style={tokensStyle} className="tokens"> { /* Should be the token list available on DEX */}
+          <TokenView croImg={croImg} price="0.000009" />
         </div>
       </div>
     </>
