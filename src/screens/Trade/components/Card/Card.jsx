@@ -6,9 +6,7 @@ import {AiOutlineArrowDown, AiTwotoneSetting, AiOutlineQuestionCircle, AiOutline
 
 import Input from "../Input/Input";
 import Button from "../Button/Button";
-import croImg from "../images/cro.png"
 import Popup from "../Popup/Popup";
-import Toggle from "../Toggle/Toggle";
 import { useState } from "react";
 
 import SlippageTolerance from "./components/SlippageTolerance"; // Adjust the path according to your project structure
@@ -17,7 +15,7 @@ import { SelectTokenPopup } from "./components/SelectTokenPopup";
 import ConfirmSwapPopup from "./components/ConfirmSwapPopup";
 import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai';
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa'; // Font Awesome icons
-import { LinearArrowsTransferVertical } from "../../../../icons/LinearArrowsTransferVertical";
+import PriceView from "./components/PriceView";
 
 
 const Card = () => {
@@ -94,7 +92,8 @@ const Card = () => {
                 style={{ textAlign: 'left' }}
                 placeholder="0.0"
                 numbersOnly={true}
-            />
+            />  
+                <PriceView />
                 <SlippageTolerance />
                 <Button name="swap" onClick={() => {setButtonPopUp3(true)}}/>
             </div>
