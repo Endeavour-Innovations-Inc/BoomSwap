@@ -1,0 +1,37 @@
+.converter {
+    background-color: #0e0e11;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    overflow: auto; /* Allow the main container to scroll */
+  }
+  
+  .converter .div {
+    background-color: #0e0e11;
+    border: 1px none;
+    height: 991px;
+    overflow: hidden;
+    position: relative;
+    width: 1440px;
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+  
+  .converter .text-wrapper-13 {
+    color: #6f767e;
+    font-family: "TT Firs Neue-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    left: 1234px;
+    letter-spacing: 0;
+    line-height: 24px;
+    position: absolute;
+    top: 70px;
+    white-space: nowrap;
+  }
+  
+  .converter .body {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+}

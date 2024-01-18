@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./style.css";
+import "./Trade.css";
 import Card from "./components/Card/Card";
 import Lcard from "./components/LiquidityCard/Lcard.jsx";
 import CommonFooter from "../CommonComp/CommonFooter";
@@ -15,6 +15,9 @@ export const Trade = () => {
         <CommonHeader />
         <div style={{ marginTop: '100px' }}>
           <LiquiditySwitch active={activeView} onToggle={setActiveView} />
+        </div>
+        <div className="body">
+          {activeView === 'swap' ? <Card /> : <Lcard />}
         </div>
         <div className="body">
           {activeView === 'swap' ? <Card /> : <Lcard />}
