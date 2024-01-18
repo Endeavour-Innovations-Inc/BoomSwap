@@ -4,9 +4,13 @@ import "./Card.css"
 import {IoRefreshSharp} from "react-icons/io5"
 import {AiOutlineArrowDown, AiTwotoneSetting, AiOutlineQuestionCircle, AiOutlineDown} from "react-icons/ai"
 
+import { LinearArrowsTransferVertical } from "../../../../icons/LinearArrowsTransferVertical";
+
 import Input from "../Input/Input";
 import Button from "../Button/Button";
+import croImg from "../images/cro.png"
 import Popup from "../Popup/Popup";
+import Toggle from "../Toggle/Toggle";
 import { useState } from "react";
 
 import SlippageTolerance from "./components/SlippageTolerance"; // Adjust the path according to your project structure

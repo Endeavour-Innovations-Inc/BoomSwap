@@ -26,7 +26,7 @@ const PriceView = () => {
         <span>Price</span>
       </div>
       <div style={slipPercentStyle}>
-        <span>x Token1 per Token2</span>
+        <span>x Token1 per Token2 </span>
         <IoRefreshSharp/>
       </div>
     </div>
