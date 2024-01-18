@@ -88,6 +88,8 @@ const SettingsPopup = ({ width = 'auto', height = 'auto' }) => {
     overflow: 'auto',
   };  
 
+  
+
   // Remaining styles (e.g., popBodyInputStyle, popBodyInputFocusStyle) can be defined here
 
   return (
