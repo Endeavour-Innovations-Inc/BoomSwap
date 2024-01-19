@@ -16,7 +16,8 @@ const Route = ({ marginTop = "0px", name = "Route", resultString = "CRO - BOOM" 
 
   const datastyle = {
     color: "var(--colorOrangeBright)", // Replace with the actual color value if not defined in CSS
-    fontWeight: 600,
+    fontWeight: 500,
+    fontSize: "14px",
   };
 
   return (

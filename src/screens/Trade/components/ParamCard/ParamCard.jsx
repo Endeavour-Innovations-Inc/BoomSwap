@@ -5,10 +5,10 @@ import Route from "./components/Route";
 const ParamCard = () => {
     return (
         <div className="param">
-            <Route marginTop="10px" name="Custom Route" resultString="ABC - XYZ" />
-            <Route marginTop="0px" name="Custom Route" resultString="ABC - XYZ" />
-            <Route marginTop="0px" name="Custom Route" resultString="ABC - XYZ" />
-            <Route marginTop="0px" name="Custom Route" resultString="ABC - XYZ" />
+            <Route marginTop="14px" name="Minimum Received" resultString="19.74 SVN" />
+            <Route marginTop="0px" name="Price Impact" resultString="<0.01%" />
+            <Route marginTop="0px" name="Liquidity Provider Fee" resultString="0.0033 CRO" />
+            <Route marginTop="0px" name="Route" resultString="CRO > BOOM" />
         </div>
     )
 }
