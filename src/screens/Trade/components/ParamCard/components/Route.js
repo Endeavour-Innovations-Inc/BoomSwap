@@ -1,11 +1,11 @@
 import React from "react";
-import {IoRefreshSharp} from "react-icons/io5";
+import { IoRefreshSharp } from "react-icons/io5";
 
-// Copied from slippage tolerance 1-1
-const Route = () => {
+const Route = ({ marginTop = "0px", name = "Route", resultString = "CRO - BOOM" }) => {
   const slipTolerance = {
     display: "flex",
     justifyContent: "space-between",
+    marginTop: marginTop,
   };
 
   const slipStyle = {
@@ -22,11 +22,11 @@ const Route = () => {
   return (
     <div style={slipTolerance}>
       <div style={slipStyle}>
-        <span>Route</span>
+        <span>{name}</span>
       </div>
       <div style={datastyle}>
-        <span>CRO - BOOM</span>
-        <IoRefreshSharp/>
+        <span>{resultString}</span>
+        <IoRefreshSharp />
       </div>
     </div>
   );
