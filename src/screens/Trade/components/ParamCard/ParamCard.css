@@ -1,0 +1,9 @@
+.param {
+    width: 428px;
+    height: 100px;
+    padding: 0px 30px; /* Removed bottom padding */
+    background-color: var(--colorPrimary);
+    border-radius: 10px;
+    position: relative;
+}
+

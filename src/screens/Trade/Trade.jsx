@@ -5,6 +5,7 @@ import Lcard from "./components/LiquidityCard/Lcard.jsx";
 import CommonFooter from "../CommonComp/CommonFooter";
 import CommonHeader from "../CommonComp/CommonHeader";
 import LiquiditySwitch from "./components/LiquiditySwitch";
+import ParamCard from "./components/ParamCard/ParamCard.jsx";
 
 export const Trade = () => {
   const [activeView, setActiveView] = useState('swap'); // 'swap' or 'liquidity'
@@ -20,7 +21,7 @@ export const Trade = () => {
           {activeView === 'swap' ? <Card /> : <Lcard />}
         </div>
         <div className="body">
-          {activeView === 'swap' ? <Card /> : <Lcard />}
+          {activeView === 'swap' ? <ParamCard /> : <div></div>}
         </div>
         <CommonFooter />
       </div>

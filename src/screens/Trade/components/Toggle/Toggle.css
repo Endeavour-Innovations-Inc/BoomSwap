@@ -44,10 +44,6 @@ input[type="checkbox"].toggle:focus + label.toggle-label::before {
   outline: 1px solid var(--colorOrangeBright); /* Focus outline */
 }
 
-input[type="checkbox"].toggle:focus + label.toggle-label::after {
-  /* No changes needed here unless you want a focus outline */
-}
-
 input[type="checkbox"].toggle:checked + label.toggle-label::before {
   background-color: var(--colorSuccess);
 }

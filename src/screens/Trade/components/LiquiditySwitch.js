@@ -6,7 +6,7 @@ const LiquiditySwitch = ({ active, onToggle }) => {
     border: '1px solid #ccc', // Border color
     borderRadius: '20px', // Rounded edges
     backgroundColor: '#f0f0f0', // Background color
-    marginTop: '10px', // Added top margin
+    marginTop: '1px', // Added top margin
   };
 
   const buttonStyle = (isActive) => ({
