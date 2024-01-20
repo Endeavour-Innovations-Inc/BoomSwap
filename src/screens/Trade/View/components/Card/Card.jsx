@@ -9,6 +9,7 @@ import Input from "../Input/Input";
 import Button from "../Button/Button";
 import Popup from "../Popup/Popup";
 import { useState } from "react";
+import { useWallet } from "../../../../CommonComp/WalletContext"; // Adjust the import path as needed
 
 import SlippageTolerance from "./components/SlippageTolerance"; // Adjust the path according to your project structure
 import SettingsPopup from "./components/SettingsPopup"; // Adjust the path according to your project structure
@@ -26,8 +27,18 @@ const Card = () => {
     const [buttonPopUp2, setButtonPopUp2] = useState(false)
     const [buttonPopUp3, setButtonPopUp3] = useState(false)
 
+    const { account, connectWallet } = useWallet(); // Use the wallet context
+
     const handleClick = () => {
         setClicked(!clicked);
+    };
+
+    const handleSwapOrConnect = () => {
+        if (account) {
+            setButtonPopUp3(true); // Open the swap popup if connected
+        } else {
+            connectWallet(); // Connect wallet if not connected
+        }
     };
 
     return (
@@ -96,7 +107,10 @@ const Card = () => {
                 />  
                     <PriceView />
                     <SlippageTolerance />
-                    <Button name="swap" onClick={() => {setButtonPopUp3(true)}}/>
+                    <Button 
+                        name={account ? "swap" : "connect wallet"} 
+                        onClick={handleSwapOrConnect} 
+                    />
                 </div>
         </LazySlippageProvider>
     )
