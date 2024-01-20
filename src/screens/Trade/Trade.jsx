@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./Trade.css";
-import Card from "./components/Card/Card";
-import Lcard from "./components/LiquidityCard/Lcard.jsx";
+import Card from "./View/components/Card/Card";
+import Lcard from "./View/components/LiquidityCard/Lcard.jsx";
 import CommonFooter from "../CommonComp/CommonFooter";
 import CommonHeader from "../CommonComp/CommonHeader";
-import LiquiditySwitch from "./components/LiquiditySwitch";
-import ParamCard from "./components/ParamCard/ParamCard.jsx";
+import LiquiditySwitch from "./View/components/LiquiditySwitch";
+import ParamCard from "./View/components/ParamCard/ParamCard.jsx";
 
 export const Trade = () => {
   const [activeView, setActiveView] = useState('swap'); // 'swap' or 'liquidity'

@@ -15,3 +15,5 @@ To copy the code: git clone https://github.com/Endeavour-Innovations-Inc/BoomSwa
 To install: npm install
 
 To run: npm run dev
+
+Note: delete parcel cahce from time to time, new code might not work correctly when old parcel cache is present

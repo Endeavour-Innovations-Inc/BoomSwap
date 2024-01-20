@@ -4,19 +4,21 @@ import Input from '../../Input/Input'; // Adjust the path as needed
 import Toggle from "../../Toggle/Toggle"; // Adjust the path as needed
 import '../Card.css'; // Adjust the path as needed
 
+import { useSlippage } from '../../../../Controller/SlippageContext'; // Adjust the path as needed
+
 const SettingsPopup = ({ width = 'auto', height = 'auto' }) => {
   // State to store the selected slippage tolerance
-  const [selectedTolerance, setSelectedTolerance] = useState(null);
+  const { slippageTolerance, setSlippageTolerance } = useSlippage();
 
   // Handle slippage tolerance selection
   const handleToleranceSelect = (value) => {
-    setSelectedTolerance(value);
+    setSlippageTolerance(value.toString()); // Update the context
   };
 
   const handleToleranceInputChange = (event) => {
     // Assuming the input value is a string like "0.5%"
     const value = event.target.value.replace('%', ''); // Remove '%' if present
-    setSelectedTolerance(value);
+    setSlippageTolerance(value); // Update the context
   };
 
   const popHeadingStyle = {
@@ -113,7 +115,7 @@ const SettingsPopup = ({ width = 'auto', height = 'auto' }) => {
           <Input 
             placeholder="0.50%" 
             numbersOnly={true} 
-            value={selectedTolerance} 
+            value={slippageTolerance || ''} // Use context value, default to empty string if null/undefined
             onChange={handleToleranceInputChange}
           />
         </div>
