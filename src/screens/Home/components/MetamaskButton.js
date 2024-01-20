@@ -2,7 +2,7 @@ import React from 'react';
 import { useWallet } from '../../CommonComp/WalletContext'; // Adjust the import path as needed
 
 const ConnectToMetamask = () => {
-  const { account, connectWallet } = useWallet();
+  const { account, connectWallet, isCorrectNetwork } = useWallet(); // Destructure isCorrectNetwork
 
   const buttonStyle = {
     alignItems: 'center',
@@ -37,7 +37,9 @@ const ConnectToMetamask = () => {
   return (
     <div style={buttonStyle} onClick={connectWallet}>
       <div style={textStyle}>
-        {account ? `Connected: ${account.substring(0, 6)}...` : 'Connect to MetaMask'}
+        {!account && 'Connect to MetaMask'}
+        {account && isCorrectNetwork && `Connected: ${account.substring(0, 6)}...`}
+        {account && !isCorrectNetwork && 'Wrong Network'}
       </div>
     </div>
   );
