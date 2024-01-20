@@ -44,8 +44,14 @@ export const WalletProvider = ({ children }) => {
                 method: 'wallet_addEthereumChain',
                 params: [{
                   chainId: MUMBAI_NETWORK_ID,
-                  rpcUrl: 'https://rpc-mumbai.maticvigil.com/',
-                  // Add other required parameters like chainName, nativeCurrency, etc.
+                  rpcUrls: ['https://rpc-mumbai.maticvigil.com/'],
+                  chainName: 'Mumbai Testnet',
+                  nativeCurrency: {
+                    name: 'Matic',
+                    symbol: 'MATIC', // 2-6 characters long
+                    decimals: 18,
+                  },
+                  blockExplorerUrls: ['https://mumbai.polygonscan.com/'],
                 }],
               });
               setIsCorrectNetwork(true);
@@ -57,7 +63,7 @@ export const WalletProvider = ({ children }) => {
         } else {
           setIsCorrectNetwork(true);
         }
-
+  
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
         setAccount(accounts[0]);
       } catch (error) {
@@ -68,7 +74,7 @@ export const WalletProvider = ({ children }) => {
       alert('Please install MetaMask to use this feature!');
       setIsCorrectNetwork(false);
     }
-  };
+  };  
 
   return (
     <WalletContext.Provider value={{ account, connectWallet, isCorrectNetwork }}>
