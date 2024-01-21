@@ -4,13 +4,16 @@ import croImg from "../../images/cro.png";
 import TokenView from "./TokenView";
 import { useAppContext } from '../../../../Controller/AppContext'; // Adjust the import path as needed
 
-export const SelectTokenPopup = () => {
-  const { setSelectedToken } = useAppContext();
+export const SelectTokenPopup = ({ isTokenA }) => {
+  const { setSelectedTokenA, setSelectedTokenB } = useAppContext();
 
   const handleTokenSelect = (tokenData) => {
     console.log('Selected Token Data:', tokenData);
-    setSelectedToken(tokenData);
-    // Additional logic can be added here, like closing the popup
+    if (isTokenA) {
+      setSelectedTokenA(tokenData);
+    } else {
+      setSelectedTokenB(tokenData);
+    }
   };
 
   const popHeadingStyle = {

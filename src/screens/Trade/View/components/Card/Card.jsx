@@ -12,20 +12,22 @@ import { SelectTokenPopup } from "./components/SelectTokenPopup";
 import ConfirmSwapPopup from "./components/ConfirmSwapPopup";
 import PriceView from "./components/PriceView";
 import { useAppContext } from '../../../Controller/AppContext';
-import LazyAppProvider from "../../../Controller/LazyAppProvider";
 import "./Card.css";
 
 const Card = () => {
     const [hover, setHover] = useState(false);
     const [clicked, setClicked] = useState(false);
-    const [buttonPopUp, setButtonPopUp] = useState(false);
+    const [buttonPopUpA, setButtonPopUpA] = useState(false);
+    const [buttonPopUpB, setButtonPopUpB] = useState(false);
     const [buttonPopUp2, setButtonPopUp2] = useState(false);
     const [buttonPopUp3, setButtonPopUp3] = useState(false);
 
-    const { account, connectWallet } = useWallet();
-    const { selectedToken } = useAppContext();
+    const {
+        selectedTokenA,
+        selectedTokenB
+    } = useAppContext();
 
-    console.log('Selected Token in Card:', selectedToken);
+    const { account, connectWallet } = useWallet();
 
     const handleClick = () => {
         setClicked(!clicked);
@@ -54,8 +56,11 @@ const Card = () => {
                 <Popup trigger={buttonPopUp2} setTrigger={setButtonPopUp2}>
                     <SettingsPopup />
                 </Popup>
-                <Popup trigger={buttonPopUp} setTrigger={setButtonPopUp}>
-                    <SelectTokenPopup />
+                <Popup trigger={buttonPopUpA} setTrigger={setButtonPopUpA}>
+                    <SelectTokenPopup isTokenA={true} />
+                </Popup>
+                <Popup trigger={buttonPopUpB} setTrigger={setButtonPopUpB}>
+                    <SelectTokenPopup isTokenA={false} />
                 </Popup>
                 <Popup trigger={buttonPopUp3} setTrigger={setButtonPopUp3}>
                     <ConfirmSwapPopup />
@@ -66,11 +71,11 @@ const Card = () => {
                         Trade tokens in an instant
                     </div>
                 </div>
-                <div className="label" onClick={() => setButtonPopUp(true)}>
-                    {selectedToken ? (
+                <div className="label" onClick={() => setButtonPopUpA(true)}>
+                    {selectedTokenA ? (
                         <>
-                            <img src={selectedToken.image} alt={selectedToken.name} style={{ width: '20px' }} />
-                            <label htmlFor="inputText">{selectedToken.name}</label>
+                            <img src={selectedTokenA.image} alt={selectedTokenA.name} style={{ width: '20px' }} />
+                            <label htmlFor="inputText">{selectedTokenA.name}</label>
                         </>
                     ) : (
                         <label htmlFor="inputText">Select a currency</label>
@@ -83,8 +88,15 @@ const Card = () => {
                     {hover ? <LinearArrowsTransferVertical /> : (clicked ? <AiOutlineArrowUp /> : <AiOutlineArrowDown />)}
                 </span>
 
-                <div className="label" onClick={() => setButtonPopUp(true)}>
-                    <label htmlFor="inputText">Select a currency</label>
+                <div className="label" onClick={() => setButtonPopUpB(true)}>
+                    {selectedTokenB ? (
+                        <>
+                            <img src={selectedTokenB.image} alt={selectedTokenB.name} style={{ width: '20px' }} />
+                            <label htmlFor="inputText">{selectedTokenB.name}</label>
+                        </>
+                    ) : (
+                        <label htmlFor="inputText">Select a currency</label>
+                    )}
                     <AiOutlineDown />
                 </div>
                 <Input style={{ textAlign: 'left' }} placeholder="0.0" numbersOnly={true} />
