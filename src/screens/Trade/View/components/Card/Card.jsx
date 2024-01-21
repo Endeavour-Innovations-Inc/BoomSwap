@@ -25,6 +25,8 @@ const Card = () => {
     const { account, connectWallet } = useWallet();
     const { selectedToken } = useAppContext();
 
+    console.log('Selected Token in Card:', selectedToken);
+
     const handleClick = () => {
         setClicked(!clicked);
     };
@@ -38,7 +40,7 @@ const Card = () => {
     };
 
     return (
-        <LazyAppProvider>
+        <>
             <div className="card">
                 <div className="cardHeadingPrimary">
                     <div className="Primary1">
@@ -90,7 +92,7 @@ const Card = () => {
                 <SlippageTolerance />
                 <Button name={account ? "swap" : "connect wallet"} onClick={handleSwapOrConnect} />
             </div>
-        </LazyAppProvider>
+        </>
     );
 };
 

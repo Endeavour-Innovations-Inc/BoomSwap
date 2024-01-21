@@ -8,6 +8,7 @@ export const SelectTokenPopup = () => {
   const { setSelectedToken } = useAppContext();
 
   const handleTokenSelect = (tokenData) => {
+    console.log('Selected Token Data:', tokenData);
     setSelectedToken(tokenData);
     // Additional logic can be added here, like closing the popup
   };
