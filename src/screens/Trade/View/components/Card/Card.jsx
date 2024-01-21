@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IoRefreshSharp } from "react-icons/io5";
-import { AiOutlineArrowDown, AiTwotoneSetting, AiOutlineDown } from "react-icons/ai";
+import { AiOutlineArrowDown, AiTwotoneSetting, AiOutlineDown, AiOutlineArrowUp } from "react-icons/ai";
 import { LinearArrowsTransferVertical } from "../../../../../icons/LinearArrowsTransferVertical";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
