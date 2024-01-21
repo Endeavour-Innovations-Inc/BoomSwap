@@ -23,14 +23,19 @@ const Card = () => {
     const [buttonPopUp3, setButtonPopUp3] = useState(false);
 
     const {
-        selectedTokenA,
-        selectedTokenB
-    } = useAppContext();
+        selectedTokenA, setSelectedTokenA,
+        selectedTokenB, setSelectedTokenB,
+    } = useAppContext();    
 
     const { account, connectWallet } = useWallet();
 
     const handleClick = () => {
         setClicked(!clicked);
+
+        // Swap the tokens
+        const temp = selectedTokenA;
+        setSelectedTokenA(selectedTokenB);
+        setSelectedTokenB(temp);
     };
 
     const handleSwapOrConnect = () => {
