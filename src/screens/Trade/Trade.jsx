@@ -6,6 +6,7 @@ import CommonFooter from "../CommonComp/CommonFooter";
 import CommonHeader from "../CommonComp/CommonHeader";
 import LiquiditySwitch from "./View/components/LiquiditySwitch";
 import ParamCard from "./View/components/ParamCard/ParamCard.jsx";
+import LazyAppProvider from "../Trade/Controller/LazyAppProvider.js";
 
 export const Trade = () => {
   const [activeView, setActiveView] = useState('swap'); // 'swap' or 'liquidity'
@@ -14,6 +15,7 @@ export const Trade = () => {
     <div className="converter">
       <div className="div">
         <CommonHeader />
+        <LazyAppProvider>
         <div style={{ marginTop: '100px' }}>
           <LiquiditySwitch active={activeView} onToggle={setActiveView} />
         </div>
@@ -23,6 +25,7 @@ export const Trade = () => {
         <div className="body">
           {activeView === 'swap' ? <ParamCard /> : <div></div>}
         </div>
+        </LazyAppProvider>
         <CommonFooter />
       </div>
     </div>

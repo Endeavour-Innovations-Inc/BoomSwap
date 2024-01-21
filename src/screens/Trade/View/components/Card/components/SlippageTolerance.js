@@ -1,8 +1,8 @@
 import React from "react";
-import { useSlippage } from '../../../../Controller/SlippageContext'; // Ensure correct path
+import { useAppContext } from '../../../../Controller/AppContext'; // Ensure correct path
 
 const SlippageTolerance = () => {
-  const { slippageTolerance } = useSlippage();
+  const { slippageTolerance } = useAppContext();
   const slipToleranceStyle = {
     display: "flex",
     justifyContent: "space-between",

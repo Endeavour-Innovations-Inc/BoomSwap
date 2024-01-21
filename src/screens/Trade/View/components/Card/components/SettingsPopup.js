@@ -4,11 +4,11 @@ import Input from '../../Input/Input'; // Adjust the path as needed
 import Toggle from "../../Toggle/Toggle"; // Adjust the path as needed
 import '../Card.css'; // Adjust the path as needed
 
-import { useSlippage } from '../../../../Controller/SlippageContext'; // Adjust the path as needed
+import { useAppContext } from '../../../../Controller/AppContext'; // Adjust the path as needed
 
 const SettingsPopup = ({ width = 'auto', height = 'auto' }) => {
   // State to store the selected slippage tolerance
-  const { slippageTolerance, setSlippageTolerance } = useSlippage();
+  const { slippageTolerance, setSlippageTolerance } = useAppContext();
 
   // Handle slippage tolerance selection
   const handleToleranceSelect = (value) => {

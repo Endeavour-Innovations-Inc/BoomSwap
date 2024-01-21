@@ -1,13 +1,14 @@
 import React from 'react';
 
-const TokenView = ({ croImg, price }) => {
+const TokenView = ({ name, croImg, price, onClick }) => {
   const tokenContainerStyle = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
     width: '100%', // Ensure the container takes the full width
     gap: '10px',
-    cursor: 'pointer',
+    cursor: 'pointer', // Indicate it's clickable
+    padding: '10px', // Optional for better click area
   };
 
   const tokenImgStyle = {
@@ -33,17 +34,17 @@ const TokenView = ({ croImg, price }) => {
   };
 
   return (
-    <div style={tokenContainerStyle}>
+    <div style={tokenContainerStyle} onClick={onClick}>
       <div style={tokenInfoStyle}>
         <div style={tokenImgStyle} className="tokenImg">
-          <img src={croImg} alt="" style={{ width: '100%', height: '100%' }} />
+          <img src={croImg} alt={name} style={{ width: '100%', height: '100%' }} />
         </div>
         <div className="tokenName">
           <div style={tokenNonFadeStyle} className="tokenNonFade">
-            <span>CRO</span>
+            <span>{name}</span> {/* Use name prop here */}
           </div>
           <div style={tokenFadeStyle} className="tokenFade">
-            <span>CRO</span>
+            <span>{name}</span> {/* And here */}
           </div>
         </div>
       </div>

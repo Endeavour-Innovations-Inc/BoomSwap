@@ -2,8 +2,16 @@ import React from "react";
 import Input from '../../Input/Input'; // Adjust the path as needed
 import croImg from "../../images/cro.png";
 import TokenView from "./TokenView";
+import { useAppContext } from '../../../../Controller/AppContext'; // Adjust the import path as needed
 
 export const SelectTokenPopup = () => {
+  const { setSelectedToken } = useAppContext();
+
+  const handleTokenSelect = (tokenData) => {
+    setSelectedToken(tokenData);
+    // Additional logic can be added here, like closing the popup
+  };
+
   const popHeadingStyle = {
     display: 'flex',
     justifyContent: 'flex-start',
@@ -17,16 +25,22 @@ export const SelectTokenPopup = () => {
     textAlign: 'left',
   };
 
-  // Adjusting the style for vertical layout with scrollable feature
   const tokensStyle = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
     gap: '10px',
     padding: '30px 0',
-    maxHeight: '400px', // Set a maximum height for the container
-    overflowY: 'auto', // Enable vertical scrolling
+    maxHeight: '400px',
+    overflowY: 'auto',
   };
+
+  // Sample token data (you should replace this with your actual token data)
+  const tokens = [
+    { name: 'Token1', image: croImg, price: '0.000010' },
+    { name: 'Token2', image: croImg, price: '0.000020' },
+    // Add more tokens as needed
+  ];
 
   return (
     <>
@@ -39,27 +53,15 @@ export const SelectTokenPopup = () => {
           style={{ textAlign: 'left' }}
         />
         <div style={tokensStyle} className="tokens">
-          <TokenView croImg={croImg} price="0.000010" />
-          <TokenView croImg={croImg} price="0.000010" />
-          <TokenView croImg={croImg} price="0.000010" />
-          <TokenView croImg={croImg} price="0.000009" />
-          <TokenView croImg={croImg} price="0.000010" />
-          <TokenView croImg={croImg} price="0.000010" />
-          <TokenView croImg={croImg} price="0.000010" />
-          <TokenView croImg={croImg} price="0.000010" />
-          <TokenView croImg={croImg} price="0.000009" />
-          <TokenView croImg={croImg} price="0.000010" />
-          <TokenView croImg={croImg} price="0.000010" />
-          <TokenView croImg={croImg} price="0.000010" />
-          <TokenView croImg={croImg} price="0.000010" />
-          <TokenView croImg={croImg} price="0.000009" />
-          <TokenView croImg={croImg} price="0.000010" />
-          <TokenView croImg={croImg} price="0.000010" />
-          <TokenView croImg={croImg} price="0.000010" />
-          <TokenView croImg={croImg} price="0.000010" />
-          <TokenView croImg={croImg} price="0.000009" />
-          <TokenView croImg={croImg} price="0.000010" />
-          {/* Add more tokens as needed */}
+        {tokens.map((token, index) => (
+          <TokenView 
+            key={index}
+            name={token.name}
+            croImg={token.image}
+            price={token.price}
+            onClick={() => handleTokenSelect(token)}
+          />
+        ))}
         </div>
       </div>
     </>
