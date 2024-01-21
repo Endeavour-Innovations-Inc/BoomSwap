@@ -5,13 +5,18 @@ import TokenView from "./TokenView";
 import { useAppContext } from '../../../../Controller/AppContext'; // Adjust the import path as needed
 
 export const SelectTokenPopup = ({ isTokenA }) => {
-  const { setSelectedTokenA, setSelectedTokenB } = useAppContext();
+  const { selectedTokenA, setSelectedTokenA, selectedTokenB, setSelectedTokenB } = useAppContext();
 
   const handleTokenSelect = (tokenData) => {
-    console.log('Selected Token Data:', tokenData);
     if (isTokenA) {
+      if (tokenData.name === selectedTokenB?.name) {
+        setSelectedTokenB(null); // Set the other token to null if they are the same
+      }
       setSelectedTokenA(tokenData);
     } else {
+      if (tokenData.name === selectedTokenA?.name) {
+        setSelectedTokenA(null); // Set the other token to null if they are the same
+      }
       setSelectedTokenB(tokenData);
     }
   };
