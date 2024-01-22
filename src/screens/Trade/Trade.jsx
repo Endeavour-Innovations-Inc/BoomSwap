@@ -31,10 +31,6 @@ export const Trade = () => {
           </div>
           {/* Conditionally render ParamCard based on shouldRenderParamCard state */}
           {activeView === 'swap' && shouldRenderParamCard && <ParamCard />}
-          {/* Always render ParamCard when activeView is 'swap', independent of shouldRenderParamCard */}
-          <div className="body">
-            {activeView === 'swap' ? <ParamCard /> : <div></div>}
-          </div>
         </LazyAppProvider>
         <CommonFooter />
       </div>
