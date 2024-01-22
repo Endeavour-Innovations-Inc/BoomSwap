@@ -33,9 +33,14 @@ const Card = ({ updateShouldRenderParamCard }) => {
         setClicked(!clicked);
 
         // Swap the tokens
-        const temp = selectedTokenA;
+        const tempToken = selectedTokenA;
         setSelectedTokenA(selectedTokenB);
-        setSelectedTokenB(temp);
+        setSelectedTokenB(tempToken);
+
+        // Swap the input values
+        const tempValue = inputValueA;
+        setInputValueA(inputValueB);
+        setInputValueB(tempValue);
     };
 
     const handleSwapOrConnect = () => {
