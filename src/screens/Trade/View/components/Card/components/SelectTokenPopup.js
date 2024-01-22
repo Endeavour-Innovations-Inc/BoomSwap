@@ -8,16 +8,19 @@ export const SelectTokenPopup = ({ isTokenA }) => {
   const { selectedTokenA, setSelectedTokenA, selectedTokenB, setSelectedTokenB } = useAppContext();
 
   const handleTokenSelect = (tokenData) => {
+    console.log("Selecting token:", tokenData);
     if (isTokenA) {
       if (tokenData.name === selectedTokenB?.name) {
         setSelectedTokenB(null); // Set the other token to null if they are the same
       }
       setSelectedTokenA(tokenData);
+      console.log("Token A Set:", tokenData);
     } else {
       if (tokenData.name === selectedTokenA?.name) {
         setSelectedTokenA(null); // Set the other token to null if they are the same
       }
       setSelectedTokenB(tokenData);
+      console.log("Token B Set:", tokenData);
     }
   };
 

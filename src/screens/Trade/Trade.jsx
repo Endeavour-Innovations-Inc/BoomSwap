@@ -10,21 +10,31 @@ import LazyAppProvider from "../Trade/Controller/LazyAppProvider.js";
 
 export const Trade = () => {
   const [activeView, setActiveView] = useState('swap'); // 'swap' or 'liquidity'
+  const [shouldRenderParamCard, setShouldRenderParamCard] = useState(false);
+
+  // Function to be called by Card to update shouldRenderParamCard
+  const updateShouldRenderParamCard = (value) => {
+    console.log("Updating shouldRenderParamCard to:", value);
+    setShouldRenderParamCard(value);
+  };
 
   return (
     <div className="converter">
       <div className="div">
         <CommonHeader />
         <LazyAppProvider>
-        <div style={{ marginTop: '100px' }}>
-          <LiquiditySwitch active={activeView} onToggle={setActiveView} />
-        </div>
-        <div className="body">
-          {activeView === 'swap' ? <Card /> : <Lcard />}
-        </div>
-        <div className="body">
-          {activeView === 'swap' ? <ParamCard /> : <div></div>}
-        </div>
+          <div style={{ marginTop: '100px' }}>
+            <LiquiditySwitch active={activeView} onToggle={setActiveView} />
+          </div>
+          <div className="body">
+            {activeView === 'swap' ? <Card updateShouldRenderParamCard={updateShouldRenderParamCard} /> : <Lcard />}
+          </div>
+          {/* Conditionally render ParamCard based on shouldRenderParamCard state */}
+          {activeView === 'swap' && shouldRenderParamCard && <ParamCard />}
+          {/* Always render ParamCard when activeView is 'swap', independent of shouldRenderParamCard */}
+          <div className="body">
+            {activeView === 'swap' ? <ParamCard /> : <div></div>}
+          </div>
         </LazyAppProvider>
         <CommonFooter />
       </div>

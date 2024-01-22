@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { IoRefreshSharp } from "react-icons/io5";
 import { AiOutlineArrowDown, AiTwotoneSetting, AiOutlineDown, AiOutlineArrowUp } from "react-icons/ai";
 import { LinearArrowsTransferVertical } from "../../../../../icons/LinearArrowsTransferVertical";
@@ -14,7 +14,7 @@ import PriceView from "./components/PriceView";
 import { useAppContext } from '../../../Controller/AppContext';
 import "./Card.css";
 
-const Card = () => {
+const Card = ({ updateShouldRenderParamCard }) => {
     const [hover, setHover] = useState(false);
     const [clicked, setClicked] = useState(false);
     const [buttonPopUpA, setButtonPopUpA] = useState(false);
@@ -45,6 +45,21 @@ const Card = () => {
             connectWallet();
         }
     };
+
+    // Determine if PriceView should be rendered
+    const shouldRenderPriceView = selectedTokenA && selectedTokenB;
+
+    const [inputValueA, setInputValueA] = useState(''); // State for the first input field
+    const [inputValueB, setInputValueB] = useState(''); // State for the second input field
+
+    // Update whether ParamCard should be rendered
+    useEffect(() => {
+        const shouldRender = selectedTokenA && selectedTokenB && (inputValueA || inputValueB);
+        console.log({ selectedTokenA, selectedTokenB, inputValueA, inputValueB, shouldRender });
+        updateShouldRenderParamCard(shouldRender);
+    }, [selectedTokenA, selectedTokenB, inputValueA, inputValueB, updateShouldRenderParamCard]);    
+
+    console.log("Selected Tokens in Card:", selectedTokenA, selectedTokenB);
 
     return (
         <>
@@ -87,7 +102,13 @@ const Card = () => {
                     )}
                     <AiOutlineDown />
                 </div>
-                <Input placeholder="0.0" numbersOnly={true} />
+                <Input 
+                  style={{ textAlign: 'left' }} 
+                  placeholder="0.0" 
+                  numbersOnly={true} 
+                  value={inputValueA}
+                  onChange={(e) => setInputValueA(e.target.value)} 
+                />
 
                 <span className="arrow" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} onClick={handleClick}>
                     {hover ? <LinearArrowsTransferVertical /> : (clicked ? <AiOutlineArrowUp /> : <AiOutlineArrowDown />)}
@@ -104,8 +125,14 @@ const Card = () => {
                     )}
                     <AiOutlineDown />
                 </div>
-                <Input style={{ textAlign: 'left' }} placeholder="0.0" numbersOnly={true} />
-                <PriceView />
+                <Input 
+                  style={{ textAlign: 'left' }} 
+                  placeholder="0.0" 
+                  numbersOnly={true} 
+                  value={inputValueB}
+                  onChange={(e) => setInputValueB(e.target.value)} 
+                />
+                {shouldRenderPriceView && <PriceView />}
                 <SlippageTolerance />
                 <Button name={account ? "swap" : "connect wallet"} onClick={handleSwapOrConnect} />
             </div>
