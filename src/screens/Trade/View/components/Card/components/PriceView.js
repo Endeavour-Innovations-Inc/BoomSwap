@@ -1,8 +1,7 @@
 import React from "react";
-import {IoRefreshSharp} from "react-icons/io5";
+import { IoRefreshSharp } from "react-icons/io5";
 
-// Copied from slippage tolerance 1-1
-const PriceView = () => {
+const PriceView = ({ tokenA, tokenB, price }) => {
   const slipToleranceStyle = {
     display: "flex",
     justifyContent: "space-between",
@@ -10,13 +9,13 @@ const PriceView = () => {
   };
 
   const slipTextStyle = {
-    color: "var(--colorPurple)", // Replace with the actual color value if not defined in CSS
+    color: "var(--colorPurple)",
     fontSize: "12px",
     fontWeight: 700,
   };
 
   const slipPercentStyle = {
-    color: "var(--colorOrangeBright)", // Replace with the actual color value if not defined in CSS
+    color: "var(--colorOrangeBright)",
     fontWeight: 800,
   };
 
@@ -26,8 +25,8 @@ const PriceView = () => {
         <span>Price</span>
       </div>
       <div style={slipPercentStyle}>
-        <span>x Token1 per Token2 </span>
-        <IoRefreshSharp/>
+        <span>{price ? `${price} ${tokenA.name} per ${tokenB.name}` : "Fetching price..."}</span>
+        <IoRefreshSharp />
       </div>
     </div>
   );

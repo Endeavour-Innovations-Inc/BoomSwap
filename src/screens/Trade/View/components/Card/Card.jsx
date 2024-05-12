@@ -66,6 +66,21 @@ const Card = ({ updateShouldRenderParamCard }) => {
 
     console.log("Selected Tokens in Card:", selectedTokenA, selectedTokenB);
 
+    const [price, setPrice] = useState(null);
+
+    useEffect(() => {
+        const fetchPrice = async () => {
+          // Example fetching logic
+          // This should be replaced with your actual API call or smart contract interaction
+          // const price = await someAPI.getPrice(selectedTokenA.id, selectedTokenB.id);
+          setPrice("10"); // Example price, replace with actual data fetching logic
+        };
+    
+        if (selectedTokenA && selectedTokenB) {
+          fetchPrice();
+        }
+      }, [selectedTokenA, selectedTokenB]);
+
     return (
         <>
             <div className="card">
@@ -137,7 +152,7 @@ const Card = ({ updateShouldRenderParamCard }) => {
                   value={inputValueB}
                   onChange={(e) => setInputValueB(e.target.value)} 
                 />
-                {shouldRenderPriceView && <PriceView />}
+                {shouldRenderPriceView && <PriceView tokenA={selectedTokenA} tokenB={selectedTokenB} price={price} />}
                 <SlippageTolerance />
                 <Button name={account ? "swap" : "connect wallet"} onClick={handleSwapOrConnect} />
             </div>
