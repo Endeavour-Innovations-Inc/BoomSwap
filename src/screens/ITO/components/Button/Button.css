@@ -1,0 +1,12 @@
+.btn {
+    width: 100%;
+    background-color: var(--brown);
+    color: var(--lightPink);
+    border: none;
+    height: 48px;
+    padding: 0 20px;
+    cursor: pointer;
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: 700;
+}

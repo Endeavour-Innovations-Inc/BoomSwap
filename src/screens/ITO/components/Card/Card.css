@@ -1,0 +1,76 @@
+.card {    
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, .3);
+    /* height: 100vh; */
+    width: 100%;
+    border-radius: 24px;
+    max-width: 500px;    
+}
+
+.cardBody {
+    /* background-color: var(--darkPurple); */
+    background-color: #3D3B40;
+    color: var(--white);
+    
+    padding: 20px 30px;    
+}
+
+.cardBody > div {
+    padding-bottom: 30px;
+}
+.cardBodyP {
+    font-size: 16px;
+    color: var(--lightPink);
+    font-weight: 500;
+}
+
+.imgTokenPlaceholder {
+    /* padding: 35px 0; */
+}
+
+.tokenPlaceholderImg {
+    width: 80px;
+    height: 80px;    
+}
+
+.ctaContainer {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.ctaText {
+    color: var(--lightGrey);
+
+}
+
+.ctaNumber {
+    color: var(--lightPink);
+}
+
+.moreContainer {
+    font-size: 16px;
+    font-weight: 800;
+    padding-bottom: 5px;
+}
+.moreContainer a{
+    color: var(--brown);
+}
+.moreContainer span svg {
+    fill: var(--brown);
+}
+
+.cardClose {
+    color: var(--brown);
+    background-color: black;
+    padding: 20px 0;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.cardClose svg {
+    fill: var(--brown);
+}

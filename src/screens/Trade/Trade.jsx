@@ -27,7 +27,7 @@ export const Trade = () => {
             <LiquiditySwitch active={activeView} onToggle={setActiveView} />
           </div>
           <div className="body">
-            {activeView === 'swap' ? <Card updateShouldRenderParamCard={updateShouldRenderParamCard} /> : <Lcard />}
+            {activeView === 'swap' ? <Card updateShouldRenderParamCard={updateShouldRenderParamCard} /> : <Lcard updateShouldRenderParamCard={updateShouldRenderParamCard}/>}
           </div>
           {/* Conditionally render ParamCard based on shouldRenderParamCard state */}
           {activeView === 'swap' && shouldRenderParamCard && <ParamCard />}

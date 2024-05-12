@@ -1,0 +1,72 @@
+.ryoshi-tales-wrapper {
+    display: flex;
+    align-items: center; /* Vertically center all direct children */
+    justify-content: space-between; /* Horizontally align children with space in between */
+    position: relative; /* For absolute positioning of 'Featured' */
+    padding: 10px; /* Add padding around the items */
+    /* background: linear-gradient(to right ,#fff, #39bbb7); */
+    background:  #00008B;
+    border-top-right-radius: 24px;
+    border-top-left-radius: 24px;
+    height: 120px; /* Set a specific height for the wrapper */
+    overflow: hidden;
+}
+
+.ryoshi-tales {
+    /* Now the direct child of a flex container, it will be centered */
+    /* color: #2E97A7; */
+
+    background-image: linear-gradient(45deg, #F3B95F, #FDE767);
+     /* Set the background clip to text */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Make the text color transparent so the gradient shows through */
+  color: transparent;
+    font-size: 45px;
+    /* text-shadow: 3px 3px 0 #fff; */
+    letter-spacing: 2px;
+    /* 'align-self' is not needed because 'align-items' on the parent will do the job */
+    font-style: italic; 
+    font-weight: 800;   
+    margin: auto; /* This will ensure centering regardless of the direction of flex */
+}
+
+
+
+
+
+.featured {
+    position: absolute; 
+    left: -40px; /* Adjust as needed */
+    top: 30%; /* Align vertically at 50% from the top */
+    transform: translateY(-40%) rotate(-40deg); /* Center vertically and rotate */
+    font-weight: 800;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--white);
+    background-color: var(--brown);
+    padding: 10px 60px;
+    word-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+.ryoshi-tales p {
+    margin: 0;
+}
+
+.arrow-button {
+    /* Align-self can be applied here if .arrow-button is a direct child of .ryoshi-tales-wrapper */
+    align-self: center; /* This should work if .arrow-button is a flex item within .ryoshi-tales-wrapper */
+    background: none;
+    border: none;
+    cursor: pointer;
+    background-color: var(--brown);
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+
+.arrow-button svg {
+    fill: #2E97A7;
+}

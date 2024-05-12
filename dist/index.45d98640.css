@@ -2704,7 +2704,7 @@ button:disabled, button[disabled] {
   display: flex;
 }
 
-.ITOcard {
+.Icard {
   background-color: gray;
   border-radius: 10px;
   width: 428px;
@@ -2713,7 +2713,7 @@ button:disabled, button[disabled] {
   position: relative;
 }
 
-.Icard {
+.ITOcard {
   background-color: gray;
   border-radius: 10px;
   width: 428px;
