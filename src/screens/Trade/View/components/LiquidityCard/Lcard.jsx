@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
-import "./Lcard.css"
-
-import {IoRefreshSharp} from "react-icons/io5"
-import {AiOutlineArrowDown, AiTwotoneSetting, AiOutlineQuestionCircle, AiOutlineDown, AiOutlineArrowUp} from "react-icons/ai"
+import {IoRefreshSharp} from "react-icons/io5";
+import {AiOutlineArrowDown, AiTwotoneSetting, AiOutlineQuestionCircle, AiOutlineDown, AiOutlineArrowUp} from "react-icons/ai";
 import { LinearArrowsTransferVertical } from "../../../../../icons/LinearArrowsTransferVertical";
-
-import Popup from "../Popup/Popup";
-import { useState } from "react";
-import SettingsPopup from "../Card/components/SettingsPopup"; // Adjust the path according to your project structure
-import { useAppContext } from '../../../Controller/AppContext';
 import Input from "../Input/Input";
+import Button from "../Button/Button";
+import Popup from "../Popup/Popup";
+import SlippageTolerance from "../Card/components/SlippageTolerance";
+import SettingsPopup from "../Card/components/SettingsPopup";
 import { useWallet } from "../../../../CommonComp/WalletContext";
 import SlippageTolerance from "../Card/components/SlippageTolerance";
-import Button from "../Button/Button";
-
+import SettingsPopup from "../Card/components/SettingsPopup";
+import { SelectTokenPopup } from "../Card/components/SelectTokenPopup";
+import ConfirmSwapPopup from "../Card/components/ConfirmSwapPopup";
+import PriceView from "../Card/components/PriceView";
+import { useAppContext } from '../../../Controller/AppContext';
+import "./Lcard.css"
 
 const Lcard = ({ updateShouldRenderParamCard }) => {
     const [hover, setHover] = useState(false);
@@ -26,7 +27,7 @@ const Lcard = ({ updateShouldRenderParamCard }) => {
     const {
         selectedTokenA, setSelectedTokenA,
         selectedTokenB, setSelectedTokenB,
-    } = useAppContext();
+    } = useAppContext();    
 
     const { account, connectWallet } = useWallet();
 
@@ -69,29 +70,35 @@ const Lcard = ({ updateShouldRenderParamCard }) => {
 
     return (
         <>
-        <div className="lcard">
-            <div className="cardHeadingPrimary">
-                        <div className="Primary1">
-                            <h2>Your Liquidity</h2>
-                        </div>
-                        <div className="Primary2">
-                            <AiTwotoneSetting
-                            onClick={() => {setButtonPopUp2(true)}}
-                            />
-                            <IoRefreshSharp/>
-                        </div>
-                        {/* Settings window is defined here */}
-                        <Popup trigger={buttonPopUp2} setTrigger={setButtonPopUp2}>
-                            <SettingsPopup />
-                        </Popup>
-                        </div>
-                        <div className="cardHeadingSecondary">
-                            <div className="secondaryText">
-                                Remove Liquidity to receive tokens back
-                            </div>
-                        </div>
-                        {/* Insert Liquidity components below */}
-                        <div className="label" onClick={() => setButtonPopUpA(true)}>
+            <div className="card">
+                <div className="cardHeadingPrimary">
+                    <div className="Primary1">
+                        <h2>Your Liquidity</h2>
+                    </div>
+                    <div className="Primary2">
+                        <AiTwotoneSetting onClick={() => setButtonPopUp2(true)} />
+                        <IoRefreshSharp />
+                    </div>
+                </div>
+                <Popup trigger={buttonPopUp2} setTrigger={setButtonPopUp2}>
+                    <SettingsPopup />
+                </Popup>
+                <Popup trigger={buttonPopUpA} setTrigger={setButtonPopUpA}>
+                    <SelectTokenPopup isTokenA={true} />
+                </Popup>
+                <Popup trigger={buttonPopUpB} setTrigger={setButtonPopUpB}>
+                    <SelectTokenPopup isTokenA={false} />
+                </Popup>
+                <Popup trigger={buttonPopUp3} setTrigger={setButtonPopUp3}>
+                    <ConfirmSwapPopup />
+                </Popup>
+
+                <div className="cardHeadingSecondary">
+                    <div className="secondaryText">
+                    Remove liquidity to receive tokens back
+                    </div>
+                </div>
+                <div className="label" onClick={() => setButtonPopUpA(true)}>
                     {selectedTokenA ? (
                         <>
                             <img src={selectedTokenA.image} alt={selectedTokenA.name} style={{ width: '20px' }} />
@@ -135,9 +142,9 @@ const Lcard = ({ updateShouldRenderParamCard }) => {
                 {shouldRenderPriceView && <PriceView />}
                 <SlippageTolerance />
                 <Button name={account ? "swap" : "connect wallet"} onClick={handleSwapOrConnect} />
-        </div>
+            </div>
         </>
-    )
-}
+    );
+};
 
 export default Lcard
