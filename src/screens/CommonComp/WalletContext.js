@@ -8,11 +8,12 @@ export const WalletProvider = ({ children }) => {
   const [account, setAccount] = useState('');
   const [isCorrectNetwork, setIsCorrectNetwork] = useState(true);
 
-  const MUMBAI_NETWORK_ID = '0x13881'; // Network ID for Mumbai Testnet
+  const POLYGON_MAINNET_ID = '0x89'; // Network ID for Polygon Mainnet
 
   useEffect(() => {
     const handleChainChanged = (chainId) => {
-      setIsCorrectNetwork(parseInt(chainId, 16) === parseInt(MUMBAI_NETWORK_ID, 16));
+      // Check if the current chainId is equal to the Polygon Mainnet ID
+      setIsCorrectNetwork(parseInt(chainId, 16) === parseInt(POLYGON_MAINNET_ID, 16));
     };
 
     if (window.ethereum) {
@@ -30,28 +31,30 @@ export const WalletProvider = ({ children }) => {
     if (window.ethereum) {
       try {
         const networkId = await window.ethereum.request({ method: 'net_version' });
-        if (parseInt(networkId, 10).toString(16) !== MUMBAI_NETWORK_ID) {
+        if (parseInt(networkId, 10).toString(16) !== POLYGON_MAINNET_ID) {
           setIsCorrectNetwork(false);
           try {
+            // Attempt to switch to Polygon Mainnet
             await window.ethereum.request({
               method: 'wallet_switchEthereumChain',
-              params: [{ chainId: MUMBAI_NETWORK_ID }],
+              params: [{ chainId: POLYGON_MAINNET_ID }],
             });
             setIsCorrectNetwork(true);
           } catch (switchError) {
+            // If the network has not been added to MetaMask, add it
             if (switchError.code === 4902) {
               await window.ethereum.request({
                 method: 'wallet_addEthereumChain',
                 params: [{
-                  chainId: MUMBAI_NETWORK_ID,
-                  rpcUrls: ['https://rpc-mumbai.maticvigil.com/'],
-                  chainName: 'Mumbai Testnet',
+                  chainId: POLYGON_MAINNET_ID,
+                  rpcUrls: ['https://polygon-rpc.com/'], // Example RPC URL
+                  chainName: 'Polygon Mainnet',
                   nativeCurrency: {
                     name: 'Matic',
-                    symbol: 'MATIC', // 2-6 characters long
+                    symbol: 'MATIC',
                     decimals: 18,
                   },
-                  blockExplorerUrls: ['https://mumbai.polygonscan.com/'],
+                  blockExplorerUrls: ['https://polygonscan.com/'],
                 }],
               });
               setIsCorrectNetwork(true);
@@ -63,7 +66,7 @@ export const WalletProvider = ({ children }) => {
         } else {
           setIsCorrectNetwork(true);
         }
-  
+
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
         setAccount(accounts[0]);
       } catch (error) {

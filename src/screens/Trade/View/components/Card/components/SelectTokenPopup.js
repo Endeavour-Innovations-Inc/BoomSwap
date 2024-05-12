@@ -49,8 +49,8 @@ export const SelectTokenPopup = ({ isTokenA }) => {
 
   // Sample token data (you should replace this with your actual token data)
   const tokens = [
-    { name: 'Token1', image: croImg, price: '0.000010' },
-    { name: 'Token2', image: croImg, price: '0.000020' },
+    { name: 'ELON', image: croImg, price: '0.000010', address: '0xe0339c80ffde91f3e20494df88d4206d86024cdf' },
+    { name: 'SHIB', image: croImg, price: '0.000020', address: '0x6f8a06447ff6fcf75d803135a7de15ce88c1d4ec' },
     // Add more tokens as needed
   ];
 
