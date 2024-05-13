@@ -45,6 +45,7 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
     const [buttonPopUp3, setButtonPopUp3] = useState(false);
     const [price, setPrice] = useState("Fetching price...");
     const [isApproved, setIsApproved] = useState(false);
+    const [balance, setBalance] = useState(null);
 
     const {
         selectedTokenA, setSelectedTokenA,
@@ -92,9 +93,25 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
         }
     };
 
+    const fetchTokenBalance = async () => {
+        if (!selectedTokenA || !account) return;
+
+        try {
+            const implementationAddress = await getImplementationAddress(selectedTokenA.address);
+            const tokenContract = new web3.eth.Contract(ERC20ABI, implementationAddress);
+            const balanceWei = await tokenContract.methods.balanceOf(account).call();
+            const balance = web3.utils.fromWei(balanceWei, 'ether');
+            setBalance(balance);
+        } catch (error) {
+            console.error('Error fetching balance:', error);
+            setBalance(null);
+        }
+    };
+
     useEffect(() => {
         fetchTokenOutput(inputValueA);
-    }, [inputValueA, selectedTokenA, selectedTokenB]);
+        fetchTokenBalance();
+    }, [inputValueA, selectedTokenA, selectedTokenB, account]);
 
     const handleClick = () => {
         setClicked(!clicked);
@@ -119,11 +136,10 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
         if (!selectedTokenA || !inputValueA) return;
 
         try {
-            console.log(`Selected token address: ${selectedTokenA.address}`);
-            const implementationAddress = await getImplementationAddress(selectedTokenA.address);
-            console.log(`Using implementation address: ${implementationAddress}`);
-            
-            const tokenContract = new web3.eth.Contract(ERC20ABI, implementationAddress);
+            const tokenAddress = selectedTokenA.address;
+            console.log(`Selected token address: ${tokenAddress}`);
+
+            const tokenContract = new web3.eth.Contract(ERC20ABI, tokenAddress);
             console.log(`Token contract methods:`, tokenContract.methods);
 
             await tokenContract.methods.approve(router.options.address, web3.utils.toWei(inputValueA, 'ether')).send({ from: account });
@@ -198,6 +214,9 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
                   value={inputValueA}
                   onChange={(e) => setInputValueA(e.target.value)} 
                 />
+                <div>
+                    {balance !== null && <p>Balance: {balance} {selectedTokenA ? selectedTokenA.name : ''}</p>}
+                </div>
 
                 <span className="arrow" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} onClick={handleClick}>
                     {hover ? <LinearArrowsTransferVertical /> : (clicked ? <AiOutlineArrowUp /> : <AiOutlineArrowDown />)}
