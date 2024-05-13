@@ -11,6 +11,12 @@ import LazyAppProvider from "../Trade/Controller/LazyAppProvider.js";
 export const Trade = () => {
   const [activeView, setActiveView] = useState('swap'); // 'swap' or 'liquidity'
   const [shouldRenderParamCard, setShouldRenderParamCard] = useState(false);
+  const [swapDetails, setSwapDetails] = useState({
+    minimumReceived: "",
+    priceImpact: "",
+    liquidityProviderFee: "",
+    route: ""
+  });
 
   // Function to be called by Card to update shouldRenderParamCard
   const updateShouldRenderParamCard = (value) => {
@@ -18,22 +24,32 @@ export const Trade = () => {
     setShouldRenderParamCard(value);
   };
 
+  const handleSwapDetailsUpdate = (details) => {
+    setSwapDetails(details);
+  };
+
   return (
     <div className="converter">
-      <div className="div">
-        <CommonHeader />
-        <LazyAppProvider>
-          <div style={{ marginTop: '100px' }}>
-            <LiquiditySwitch active={activeView} onToggle={setActiveView} />
-          </div>
-          <div className="body">
-            {activeView === 'swap' ? <Card updateShouldRenderParamCard={updateShouldRenderParamCard} /> : <Lcard updateShouldRenderParamCard={updateShouldRenderParamCard}/>}
-          </div>
-          {/* Conditionally render ParamCard based on shouldRenderParamCard state */}
-          {activeView === 'swap' && shouldRenderParamCard && <ParamCard />}
-        </LazyAppProvider>
-        <CommonFooter />
-      </div>
+    <div className="div">
+      <CommonHeader />
+      <LazyAppProvider>
+        <div style={{ marginTop: '100px' }}>
+          <LiquiditySwitch active={activeView} onToggle={setActiveView} />
+        </div>
+        <div className="body">
+          {activeView === 'swap' ? 
+            <Card 
+              updateShouldRenderParamCard={updateShouldRenderParamCard}
+              updateSwapDetails={setSwapDetails}
+            /> 
+            : <Lcard updateShouldRenderParamCard={updateShouldRenderParamCard}/>
+          }
+        </div>
+        {activeView === 'swap' && shouldRenderParamCard && 
+          <ParamCard swapDetails={swapDetails} />}
+      </LazyAppProvider>
+      <CommonFooter />
     </div>
+  </div>
   );
 };

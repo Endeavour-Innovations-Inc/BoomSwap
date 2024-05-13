@@ -16,7 +16,7 @@ import "./Card.css";
 import RouterABI from './components/RouterABI.json';
 import Web3 from 'web3';
 
-const Card = ({ updateShouldRenderParamCard }) => {
+const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
     const [hover, setHover] = useState(false);
     const [clicked, setClicked] = useState(false);
     const [buttonPopUpA, setButtonPopUpA] = useState(false);
@@ -42,21 +42,35 @@ const Card = ({ updateShouldRenderParamCard }) => {
     // Fetch tokenB amount based on tokenA input
     const fetchTokenOutput = async (inputAmount) => {
         if (!selectedTokenA || !selectedTokenB || !inputAmount) return;
-
+    
         try {
             const amountsOut = await router.methods.getAmountsOut(
                 web3.utils.toWei(inputAmount.toString(), 'ether'), // Convert token amount to Wei
                 [selectedTokenA.address, selectedTokenB.address]
             ).call();
-
-            const outputAmount = web3.utils.fromWei(amountsOut[1], 'ether'); // Convert Wei back to token amount
+    
+            const outputAmountWei = amountsOut[1];
+            const outputAmount = web3.utils.fromWei(outputAmountWei, 'ether'); // Convert Wei back to token amount
             setInputValueB(outputAmount);
+    
+            // Assuming calculation based on fetched data
+            const calculatedMinReceived = parseFloat(outputAmount) * 0.99; // Assuming 1% slippage tolerance
+            const calculatedPriceImpact = "<0.01%"; // Placeholder value
+            const calculatedLPFee = parseFloat(outputAmount) * 0.003; // Assuming 0.3% fee
+            const calculatedRoute = `${selectedTokenA.name} > ${selectedTokenB.name}`;
+    
+            updateSwapDetails({
+                minimumReceived: calculatedMinReceived.toFixed(6).toString(),
+                priceImpact: calculatedPriceImpact,
+                liquidityProviderFee: calculatedLPFee.toFixed(6).toString(),
+                route: calculatedRoute
+            });
         } catch (error) {
             console.error('Error fetching output amount:', error);
             setInputValueB('0'); // Reset or handle errors appropriately
         }
     };
-
+    
     useEffect(() => {
         fetchTokenOutput(inputValueA);
     }, [inputValueA, selectedTokenA, selectedTokenB]);
