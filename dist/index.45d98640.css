@@ -1588,13 +1588,14 @@ input[type="checkbox"].toggle:disabled + label.toggle-label:after {
 }
 
 .button-container {
-  justify-content: space-between;
+  justify-content: center;
+  gap: 4px;
   width: 100%;
   display: flex;
 }
 
 .half-button {
-  width: 48%;
+  width: calc(50% - 2px);
 }
 
 .full-button {

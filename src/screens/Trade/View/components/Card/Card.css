@@ -250,17 +250,19 @@
 
 .button-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Center the contents */
     width: 100%;
+    gap: 4px; /* Add a small gap between the buttons */
 }
 
 .half-button {
-    width: 48%; /* Adjust as needed to ensure there's a small gap between the buttons */
+    width: calc(50% - 2px); /* Adjust width to account for the gap */
 }
 
 .full-button {
-    width: 100%; /* Full width for single button */
+    width: 100%; /* Full width for a single button */
 }
+
 
 
   
