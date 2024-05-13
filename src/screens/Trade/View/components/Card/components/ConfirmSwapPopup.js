@@ -1,9 +1,8 @@
 import React from "react";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import Button from '../../Button/Button'; // Adjust the path as needed
-import croImg from "../../images/cro.png"
 
-const ConfirmSwapPopup = () => {
+const ConfirmSwapPopup = ({ tokenA, tokenB, inputValueA, inputValueB }) => {
   const popHeadingStyle = {
     display: 'flex',
     justifyContent: 'flex-start',
@@ -44,20 +43,20 @@ const ConfirmSwapPopup = () => {
       <div style={popBodyStyle} className="popBody">
         <div style={swapStyle} className="swap">
           <div style={priceImgStyle} className="priceImg">
-            <img src={croImg} alt="" style={priceImgImgStyle} />
-            <span>0.99393</span>
+            <img src={tokenA.image} alt={tokenA.name} style={priceImgImgStyle} />
+            <span>{inputValueA}</span>
           </div>                
-          <div className="swapName">CRO</div>
+          <div className="swapName">{tokenA.name}</div>
         </div>  
         <div className="arrDown">
           <AiOutlineArrowDown />
         </div>     
         <div style={swapStyle} className="swap">
           <div style={priceImgStyle} className="priceImg">
-            <img src={croImg} alt="" style={priceImgImgStyle} />
-            <span>0.99393</span>
+            <img src={tokenB.image} alt={tokenB.name} style={priceImgImgStyle} />
+            <span>{inputValueB}</span>
           </div>                
-          <div className="swapName">CRO</div>
+          <div className="swapName">{tokenB.name}</div>
         </div> 
         <Button name="confirm swap" />               
       </div>

@@ -108,7 +108,12 @@ const Card = ({ updateShouldRenderParamCard }) => {
                     <SelectTokenPopup isTokenA={false} closePopup={togglePopupB} />
                 </Popup>
                 <Popup trigger={buttonPopUp3} setTrigger={setButtonPopUp3}>
-                    <ConfirmSwapPopup />
+                    <ConfirmSwapPopup 
+                        tokenA={selectedTokenA} 
+                        tokenB={selectedTokenB} 
+                        inputValueA={inputValueA} 
+                        inputValueB={inputValueB}
+                    />
                 </Popup>
 
                 <div className="cardHeadingSecondary">
