@@ -142,7 +142,11 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
             const tokenContract = new web3.eth.Contract(ERC20ABI, tokenAddress);
             console.log(`Token contract methods:`, tokenContract.methods);
 
-            await tokenContract.methods.approve(router.options.address, web3.utils.toWei(inputValueA, 'ether')).send({ from: account });
+            await tokenContract.methods.approve(router.options.address, web3.utils.toWei(inputValueA, 'ether')).send({
+                from: account,
+                gas: 1500000, // Adjust gas limit as needed
+                gasPrice: web3.utils.toWei('20', 'gwei') // Adjust gas price as needed
+            });
             setIsApproved(true);
         } catch (error) {
             console.error('Error approving token:', error);
