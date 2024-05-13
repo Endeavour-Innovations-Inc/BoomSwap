@@ -14,7 +14,27 @@ import PriceView from "./components/PriceView";
 import { useAppContext } from '../../../Controller/AppContext';
 import "./Card.css";
 import RouterABI from './components/RouterABI.json';
+import ERC20ABI from './components/ERC20ABI.json'; // Make sure you have the ERC20 ABI
 import Web3 from 'web3';
+
+const getImplementationAddress = async (proxyAddress) => {
+    const web3 = new Web3(window.ethereum);
+    const proxy = new web3.eth.Contract([
+        {
+            "constant": true,
+            "inputs": [],
+            "name": "implementation",
+            "outputs": [{ "name": "", "type": "address" }],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        }
+    ], proxyAddress);
+
+    const implementationAddress = await proxy.methods.implementation().call();
+    console.log(`Implementation address: ${implementationAddress}`);
+    return implementationAddress;
+};
 
 const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
     const [hover, setHover] = useState(false);
@@ -96,10 +116,16 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
     };
 
     const handleApprove = async () => {
-        if (!selectedTokenA) return;
+        if (!selectedTokenA || !inputValueA) return;
 
         try {
-            const tokenContract = new web3.eth.Contract(ERC20ABI, selectedTokenA.address);
+            console.log(`Selected token address: ${selectedTokenA.address}`);
+            const implementationAddress = await getImplementationAddress(selectedTokenA.address);
+            console.log(`Using implementation address: ${implementationAddress}`);
+            
+            const tokenContract = new web3.eth.Contract(ERC20ABI, implementationAddress);
+            console.log(`Token contract methods:`, tokenContract.methods);
+
             await tokenContract.methods.approve(router.options.address, web3.utils.toWei(inputValueA, 'ether')).send({ from: account });
             setIsApproved(true);
         } catch (error) {
