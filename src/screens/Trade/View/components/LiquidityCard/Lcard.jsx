@@ -68,6 +68,9 @@ const Lcard = ({ updateShouldRenderParamCard }) => {
 
     console.log("Selected Tokens in Card:", selectedTokenA, selectedTokenB);
 
+    const togglePopupA = () => setButtonPopUpA(!buttonPopUpA);
+    const togglePopupB = () => setButtonPopUpB(!buttonPopUpB);
+
     return (
         <>
             <div className="card">
@@ -84,10 +87,10 @@ const Lcard = ({ updateShouldRenderParamCard }) => {
                     <SettingsPopup />
                 </Popup>
                 <Popup trigger={buttonPopUpA} setTrigger={setButtonPopUpA}>
-                    <SelectTokenPopup isTokenA={true} />
+                    <SelectTokenPopup isTokenA={true} closePopup={togglePopupA} />
                 </Popup>
                 <Popup trigger={buttonPopUpB} setTrigger={setButtonPopUpB}>
-                    <SelectTokenPopup isTokenA={false} />
+                    <SelectTokenPopup isTokenA={false} closePopup={togglePopupB} />
                 </Popup>
                 <Popup trigger={buttonPopUp3} setTrigger={setButtonPopUp3}>
                     <ConfirmSwapPopup />

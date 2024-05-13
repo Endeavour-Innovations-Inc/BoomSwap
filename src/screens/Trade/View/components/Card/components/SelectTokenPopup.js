@@ -4,7 +4,7 @@ import croImg from "../../images/cro.png";
 import TokenView from "./TokenView";
 import { useAppContext } from '../../../../Controller/AppContext'; // Adjust the import path as needed
 
-export const SelectTokenPopup = ({ isTokenA }) => {
+export const SelectTokenPopup = ({ isTokenA, closePopup }) => {
   const { selectedTokenA, setSelectedTokenA, selectedTokenB, setSelectedTokenB } = useAppContext();
 
   const handleTokenSelect = (tokenData) => {
@@ -22,6 +22,7 @@ export const SelectTokenPopup = ({ isTokenA }) => {
       setSelectedTokenB(tokenData);
       console.log("Token B Set:", tokenData);
     }
+    closePopup(); // Close the popup after selection
   };
 
   const popHeadingStyle = {
@@ -65,15 +66,15 @@ export const SelectTokenPopup = ({ isTokenA }) => {
           style={{ textAlign: 'left' }}
         />
         <div style={tokensStyle} className="tokens">
-        {tokens.map((token, index) => (
-          <TokenView 
-            key={index}
-            name={token.name}
-            croImg={token.image}
-            price={token.price}
-            onClick={() => handleTokenSelect(token)}
-          />
-        ))}
+          {tokens.map((token, index) => (
+            <TokenView 
+              key={index}
+              name={token.name}
+              croImg={token.image}
+              price={token.price}
+              onClick={() => handleTokenSelect(token)}
+            />
+          ))}
         </div>
       </div>
     </>
