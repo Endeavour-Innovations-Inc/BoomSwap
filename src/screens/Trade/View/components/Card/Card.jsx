@@ -13,6 +13,8 @@ import ConfirmSwapPopup from "./components/ConfirmSwapPopup";
 import PriceView from "./components/PriceView";
 import { useAppContext } from '../../../Controller/AppContext';
 import "./Card.css";
+import RouterABI from './components/RouterABI.json';
+import Web3 from 'web3';
 
 const Card = ({ updateShouldRenderParamCard }) => {
     const [hover, setHover] = useState(false);
@@ -21,23 +23,50 @@ const Card = ({ updateShouldRenderParamCard }) => {
     const [buttonPopUpB, setButtonPopUpB] = useState(false);
     const [buttonPopUp2, setButtonPopUp2] = useState(false);
     const [buttonPopUp3, setButtonPopUp3] = useState(false);
+    const [price, setPrice] = useState("Fetching price...")
 
     const {
         selectedTokenA, setSelectedTokenA,
         selectedTokenB, setSelectedTokenB,
-    } = useAppContext();    
+    } = useAppContext();
 
     const { account, connectWallet } = useWallet();
 
+    const [inputValueA, setInputValueA] = useState('');
+    const [inputValueB, setInputValueB] = useState('');
+
+    // Web3 and Contract Setup
+    const web3 = new Web3(window.ethereum); // Assuming the user has MetaMask
+    const router = new web3.eth.Contract(RouterABI, '0x0D2AE4BFb4Fd2F6c48B65f900c7550BB49909f2B'); // Router address for Uniswap V2 on Polygon
+
+    // Fetch tokenB amount based on tokenA input
+    const fetchTokenOutput = async (inputAmount) => {
+        if (!selectedTokenA || !selectedTokenB || !inputAmount) return;
+
+        try {
+            const amountsOut = await router.methods.getAmountsOut(
+                web3.utils.toWei(inputAmount.toString(), 'ether'), // Convert token amount to Wei
+                [selectedTokenA.address, selectedTokenB.address]
+            ).call();
+
+            const outputAmount = web3.utils.fromWei(amountsOut[1], 'ether'); // Convert Wei back to token amount
+            setInputValueB(outputAmount);
+        } catch (error) {
+            console.error('Error fetching output amount:', error);
+            setInputValueB('0'); // Reset or handle errors appropriately
+        }
+    };
+
+    useEffect(() => {
+        fetchTokenOutput(inputValueA);
+    }, [inputValueA, selectedTokenA, selectedTokenB]);
+
     const handleClick = () => {
         setClicked(!clicked);
-
-        // Swap the tokens
         const tempToken = selectedTokenA;
         setSelectedTokenA(selectedTokenB);
         setSelectedTokenB(tempToken);
 
-        // Swap the input values
         const tempValue = inputValueA;
         setInputValueA(inputValueB);
         setInputValueB(tempValue);
@@ -51,35 +80,12 @@ const Card = ({ updateShouldRenderParamCard }) => {
         }
     };
 
-    // Determine if PriceView should be rendered
     const shouldRenderPriceView = selectedTokenA && selectedTokenB;
 
-    const [inputValueA, setInputValueA] = useState(''); // State for the first input field
-    const [inputValueB, setInputValueB] = useState(''); // State for the second input field
-
-    // Update whether ParamCard should be rendered
     useEffect(() => {
         const shouldRender = selectedTokenA && selectedTokenB && (inputValueA || inputValueB);
-        console.log({ selectedTokenA, selectedTokenB, inputValueA, inputValueB, shouldRender });
         updateShouldRenderParamCard(shouldRender);
-    }, [selectedTokenA, selectedTokenB, inputValueA, inputValueB, updateShouldRenderParamCard]);    
-
-    console.log("Selected Tokens in Card:", selectedTokenA, selectedTokenB);
-
-    const [price, setPrice] = useState(null);
-
-    useEffect(() => {
-        const fetchPrice = async () => {
-          // Example fetching logic
-          // This should be replaced with your actual API call or smart contract interaction
-          // const price = await someAPI.getPrice(selectedTokenA.id, selectedTokenB.id);
-          setPrice("10"); // Example price, replace with actual data fetching logic
-        };
-    
-        if (selectedTokenA && selectedTokenB) {
-          fetchPrice();
-        }
-      }, [selectedTokenA, selectedTokenB]);
+    }, [selectedTokenA, selectedTokenB, inputValueA, inputValueB, updateShouldRenderParamCard]);
 
     const togglePopupA = () => setButtonPopUpA(!buttonPopUpA);
     const togglePopupB = () => setButtonPopUpB(!buttonPopUpB);
