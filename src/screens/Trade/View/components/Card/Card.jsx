@@ -36,6 +36,21 @@ const getImplementationAddress = async (proxyAddress) => {
     return implementationAddress;
 };
 
+const fetchGasPrice = async () => {
+    try {
+        const response = await fetch('https://ethgasstation.info/api/ethgasAPI.json?api-key=YOUR_API_KEY');
+        const data = await response.json();
+        // EthGasStation returns gas prices in gwei * 10, so divide by 10 to get the price in gwei
+        const averageGasPrice = data.average / 10;
+        console.log(`Average Gas Price: ${averageGasPrice} gwei`);
+        return Web3.utils.toWei(averageGasPrice.toString(), 'gwei');
+    } catch (error) {
+        console.error('Error fetching gas price from EthGasStation:', error);
+        // Fallback to a default value
+        return Web3.utils.toWei('20', 'gwei');
+    }
+};
+
 const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
     const [hover, setHover] = useState(false);
     const [clicked, setClicked] = useState(false);
@@ -46,6 +61,7 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
     const [price, setPrice] = useState("Fetching price...");
     const [isApproved, setIsApproved] = useState(false);
     const [balance, setBalance] = useState(null);
+    const [gasPrice, setGasPrice] = useState(null);
 
     const {
         selectedTokenA, setSelectedTokenA,
@@ -60,6 +76,15 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
     // Web3 and Contract Setup
     const web3 = new Web3(window.ethereum); // Assuming the user has MetaMask
     const router = new web3.eth.Contract(RouterABI, '0x0D2AE4BFb4Fd2F6c48B65f900c7550BB49909f2B'); // Router address for Uniswap V2 on Polygon
+
+    // Fetch the current gas price from EthGasStation
+    useEffect(() => {
+        const getGasPrice = async () => {
+            const fetchedGasPrice = await fetchGasPrice();
+            setGasPrice(fetchedGasPrice);
+        };
+        getGasPrice();
+    }, []);
 
     // Fetch tokenB amount based on tokenA input
     const fetchTokenOutput = async (inputAmount) => {
@@ -133,7 +158,7 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
     };
 
     const handleApprove = async () => {
-        if (!selectedTokenA || !inputValueA) return;
+        if (!selectedTokenA || !inputValueA || !gasPrice) return;
 
         try {
             const tokenAddress = selectedTokenA.address;
@@ -145,11 +170,34 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
             await tokenContract.methods.approve(router.options.address, web3.utils.toWei(inputValueA, 'ether')).send({
                 from: account,
                 gas: 1500000, // Adjust gas limit as needed
-                gasPrice: web3.utils.toWei('20', 'gwei') // Adjust gas price as needed
+                gasPrice: gasPrice // Use fetched gas price
             });
             setIsApproved(true);
         } catch (error) {
             console.error('Error approving token:', error);
+        }
+    };
+
+    const handleSwap = async () => {
+        if (!selectedTokenA || !selectedTokenB || !inputValueA || !account || !gasPrice) return;
+
+        try {
+            const deadline = Math.floor(Date.now() / 1000) + 60 * 20; // 20 minutes from the current time
+
+            await router.methods.swapExactTokensForTokens(
+                web3.utils.toWei(inputValueA, 'ether'), // Amount of token A to swap
+                0, // Minimum amount of token B to receive (set to 0 for now, you can adjust this for slippage)
+                [selectedTokenA.address, selectedTokenB.address], // Path
+                account, // Recipient
+                deadline // Deadline
+            ).send({
+                from: account,
+                gas: 1500000, // Adjust gas limit as needed
+                gasPrice: gasPrice // Use fetched gas price
+            });
+            console.log('Swap successful');
+        } catch (error) {
+            console.error('Error swapping tokens:', error);
         }
     };
 
@@ -192,6 +240,7 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
                         tokenB={selectedTokenB} 
                         inputValueA={inputValueA} 
                         inputValueB={inputValueB}
+                        handleSwap={handleSwap}
                     />
                 </Popup>
 

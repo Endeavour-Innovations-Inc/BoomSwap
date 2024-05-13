@@ -2,7 +2,7 @@ import React from "react";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import Button from '../../Button/Button'; // Adjust the path as needed
 
-const ConfirmSwapPopup = ({ tokenA, tokenB, inputValueA, inputValueB }) => {
+const ConfirmSwapPopup = ({ tokenA, tokenB, inputValueA, inputValueB, handleSwap }) => {
   const popHeadingStyle = {
     display: 'flex',
     justifyContent: 'flex-start',
@@ -58,7 +58,7 @@ const ConfirmSwapPopup = ({ tokenA, tokenB, inputValueA, inputValueB }) => {
           </div>                
           <div className="swapName">{tokenB.name}</div>
         </div> 
-        <Button name="confirm swap" />               
+        <Button name="confirm swap" onClick={handleSwap} />               
       </div>
     </div>
   );
