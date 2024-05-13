@@ -23,7 +23,8 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
     const [buttonPopUpB, setButtonPopUpB] = useState(false);
     const [buttonPopUp2, setButtonPopUp2] = useState(false);
     const [buttonPopUp3, setButtonPopUp3] = useState(false);
-    const [price, setPrice] = useState("Fetching price...")
+    const [price, setPrice] = useState("Fetching price...");
+    const [isApproved, setIsApproved] = useState(false);
 
     const {
         selectedTokenA, setSelectedTokenA,
@@ -42,23 +43,23 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
     // Fetch tokenB amount based on tokenA input
     const fetchTokenOutput = async (inputAmount) => {
         if (!selectedTokenA || !selectedTokenB || !inputAmount) return;
-    
+
         try {
             const amountsOut = await router.methods.getAmountsOut(
                 web3.utils.toWei(inputAmount.toString(), 'ether'), // Convert token amount to Wei
                 [selectedTokenA.address, selectedTokenB.address]
             ).call();
-    
+
             const outputAmountWei = amountsOut[1];
             const outputAmount = web3.utils.fromWei(outputAmountWei, 'ether'); // Convert Wei back to token amount
             setInputValueB(outputAmount);
-    
+
             // Assuming calculation based on fetched data
             const calculatedMinReceived = parseFloat(outputAmount) * 0.99; // Assuming 1% slippage tolerance
             const calculatedPriceImpact = "<0.01%"; // Placeholder value
             const calculatedLPFee = parseFloat(outputAmount) * 0.003; // Assuming 0.3% fee
             const calculatedRoute = `${selectedTokenA.name} > ${selectedTokenB.name}`;
-    
+
             updateSwapDetails({
                 minimumReceived: calculatedMinReceived.toFixed(6).toString(),
                 priceImpact: calculatedPriceImpact,
@@ -70,7 +71,7 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
             setInputValueB('0'); // Reset or handle errors appropriately
         }
     };
-    
+
     useEffect(() => {
         fetchTokenOutput(inputValueA);
     }, [inputValueA, selectedTokenA, selectedTokenB]);
@@ -91,6 +92,18 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
             setButtonPopUp3(true);
         } else {
             connectWallet();
+        }
+    };
+
+    const handleApprove = async () => {
+        if (!selectedTokenA) return;
+
+        try {
+            const tokenContract = new web3.eth.Contract(ERC20ABI, selectedTokenA.address);
+            await tokenContract.methods.approve(router.options.address, web3.utils.toWei(inputValueA, 'ether')).send({ from: account });
+            setIsApproved(true);
+        } catch (error) {
+            console.error('Error approving token:', error);
         }
     };
 
@@ -184,7 +197,24 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
                 />
                 {shouldRenderPriceView && <PriceView tokenA={selectedTokenA} tokenB={selectedTokenB} price={price} />}
                 <SlippageTolerance />
-                <Button name={account ? "swap" : "connect wallet"} onClick={handleSwapOrConnect} />
+                {account ? (
+                    selectedTokenA && selectedTokenB ? (
+                        <div className="button-container">
+                            {!isApproved ? (
+                                <>
+                                    <Button className="half-button" name="approve" onClick={handleApprove} />
+                                    <Button className="half-button" name="swap" disabled />
+                                </>
+                            ) : (
+                                <Button className="full-button" name="swap" onClick={handleSwapOrConnect} />
+                            )}
+                        </div>
+                    ) : (
+                        <Button name="select tokens" disabled />
+                    )
+                ) : (
+                    <Button name="connect wallet" onClick={handleSwapOrConnect} />
+                )}
             </div>
         </>
     );

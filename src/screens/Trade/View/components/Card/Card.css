@@ -248,7 +248,19 @@
     text-align: left;
 }
 
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
 
+.half-button {
+    width: 48%; /* Adjust as needed to ensure there's a small gap between the buttons */
+}
+
+.full-button {
+    width: 100%; /* Full width for single button */
+}
 
 
   

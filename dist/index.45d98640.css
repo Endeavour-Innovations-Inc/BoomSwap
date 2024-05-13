@@ -1587,6 +1587,20 @@ input[type="checkbox"].toggle:disabled + label.toggle-label:after {
   text-align: left;
 }
 
+.button-container {
+  justify-content: space-between;
+  width: 100%;
+  display: flex;
+}
+
+.half-button {
+  width: 48%;
+}
+
+.full-button {
+  width: 100%;
+}
+
 .lcard {
   background-color: var(--colorPrimary);
   border-radius: 10px;
