@@ -1708,11 +1708,12 @@ input[type="checkbox"].toggle:disabled + label.toggle-label:after {
 
 .parentContainer {
   padding: 50px 100px;
+  background: none !important;
 }
 
 #parentCont .collapsible-container {
-  background-color: var(--colorDarkBg);
   display: block;
+  background: none !important;
 }
 
 #parentCont .collapsible {
@@ -1755,6 +1756,7 @@ input[type="checkbox"].toggle:disabled + label.toggle-label:after {
 
 .earningsWallet {
   background-color: var(--colorPrimary2);
+  background: none !important;
 }
 
 .LinksOnly {
@@ -2069,7 +2071,8 @@ input[type="checkbox"].toggle:disabled + label:after {
   padding: 20px 50px;
 }
 
-.textHeading1 {
+.textHeading1, .textHeading2 {
+  color: #fff;
   font-size: 80px;
 }
 

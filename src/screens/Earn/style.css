@@ -4,30 +4,30 @@
     flex-direction: row;
     justify-content: center;
     width: 100%;
-  }
-  
-  .converter .div {
+}
+
+.converter .div {
     background-color: #0e0e11;
     border: 1px none;
     height: 991px;
     overflow: hidden;
     position: relative;
     width: 1440px;
-  }
-  
+}
+
 .parentContainer {
     padding: 50px 100px;
+    background: none !important; /* Remove any background image */
 }
 
 #parentCont .collapsible-container {
     display: block;
-    background-color: var(--colorDarkBg);
-    
+    background: none !important; /* Remove any background image */
 }
 
 #parentCont .collapsible {
     background-color: var(--colorDarkBg);
-    border-bottom: 1px solid  var(--colorPrimary3);
+    border-bottom: 1px solid var(--colorPrimary3);
 }
 
 .series > div {
@@ -65,30 +65,27 @@
 
 .earningsWallet {
     background-color: var(--colorPrimary2);
+    background: none !important; /* Remove any background image */
 }
-
-/* #parentCont .content {
-    padding: 0;
-} */
 
 .LinksOnly {
     width: 100%;
-    
 }
+
 .LinksOnly1 {
     display: flex;
     justify-content: space-between;
-
 }
+
 .LinksOnly1 a {
     text-decoration: none;
     color: var(--colorBrown);
-
 }
 
-.LinksOnly1  {
+.LinksOnly1 {
     padding-bottom: 10px;
 }
+
 .LinksOnly1 svg {
     fill: var(--colorBrown);
     height: 20px;
@@ -141,6 +138,7 @@
     align-self: flex-start;
     padding-bottom: 10px;
 }
+
 .wallet3 .button {
     width: 100%;
 }
@@ -158,6 +156,7 @@
     justify-content: center;
     border-radius: 10px;
 }
+
 .box {
     height: 100px;
     width: 100px;
@@ -175,6 +174,7 @@
     font-size: 16px;
     font-weight: 700;
 }
+
 .span2Earn {
     color: var(--colorBrown);
 }
@@ -185,7 +185,7 @@
 }
 
 .span3C {
-    font-size:  35px;
+    font-size: 35px;
     font-weight: 700;
 }
 

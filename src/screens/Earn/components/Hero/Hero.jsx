@@ -10,10 +10,7 @@ const Hero = () => {
     const [selectedLabel, setSelectedLabel] = useState('live');
     return (
         <>
-        <div className="hero"
-        style={{backgroundImage: `url(${heroBackImg})`,
-         
-        }}>
+        <div className="hero" style={{backgroundImage: `url()})`}}>
             <div className="heroBody">
                 <div className="heroHeading flex mb2">
                     <h1 className="textHeading1">
@@ -22,7 +19,7 @@ const Hero = () => {
                 </div>
                 <div className="heroHeading2 flex">
                     <h2 className="textHeading2">
-                    Stake LP tokens to earn.
+                        Stake LP tokens to earn
                     </h2>
                 </div>
                 <div className="heroItemsMany flex">

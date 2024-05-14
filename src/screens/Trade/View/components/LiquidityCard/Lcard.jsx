@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import {IoRefreshSharp} from "react-icons/io5";
-import {AiOutlineArrowDown, AiTwotoneSetting, AiOutlineQuestionCircle, AiOutlineDown, AiOutlineArrowUp} from "react-icons/ai";
+import { IoRefreshSharp } from "react-icons/io5";
+import { AiOutlineArrowDown, AiTwotoneSetting, AiOutlineQuestionCircle, AiOutlineDown, AiOutlineArrowUp } from "react-icons/ai";
 import { LinearArrowsTransferVertical } from "../../../../../icons/LinearArrowsTransferVertical";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import Popup from "../Popup/Popup";
-import SlippageTolerance from "../Card/components/SlippageTolerance";
-import SettingsPopup from "../Card/components/SettingsPopup";
 import { useWallet } from "../../../../CommonComp/WalletContext";
 import SlippageTolerance from "../Card/components/SlippageTolerance";
 import SettingsPopup from "../Card/components/SettingsPopup";
@@ -14,6 +12,8 @@ import { SelectTokenPopup } from "../Card/components/SelectTokenPopup";
 import ConfirmSwapPopup from "../Card/components/ConfirmSwapPopup";
 import PriceView from "../Card/components/PriceView";
 import { useAppContext } from '../../../Controller/AppContext';
+import Web3 from 'web3'; // Import Web3
+import FactoryABI from '../Card/components/FactoryABI.json'; // Import the Factory ABI
 import "./Lcard.css"
 
 const Lcard = ({ updateShouldRenderParamCard }) => {
@@ -23,6 +23,7 @@ const Lcard = ({ updateShouldRenderParamCard }) => {
     const [buttonPopUpB, setButtonPopUpB] = useState(false);
     const [buttonPopUp2, setButtonPopUp2] = useState(false);
     const [buttonPopUp3, setButtonPopUp3] = useState(false);
+    const [liquidityFound, setLiquidityFound] = useState(false); // State to track liquidity
 
     const {
         selectedTokenA, setSelectedTokenA,
@@ -30,6 +31,9 @@ const Lcard = ({ updateShouldRenderParamCard }) => {
     } = useAppContext();    
 
     const { account, connectWallet } = useWallet();
+
+    const [inputValueA, setInputValueA] = useState(''); // State for the first input field
+    const [inputValueB, setInputValueB] = useState(''); // State for the second input field
 
     const handleClick = () => {
         setClicked(!clicked);
@@ -53,11 +57,14 @@ const Lcard = ({ updateShouldRenderParamCard }) => {
         }
     };
 
+    const handleSwap = async () => {
+        console.log('Executing swap...');
+        // Add the logic for the swap here
+        // This can include interacting with a smart contract using Web3 or Ethers.js
+    };
+
     // Determine if PriceView should be rendered
     const shouldRenderPriceView = selectedTokenA && selectedTokenB;
-
-    const [inputValueA, setInputValueA] = useState(''); // State for the first input field
-    const [inputValueB, setInputValueB] = useState(''); // State for the second input field
 
     // Update whether ParamCard should be rendered
     useEffect(() => {
@@ -70,6 +77,29 @@ const Lcard = ({ updateShouldRenderParamCard }) => {
 
     const togglePopupA = () => setButtonPopUpA(!buttonPopUpA);
     const togglePopupB = () => setButtonPopUpB(!buttonPopUpB);
+
+    useEffect(() => {
+        // Fetch liquidity pair tokens
+        const fetchLiquidityPairs = async () => {
+            if (!account) return;
+
+            const web3 = new Web3(window.ethereum); // Initialize Web3
+            const factoryContract = new web3.eth.Contract(
+                FactoryABI, // Use the imported Factory ABI
+                '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f' // Uniswap V2 Factory address (example)
+            );
+
+            try {
+                const pairAddress = await factoryContract.methods.allPairs(account).call();
+                setLiquidityFound(!!pairAddress);
+            } catch (error) {
+                console.error("Error fetching liquidity pairs:", error);
+                setLiquidityFound(false);
+            }
+        };
+
+        fetchLiquidityPairs();
+    }, [account]);
 
     return (
         <>
@@ -86,6 +116,8 @@ const Lcard = ({ updateShouldRenderParamCard }) => {
                 <Popup trigger={buttonPopUp2} setTrigger={setButtonPopUp2}>
                     <SettingsPopup />
                 </Popup>
+
+                {/* Sample comment */}
                 <Popup trigger={buttonPopUpA} setTrigger={setButtonPopUpA}>
                     <SelectTokenPopup isTokenA={true} closePopup={togglePopupA} />
                 </Popup>
@@ -93,61 +125,30 @@ const Lcard = ({ updateShouldRenderParamCard }) => {
                     <SelectTokenPopup isTokenA={false} closePopup={togglePopupB} />
                 </Popup>
                 <Popup trigger={buttonPopUp3} setTrigger={setButtonPopUp3}>
-                    <ConfirmSwapPopup />
+                    <ConfirmSwapPopup 
+                        tokenA={selectedTokenA} 
+                        tokenB={selectedTokenB} 
+                        inputValueA={inputValueA} 
+                        inputValueB={inputValueB}
+                        handleSwap={handleSwap} // Pass handleSwap function
+                    />
                 </Popup>
 
                 <div className="cardHeadingSecondary">
                     <div className="secondaryText">
-                    Remove liquidity to receive tokens back
+                        Manage your liquidity positions
                     </div>
                 </div>
-                <div className="label" onClick={() => setButtonPopUpA(true)}>
-                    {selectedTokenA ? (
-                        <>
-                            <img src={selectedTokenA.image} alt={selectedTokenA.name} style={{ width: '20px' }} />
-                            <label htmlFor="inputText">{selectedTokenA.name}</label>
-                        </>
-                    ) : (
-                        <label htmlFor="inputText">Select a currency</label>
-                    )}
-                    <AiOutlineDown />
-                </div>
-                <Input 
-                  style={{ textAlign: 'left' }} 
-                  placeholder="0.0" 
-                  numbersOnly={true} 
-                  value={inputValueA}
-                  onChange={(e) => setInputValueA(e.target.value)} 
-                />
 
-                <span className="arrow" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} onClick={handleClick}>
-                    {hover ? <LinearArrowsTransferVertical /> : (clicked ? <AiOutlineArrowUp /> : <AiOutlineArrowDown />)}
-                </span>
-
-                <div className="label" onClick={() => setButtonPopUpB(true)}>
-                    {selectedTokenB ? (
-                        <>
-                            <img src={selectedTokenB.image} alt={selectedTokenB.name} style={{ width: '20px' }} />
-                            <label htmlFor="inputText">{selectedTokenB.name}</label>
-                        </>
-                    ) : (
-                        <label htmlFor="inputText">Select a currency</label>
-                    )}
-                    <AiOutlineDown />
+                {/* Check for liquidity pairs */}
+                <div className="liquidity-status">
+                    {liquidityFound ? "Liquidity pairs found" : "No liquidity found"}
                 </div>
-                <Input 
-                  style={{ textAlign: 'left' }} 
-                  placeholder="0.0" 
-                  numbersOnly={true} 
-                  value={inputValueB}
-                  onChange={(e) => setInputValueB(e.target.value)} 
-                />
-                {shouldRenderPriceView && <PriceView />}
-                <SlippageTolerance />
-                <Button name={account ? "swap" : "connect wallet"} onClick={handleSwapOrConnect} />
+
+                <Button name={account ? "add liquidity" : "connect wallet"} onClick={handleSwapOrConnect} />
             </div>
         </>
     );
 };
 
-export default Lcard
+export default Lcard;
