@@ -1,9 +1,11 @@
-
-.inputs {
-    text-align: left;
+.input-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1; /* Ensure the input container is below popups */
 }
 
-.input input {
+.input-field {
     background-color: var(--colorBodyBackground);
     border: none;
     font-size: 1rem;
@@ -14,6 +16,15 @@
     border-radius: 10px;
 }
 
-.input input:focus {
+.input-field:focus {
     outline: none;
+}
+
+.input-suffix {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: var(--colorPrimary);
+    padding: 5px; /* Optional for better click area */
+    z-index: 2; /* Ensure the suffix is above the input */
 }

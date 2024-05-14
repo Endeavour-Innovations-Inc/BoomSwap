@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import './Input.css'; // Ensure this path matches your project structure
 
 const Input = (props) => {
     const handleInputChange = (e) => {
@@ -13,46 +14,23 @@ const Input = (props) => {
         }
     };
 
-    // Inline styles
-    const inputsStyle = {
-        textAlign: 'left',
-    };
-
-    const inputStyle = {
-        backgroundColor: 'var(--colorBodyBackground)',
-        border: 'none',
-        fontSize: '1rem',
-        color: 'var(--white)',
-        padding: '20px 5px',
-        width: '100%',
-        textAlign: 'right',
-        borderRadius: '10px',
-    };
-
-    const inputFocusStyle = {
-        outline: 'none',
-    };
-
     return (
-        <>
-            <div style={inputsStyle}>
-                <div className="input">
-                    <input 
-                        type="text" 
-                        id="inpuText" 
-                        placeholder={props.placeholder} 
-                        inputMode="decimal"
-                        autoComplete="off" 
-                        autoCorrect="off" 
-                        pattern="^[0-9]*[.,]?[0-9]*$"
-                        value={props.value}  // Use value from props
-                        onChange={handleInputChange}
-                        style={{...inputStyle, ...(props.focused && inputFocusStyle)}}
-                    />
-                </div>            
-            </div>
-        </>
-    )
+        <div className="input-container">
+            <input 
+                type="text" 
+                id="inputText" 
+                placeholder={props.placeholder} 
+                inputMode="decimal"
+                autoComplete="off" 
+                autoCorrect="off" 
+                pattern="^[0-9]*[.,]?[0-9]*$"
+                value={props.value}  // Use value from props
+                onChange={handleInputChange}
+                className="input-field"
+            />
+            {props.suffix && <div className="input-suffix">{props.suffix}</div>}
+        </div>
+    );
 }
 
 export default Input;

@@ -11,7 +11,8 @@ const Popup = (props) => {
         backgroundColor: 'rgba(0, 0, 0, 0.2)',
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        zIndex: 1000, // High z-index to ensure it is above other elements
     };
 
     const popupInnerStyle = {
@@ -20,7 +21,8 @@ const Popup = (props) => {
         width: '100%',
         maxWidth: '400px',
         backgroundColor: 'var(--colorPrimary)',
-        borderRadius: '25px'
+        borderRadius: '25px',
+        zIndex: 1001, // Ensure the inner content is above the overlay
     };
 
     const closeBtnStyle = {
@@ -28,14 +30,15 @@ const Popup = (props) => {
         top: '16px',
         right: '16px',
         cursor: 'pointer',
-        color: 'var(--colorOrangeBright)'
+        color: 'var(--colorOrangeBright)',
+        zIndex: 1002, // Ensure the close button is above everything
     };
 
     return (props.trigger) ? (
         <div style={popupStyle}>
             <div style={popupInnerStyle}>
                 <span style={closeBtnStyle}>
-                    <AiOutlineClose onClick={() => {props.setTrigger(false)}} />
+                    <AiOutlineClose onClick={() => { props.setTrigger(false) }} />
                 </span>                
                 {props.children}
             </div>

@@ -47,7 +47,6 @@ const fetchGasPrice = async () => {
     } catch (error) {
         console.error('Error fetching gas price from EthGasStation:', error);
         // Fallback to a default value
-        // temporary solution
         return Web3.utils.toWei('30.005', 'gwei');
     }
 };
@@ -214,6 +213,10 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
     const togglePopupSettings = () => setButtonPopUp2(!buttonPopUp2);
     const togglePopupConfirm = () => setButtonPopUp3(!buttonPopUp3);
 
+    const handleMaxClick = () => {
+        setInputValueA(balance);
+    };
+
     return (
         <>
             <div className="card">
@@ -266,7 +269,8 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
                   placeholder="0.0" 
                   numbersOnly={true} 
                   value={inputValueA}
-                  onChange={(e) => setInputValueA(e.target.value)} 
+                  onChange={(e) => setInputValueA(e.target.value)}
+                  suffix={<button onClick={handleMaxClick}>Max</button>} // Add Max button
                 />
                 <div>
                     {balance !== null && <p>Balance: {balance} {selectedTokenA ? selectedTokenA.name : ''}</p>}
