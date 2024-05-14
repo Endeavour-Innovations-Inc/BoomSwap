@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { ethers } from "ethers";
 import Input from '../../Input/Input'; // Adjust the path as needed
 import croImg from "../../images/cro.png";
 import TokenView from "./TokenView";
@@ -6,6 +7,7 @@ import { useAppContext } from '../../../../Controller/AppContext'; // Adjust the
 
 export const SelectTokenPopup = ({ isTokenA, closePopup }) => {
   const { selectedTokenA, setSelectedTokenA, selectedTokenB, setSelectedTokenB } = useAppContext();
+  const [tokenBalances, setTokenBalances] = useState({});
 
   const handleTokenSelect = (tokenData) => {
     console.log("Selecting token:", tokenData);
@@ -24,6 +26,37 @@ export const SelectTokenPopup = ({ isTokenA, closePopup }) => {
     }
     closePopup(); // Close the popup after selection
   };
+
+  useEffect(() => {
+    const fetchTokenBalances = async () => {
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      const address = await signer.getAddress();
+
+      // Sample token data (you should replace this with your actual token data)
+      const tokens = [
+        { name: 'ELON', image: croImg, price: '0.000010', address: '0xe0339c80ffde91f3e20494df88d4206d86024cdf' },
+        { name: 'SHIB', image: croImg, price: '0.000020', address: '0x6f8a06447ff6fcf75d803135a7de15ce88c1d4ec' },
+        // Add more tokens as needed
+      ];
+
+      const erc20ABI = [
+        "function balanceOf(address owner) view returns (uint256)"
+      ];
+
+      let balances = {};
+
+      for (const token of tokens) {
+        const contract = new ethers.Contract(token.address, erc20ABI, provider);
+        const balance = await contract.balanceOf(address);
+        balances[token.name] = ethers.utils.formatUnits(balance, 18); // Assuming tokens have 18 decimals, adjust as needed
+      }
+
+      setTokenBalances(balances);
+    };
+
+    fetchTokenBalances();
+  }, []);
 
   const popHeadingStyle = {
     display: 'flex',
@@ -71,7 +104,8 @@ export const SelectTokenPopup = ({ isTokenA, closePopup }) => {
               key={index}
               name={token.name}
               croImg={token.image}
-              price={token.price}
+              price={tokenBalances[token.name]} // Pass the token balance as price
+              balance={tokenBalances[token.name]} // Also pass the token balance
               onClick={() => handleTokenSelect(token)}
             />
           ))}

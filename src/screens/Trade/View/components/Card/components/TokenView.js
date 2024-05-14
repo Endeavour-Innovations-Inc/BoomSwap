@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TokenView = ({ name, croImg, price, onClick }) => {
+const TokenView = ({ name, croImg, price, balance, onClick }) => {
   const tokenContainerStyle = {
     display: 'flex',
     alignItems: 'center',
@@ -43,13 +43,10 @@ const TokenView = ({ name, croImg, price, onClick }) => {
           <div style={tokenNonFadeStyle} className="tokenNonFade">
             <span>{name}</span> {/* Use name prop here */}
           </div>
-          <div style={tokenFadeStyle} className="tokenFade">
-            <span>{name}</span> {/* And here */}
-          </div>
         </div>
       </div>
       <div className="tokenPrice">
-        <span>{price}</span>
+        <span>{price}</span> {/* Display balance instead of hardcoded price */}
       </div>
     </div>
   );

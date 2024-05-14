@@ -47,7 +47,8 @@ const fetchGasPrice = async () => {
     } catch (error) {
         console.error('Error fetching gas price from EthGasStation:', error);
         // Fallback to a default value
-        return Web3.utils.toWei('20', 'gwei');
+        // temporary solution
+        return Web3.utils.toWei('30.005', 'gwei');
     }
 };
 
@@ -169,7 +170,7 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
 
             await tokenContract.methods.approve(router.options.address, web3.utils.toWei(inputValueA, 'ether')).send({
                 from: account,
-                gas: 1500000, // Adjust gas limit as needed
+                gas: 3000000, // Adjust gas limit as needed
                 gasPrice: gasPrice // Use fetched gas price
             });
             setIsApproved(true);
@@ -192,7 +193,7 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
                 deadline // Deadline
             ).send({
                 from: account,
-                gas: 1500000, // Adjust gas limit as needed
+                gas: 3000000, // Adjust gas limit as needed
                 gasPrice: gasPrice // Use fetched gas price
             });
             console.log('Swap successful');
