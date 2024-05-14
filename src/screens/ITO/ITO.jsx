@@ -13,7 +13,8 @@ export const ITO = () => {
     <div className="converter">
       <div className="div">
         <CommonHeader />
-        <h1 className="ito-heading">Initial Token Offering</h1>
+        <h3 className="textHeading3">Coming Soon!</h3>
+        {/*
         <div style={{ marginBottom: '20px' }}>
           <SlideSwitch active={activeView} onToggle={setActiveView} />
         </div>
@@ -22,10 +23,10 @@ export const ITO = () => {
           <ITOcard /> : 
           <>
             <Icard />
-            <Icard /> {/* Add more Icard components as needed */}
+            <Icard /> 
           </>
         }
-        
+        */}{/* Add more Icard components as needed */}
         <CommonFooter />
       </div>
     </div>

@@ -16,9 +16,11 @@ export const Earn = () => {
     <div className="converter">
       <div className="div">
         <CommonHeader /> {/* Header */}
+        <h3 className="textHeading3">Coming Soon!</h3>
 
-        <Hero /> {/* Upper Element */}
+        {/* <Hero /> */}  {/* Upper Element */}
 
+        {/*
         <div id="parentCont" className="parentContainer">
           {times.map((_, index) => {
             return (
@@ -153,7 +155,7 @@ export const Earn = () => {
             );
           })}
         </div>
-
+        */}
         <CommonFooter /> {/* Footer */}
       </div>
     </div>

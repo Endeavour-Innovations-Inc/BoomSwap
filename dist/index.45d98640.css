@@ -1821,6 +1821,13 @@ input[type="checkbox"].toggle:disabled + label.toggle-label:after {
   font-weight: 800;
 }
 
+.textHeading3 {
+  color: #fff;
+  padding: 100px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
 .mmfAmt {
   align-self: flex-start;
 }
@@ -2077,36 +2084,42 @@ input[type="checkbox"].toggle:disabled + label:after {
 }
 
 .heroItemsMany {
+  color: #fff;
   justify-content: space-between;
   margin-top: 100px;
 }
 
 .heroItemsLeft {
+  color: #fff;
   gap: 30px;
 }
 
 .heroItemsLeft span {
+  color: #fff;
   font-weight: 700;
 }
 
 .heroItemsLeft svg {
-  fill: var(--colorBrown);
+  fill: #fff;
   width: 30px;
   height: 30px;
 }
 
 .heroItemsRight input {
   text-align: left;
+  color: #fff;
 }
 
 .liveFinished {
   background-color: var(--colorBrightGrey);
+  color: #fff;
   border-radius: 20px;
   padding: 10px 0;
 }
 
 .round {
   cursor: pointer;
+  color: #fff;
   border-radius: 20px;
   padding: 10px 15px;
 }
@@ -2118,44 +2131,48 @@ input[type="checkbox"].toggle:disabled + label:after {
 
 .selected {
   background-color: var(--colorBrownLight);
+  color: #fff;
 }
 
 .heroItemsRight {
+  color: #fff;
   justify-content: space-between;
   gap: 50px;
 }
 
 #sort .collapsible {
   background-color: var(--colorBrightGrey);
+  color: #fff;
   height: 10px;
 }
 
 .rightH1 {
+  color: #fff;
   justify-content: space-between;
 }
 
 .rightH2 {
+  color: #fff;
   justify-content: space-between;
   gap: 10px;
 }
 
-.spanSortBy {
-  color: var(--colorLightPink);
-}
-
-.spanSort {
-  color: var(--colorBrownLight);
+.spanSortBy, .spanSort {
+  color: #fff;
 }
 
 .sortUl {
   text-align: left;
+  color: #fff;
 }
 
 .sortUl li {
+  color: #fff;
   padding: 12px;
 }
 
 #inputHero input {
+  color: #fff;
   border-radius: 10px;
   height: 5px;
 }
@@ -2751,6 +2768,13 @@ button:disabled, button[disabled] {
   margin-top: 1px;
   padding: 15px 0;
   display: flex;
+}
+
+.textHeading3 {
+  color: #fff;
+  padding: 100px;
+  font-size: 14px;
+  font-weight: 800;
 }
 
 .ITOcard {

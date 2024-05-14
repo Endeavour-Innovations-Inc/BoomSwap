@@ -2,7 +2,7 @@
     height: 65vh;
     width: 100%;
     background-size: 100%;
-    color: var(--colorWhite);
+    color: var(--colorWhite); /* Make sure the text color is white */
 }
 
 .heroBody {
@@ -11,49 +11,54 @@
 
 .textHeading1 {
     font-size: 80px;
-    color: white;
+    color: white; /* Ensure the heading text is white */
 }
 
 .textHeading2 {
     font-size: 80px;
-    color: white;
+    color: white; /* Ensure the heading text is white */
 }
 
 .heroItemsMany {
     justify-content: space-between;
     margin-top: 100px;
+    color: white; /* Ensure the text is white */
 }
 
 .heroItemsLeft {
     gap: 30px;
+    color: white; /* Ensure the text is white */
 }
 
 .heroItemsLeft span {
     font-weight: 700;
+    color: white; /* Ensure the span text is white */
 }
-.heroItemsLeft svg{
+
+.heroItemsLeft svg {
     height: 30px;
-    width: 30px;    
-    fill: var(--colorBrown);
+    width: 30px;
+    fill: white; /* Ensure the SVG fill is white */
 }
 
 .heroItemsRight input {
     text-align: left;
+    color: white; /* Ensure the input text is white */
 }
 
 .liveFinished {
     background-color: var(--colorBrightGrey);
     padding: 10px 0px;
     border-radius: 20px;
+    color: white; /* Ensure the text is white */
 }
 
 .round {
     padding: 10px 15px 10px 15px;
     border-radius: 20px;
     cursor: pointer;
+    color: white; /* Ensure the text is white */
 }
-
-/* ... (existing styles) */
 
 /* Background transition effect */
 .live, .finished {
@@ -64,48 +69,52 @@
 /* Style for selected label */
 .selected {
     background-color: var(--colorBrownLight);
+    color: white; /* Ensure the selected text is white */
 }
 
 .heroItemsRight {
     justify-content: space-between;
     gap: 50px;
+    color: white; /* Ensure the text is white */
 }
 
 #sort .collapsible {
     background-color: var(--colorBrightGrey);
     height: 10px;
+    color: white; /* Ensure the text is white */
 }
-
 
 .rightH1 {
     justify-content: space-between;
+    color: white; /* Ensure the text is white */
 }
 
 .rightH2 {
     justify-content: space-between;
     gap: 10px;
+    color: white; /* Ensure the text is white */
 }
 
 .spanSortBy {
-    color: var(--colorLightPink);
-    
+    color: white; /* Ensure the text is white */
 }
 
 .spanSort {
-    color: var(--colorBrownLight);
+    color: white; /* Ensure the text is white */
 }
 
 .sortUl {
     text-align: left;
+    color: white; /* Ensure the text is white */
 }
 
 .sortUl li {
-    padding:12px 12px;
+    padding: 12px 12px;
+    color: white; /* Ensure the list items text is white */
 }
-
-
 
 #inputHero input {
     border-radius: 10px;
     height: 5px;
+    color: white; /* Ensure the input text is white */
 }

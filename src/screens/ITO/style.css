@@ -592,5 +592,12 @@
     padding: 15px 0;
     margin-top: 1px; /* Replace [YourValue] with an appropriate value */
 }
+
+.textHeading3 {
+  font-size: 14px;
+  font-weight: 800;
+  color: white;
+  padding: 100px;
+}
   
   

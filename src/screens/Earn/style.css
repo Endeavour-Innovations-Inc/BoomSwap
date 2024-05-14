@@ -130,6 +130,13 @@
     font-weight: 800;
 }
 
+.textHeading3 {
+    font-size: 14px;
+    font-weight: 800;
+    color: white;
+    padding: 100px;
+}
+
 .mmfAmt {
     align-self: flex-start;
 }
