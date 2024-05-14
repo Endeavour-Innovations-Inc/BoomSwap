@@ -16,6 +16,18 @@ export const WalletProvider = ({ children }) => {
       setIsCorrectNetwork(parseInt(chainId, 16) === parseInt(POLYGON_MAINNET_ID, 16));
     };
 
+    const checkIfWalletIsConnected = async () => {
+      if (window.ethereum) {
+        const accounts = await window.ethereum.request({ method: 'eth_accounts' });
+        if (accounts.length > 0) {
+          setAccount(accounts[0]);
+          handleChainChanged(window.ethereum.chainId);
+        }
+      }
+    };
+
+    checkIfWalletIsConnected();
+
     if (window.ethereum) {
       window.ethereum.on('chainChanged', handleChainChanged);
     }
@@ -77,7 +89,7 @@ export const WalletProvider = ({ children }) => {
       alert('Please install MetaMask to use this feature!');
       setIsCorrectNetwork(false);
     }
-  };  
+  };
 
   return (
     <WalletContext.Provider value={{ account, connectWallet, isCorrectNetwork }}>
