@@ -121,7 +121,7 @@ const NavbarButtons = () => { // <-- Include the props argument
                           width: '100%',
                           textAlign: 'left'
                       }}
-                      onClick={() => window.open('https://wsu-1.gitbook.io/untitled/', '_blank')}
+                      onClick={() => window.open('https://boomswap-1.gitbook.io/boomswap/', '_blank')}
                   >
                       Docs
                   </button>
