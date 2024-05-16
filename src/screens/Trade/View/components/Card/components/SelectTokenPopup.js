@@ -61,6 +61,7 @@ export const SelectTokenPopup = ({ isTokenA, closePopup }) => {
   const popHeadingStyle = {
     display: 'flex',
     justifyContent: 'flex-start',
+    color: 'white', // Set text color to white
   };
 
   const popHeadingTextStyle = {
@@ -69,6 +70,7 @@ export const SelectTokenPopup = ({ isTokenA, closePopup }) => {
 
   const popBodyStyle = {
     textAlign: 'left',
+    color: 'white', // Set text color to white
   };
 
   const tokensStyle = {
@@ -79,6 +81,7 @@ export const SelectTokenPopup = ({ isTokenA, closePopup }) => {
     padding: '30px 0',
     maxHeight: '400px',
     overflowY: 'auto',
+    color: 'white', // Set text color to white
   };
 
   // Sample token data (you should replace this with your actual token data)
@@ -96,7 +99,7 @@ export const SelectTokenPopup = ({ isTokenA, closePopup }) => {
       <div className="popBody" style={popBodyStyle}>
         <Input 
           placeholder="Search name or paste address"
-          style={{ textAlign: 'left' }}
+          style={{ textAlign: 'left', color: 'white' }} // Set text color to white
         />
         <div style={tokensStyle} className="tokens">
           {tokens.map((token, index) => (

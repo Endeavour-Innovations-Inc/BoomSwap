@@ -6,6 +6,7 @@ const ConfirmSwapPopup = ({ tokenA, tokenB, inputValueA, inputValueB, handleSwap
   const popHeadingStyle = {
     display: 'flex',
     justifyContent: 'flex-start',
+    color: 'white', // Set text color to white
   };
 
   const popHeadingTextStyle = {
@@ -14,6 +15,7 @@ const ConfirmSwapPopup = ({ tokenA, tokenB, inputValueA, inputValueB, handleSwap
 
   const popBodyStyle = {
     textAlign: 'left',
+    color: 'white', // Set text color to white
   };
 
   const swapStyle = {
@@ -22,6 +24,7 @@ const ConfirmSwapPopup = ({ tokenA, tokenB, inputValueA, inputValueB, handleSwap
     alignItems: 'center',
     fontWeight: 500,
     fontSize: '17px',
+    color: 'white', // Set text color to white
   };
 
   const priceImgStyle = {
@@ -29,6 +32,7 @@ const ConfirmSwapPopup = ({ tokenA, tokenB, inputValueA, inputValueB, handleSwap
     alignItems: 'center',
     justifyContent: 'space-between',
     gap: '20px',
+    color: 'white', // Set text color to white
   };
 
   const priceImgImgStyle = {
@@ -48,7 +52,7 @@ const ConfirmSwapPopup = ({ tokenA, tokenB, inputValueA, inputValueB, handleSwap
           </div>                
           <div className="swapName">{tokenA.name}</div>
         </div>  
-        <div className="arrDown">
+        <div className="arrDown" style={{ color: 'white' }}> {/* Set arrow color to white */}
           <AiOutlineArrowDown />
         </div>     
         <div style={swapStyle} className="swap">
