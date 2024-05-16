@@ -43,3 +43,13 @@
 .secondaryText {
     color: var(--colorLightGrey);
 }
+
+/* Lcard.css */
+.liquidity-status {
+    padding: 20px 0;
+}
+
+.no-liquidity {
+    padding-top: 135px;
+    padding-bottom: 135px;
+}

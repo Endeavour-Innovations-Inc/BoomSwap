@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { IoRefreshSharp } from "react-icons/io5";
-import { AiOutlineArrowDown, AiTwotoneSetting, AiOutlineQuestionCircle, AiOutlineDown, AiOutlineArrowUp } from "react-icons/ai";
-import { LinearArrowsTransferVertical } from "../../../../../icons/LinearArrowsTransferVertical";
+import { AiTwotoneSetting } from "react-icons/ai";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import Popup from "../Popup/Popup";
@@ -14,7 +13,7 @@ import PriceView from "../Card/components/PriceView";
 import { useAppContext } from '../../../Controller/AppContext';
 import Web3 from 'web3'; // Import Web3
 import FactoryABI from '../Card/components/FactoryABI.json'; // Import the Factory ABI
-import "./Lcard.css"
+import "./Lcard.css";
 
 const Lcard = ({ updateShouldRenderParamCard }) => {
     const [hover, setHover] = useState(false);
@@ -142,7 +141,7 @@ const Lcard = ({ updateShouldRenderParamCard }) => {
 
                 {/* Check for liquidity pairs */}
                 <div className="liquidity-status">
-                    {liquidityFound ? "Liquidity pairs found" : "No liquidity found"}
+                    {liquidityFound ? "Liquidity pairs found" : <p className="no-liquidity">No liquidity found</p>}
                 </div>
 
                 <Button name={account ? "add liquidity" : "connect wallet"} onClick={handleSwapOrConnect} />

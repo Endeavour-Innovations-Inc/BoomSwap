@@ -1680,6 +1680,15 @@ input[type="checkbox"].toggle:disabled + label.toggle-label:after {
   color: var(--colorLightGrey);
 }
 
+.liquidity-status {
+  padding: 20px 0;
+}
+
+.no-liquidity {
+  padding-top: 135px;
+  padding-bottom: 135px;
+}
+
 .param {
   background-color: var(--colorPrimary);
   border-radius: 10px;
