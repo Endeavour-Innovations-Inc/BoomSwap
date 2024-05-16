@@ -134,9 +134,16 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
     };
 
     useEffect(() => {
-        fetchTokenOutput(inputValueA);
-        fetchTokenBalance();
-    }, [inputValueA, selectedTokenA, selectedTokenB, account]);
+        if (account && selectedTokenA) {
+            fetchTokenBalance();
+        }
+    }, [account, selectedTokenA]);
+
+    useEffect(() => {
+        if (inputValueA) {
+            fetchTokenOutput(inputValueA);
+        }
+    }, [inputValueA, selectedTokenA, selectedTokenB]);
 
     const handleClick = () => {
         setClicked(!clicked);
@@ -302,16 +309,20 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
                 <SlippageTolerance />
                 {account ? (
                     selectedTokenA && selectedTokenB ? (
-                        <div className="button-container">
-                            {!isApproved ? (
-                                <>
-                                    <Button className="half-button" name="approve" onClick={handleApprove} />
-                                    <Button className="half-button" name="swap" disabled />
-                                </>
-                            ) : (
-                                <Button className="full-button" name="swap" onClick={handleSwapOrConnect} />
-                            )}
-                        </div>
+                        inputValueA && inputValueB ? (
+                            <div className="button-container">
+                                {!isApproved ? (
+                                    <>
+                                        <Button className="half-button" name="approve" onClick={handleApprove} />
+                                        <Button className="half-button" name="swap" disabled />
+                                    </>
+                                ) : (
+                                    <Button className="full-button" name="swap" onClick={handleSwapOrConnect} />
+                                )}
+                            </div>
+                        ) : (
+                            <Button name="enter amount" disabled />
+                        )
                     ) : (
                         <Button name="select tokens" disabled />
                     )
