@@ -87,6 +87,7 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
     const [isApproved, setIsApproved] = useState(false);
     const [balance, setBalance] = useState('');
     const [gasPrice, setGasPrice] = useState(null);
+    const [tokenBalances, setTokenBalances] = useState({}); // New state to store token balances
 
     const {
         selectedTokenA, setSelectedTokenA,
@@ -246,7 +247,9 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
     const togglePopupConfirm = () => setButtonPopUp3(!buttonPopUp3);
 
     const handleMaxClick = () => {
-        setInputValueA(balance);
+        if (selectedTokenA) {
+            setInputValueA(tokenBalances[selectedTokenA.name] || ''); // Use the balance of the selected token
+        }
     };
 
     return (
@@ -265,10 +268,10 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
                     <SettingsPopup />
                 </Popup>
                 <Popup trigger={buttonPopUpA} setTrigger={setButtonPopUpA}>
-                    <SelectTokenPopup isTokenA={true} closePopup={togglePopupA} />
+                    <SelectTokenPopup isTokenA={true} closePopup={togglePopupA} setTokenBalances={setTokenBalances} /> {/* Pass setTokenBalances */}
                 </Popup>
                 <Popup trigger={buttonPopUpB} setTrigger={setButtonPopUpB}>
-                    <SelectTokenPopup isTokenA={false} closePopup={togglePopupB} />
+                    <SelectTokenPopup isTokenA={false} closePopup={togglePopupB} setTokenBalances={setTokenBalances} /> {/* Pass setTokenBalances */}
                 </Popup>
                 <Popup trigger={buttonPopUp3} setTrigger={setButtonPopUp3}>
                     <ConfirmSwapPopup 

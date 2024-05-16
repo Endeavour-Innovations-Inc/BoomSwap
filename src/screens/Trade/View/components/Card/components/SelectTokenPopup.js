@@ -5,9 +5,9 @@ import croImg from "../../images/cro.png";
 import TokenView from "./TokenView";
 import { useAppContext } from '../../../../Controller/AppContext'; // Adjust the import path as needed
 
-export const SelectTokenPopup = ({ isTokenA, closePopup }) => {
+export const SelectTokenPopup = ({ isTokenA, closePopup, setTokenBalances }) => { // Added setTokenBalances
   const { selectedTokenA, setSelectedTokenA, selectedTokenB, setSelectedTokenB } = useAppContext();
-  const [tokenBalances, setTokenBalances] = useState({});
+  const [localTokenBalances, setLocalTokenBalances] = useState({});
 
   const handleTokenSelect = (tokenData) => {
     console.log("Selecting token:", tokenData);
@@ -52,11 +52,12 @@ export const SelectTokenPopup = ({ isTokenA, closePopup }) => {
         balances[token.name] = ethers.utils.formatUnits(balance, 18); // Assuming tokens have 18 decimals, adjust as needed
       }
 
-      setTokenBalances(balances);
+      setLocalTokenBalances(balances);
+      setTokenBalances(balances); // Pass the balances to the parent component
     };
 
     fetchTokenBalances();
-  }, []);
+  }, [setTokenBalances]);
 
   const popHeadingStyle = {
     display: 'flex',
@@ -107,8 +108,8 @@ export const SelectTokenPopup = ({ isTokenA, closePopup }) => {
               key={index}
               name={token.name}
               croImg={token.image}
-              price={tokenBalances[token.name]} // Pass the token balance as price
-              balance={tokenBalances[token.name]} // Also pass the token balance
+              price={localTokenBalances[token.name]} // Pass the token balance as price
+              balance={localTokenBalances[token.name]} // Also pass the token balance
               onClick={() => handleTokenSelect(token)}
             />
           ))}
