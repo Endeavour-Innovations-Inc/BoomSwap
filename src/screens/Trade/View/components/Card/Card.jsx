@@ -41,9 +41,29 @@ const fetchGasPrice = async () => {
     try {
         if (typeof window.ethereum !== 'undefined') {
             const web3 = new Web3(window.ethereum);
-            const gasPrice = await window.ethereum.request({ method: 'eth_gasPrice' });
-            console.log(`Gas Price from MetaMask: ${gasPrice} wei`);
-            return gasPrice;
+
+            // Fetch the base gas price
+            const gasPriceHex = await window.ethereum.request({ method: 'eth_gasPrice' });
+            console.log(`Gas Price from MetaMask (hex): ${gasPriceHex} wei`);
+
+            // Convert hex to a number
+            const gasPriceWei = parseInt(gasPriceHex, 16);
+            console.log(`Gas Price from MetaMask (decimal): ${gasPriceWei} wei`);
+
+            // Multiply the gas price by 1.2 to make it more aggressive
+            const aggressiveFactor = 1.2;
+            const aggressiveGasPriceWei = Math.floor(gasPriceWei * aggressiveFactor);
+            console.log(`Aggressive Gas Price (decimal): ${aggressiveGasPriceWei} wei`);
+
+            // Convert the result to hex
+            const aggressiveGasPriceHex = web3.utils.toHex(aggressiveGasPriceWei);
+            console.log(`Aggressive Gas Price (hex): ${aggressiveGasPriceHex} wei`);
+
+            // Convert to Gwei for readability
+            const aggressiveGasPriceGwei = web3.utils.fromWei(aggressiveGasPriceHex, 'gwei');
+            console.log(`Aggressive Gas Price from MetaMask: ${aggressiveGasPriceGwei} gwei`);
+
+            return aggressiveGasPriceHex;
         } else {
             console.error('MetaMask is not installed');
             // Fallback to a default value
