@@ -59,7 +59,7 @@ export const Home = () => {
                   </div>
                 </div>
                 <div className="frame">
-                  <h1 className="text-wrapper">Welcome to BoomFinance ICO</h1>
+                  <h1 className="text-wrapper">Welcome to BoomSwap ICO</h1>
                   <p className="we-provide-software">
                   Welcome to Boom Finance: Your Next-Gen DeFi Companion. As an independent DeFi project, we're dedicated to offering sophisticated financial tools. Elevate your DeFi experience and harness maximum utility with the expertise of the Top 1 Seattle Blockchain Development company.
                   </p>
@@ -130,9 +130,9 @@ export const Home = () => {
           <div className="overlap-group">
             <div className="ellipse" />
             <div className="frame-3">
-              <h1 className="h-1">Welcome to BoomFinance ICO</h1>
+              <h1 className="h-1">Welcome to BoomSwap ICO</h1>
               <p className="we-provide-software">
-                Welcome to Boom Finance: Your Next-Gen DeFi Companion. As an independent DeFi project, we're dedicated to offering sophisticated financial tools. Elevate your DeFi experience and harness maximum utility with the expertise of the Top 1 Seattle Blockchain Development company.
+                Welcome to BoomSwap: Your Next-Gen DeFi Companion. As an independent DeFi project, we're dedicated to offering sophisticated financial tools. Elevate your DeFi experience and harness maximum utility with the expertise of the Top 1 Seattle Blockchain Development company.
               </p>
               <div className="button-2">
                 <AddToMetamask />
