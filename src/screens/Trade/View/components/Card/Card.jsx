@@ -16,6 +16,7 @@ import "./Card.css";
 import RouterABI from './components/RouterABI.json';
 import ERC20ABI from './components/ERC20ABI.json'; // Make sure you have the ERC20 ABI
 import Web3 from 'web3';
+import BN from 'bn.js'; // Import BN directly from the bn.js library
 
 const getImplementationAddress = async (proxyAddress) => {
     const web3 = new Web3(window.ethereum);
@@ -38,14 +39,18 @@ const getImplementationAddress = async (proxyAddress) => {
 
 const fetchGasPrice = async () => {
     try {
-        const response = await fetch('https://ethgasstation.info/api/ethgasAPI.json?api-key=YOUR_API_KEY');
-        const data = await response.json();
-        // EthGasStation returns gas prices in gwei * 10, so divide by 10 to get the price in gwei
-        const averageGasPrice = data.average / 10;
-        console.log(`Average Gas Price: ${averageGasPrice} gwei`);
-        return Web3.utils.toWei(averageGasPrice.toString(), 'gwei');
+        if (typeof window.ethereum !== 'undefined') {
+            const web3 = new Web3(window.ethereum);
+            const gasPrice = await window.ethereum.request({ method: 'eth_gasPrice' });
+            console.log(`Gas Price from MetaMask: ${gasPrice} wei`);
+            return gasPrice;
+        } else {
+            console.error('MetaMask is not installed');
+            // Fallback to a default value
+            return Web3.utils.toWei('30.005', 'gwei');
+        }
     } catch (error) {
-        console.error('Error fetching gas price from EthGasStation:', error);
+        console.error('Error fetching gas price from MetaMask:', error);
         // Fallback to a default value
         return Web3.utils.toWei('30.005', 'gwei');
     }
@@ -60,7 +65,7 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
     const [buttonPopUp3, setButtonPopUp3] = useState(false);
     const [price, setPrice] = useState("Fetching price...");
     const [isApproved, setIsApproved] = useState(false);
-    const [balance, setBalance] = useState(null);
+    const [balance, setBalance] = useState('');
     const [gasPrice, setGasPrice] = useState(null);
 
     const {
@@ -129,7 +134,7 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
             setBalance(balance);
         } catch (error) {
             console.error('Error fetching balance:', error);
-            setBalance(null);
+            setBalance('');
         }
     };
 
@@ -275,12 +280,12 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
                   style={{ textAlign: 'left' }} 
                   placeholder="0.0" 
                   numbersOnly={true} 
-                  value={inputValueA}
+                  value={inputValueA || ''} // Ensure value is never null
                   onChange={(e) => setInputValueA(e.target.value)}
                   suffix={<button onClick={handleMaxClick}>Max</button>} // Add Max button
                 />
                 <div>
-                    {balance !== null && <p>Balance: {balance} {selectedTokenA ? selectedTokenA.name : ''}</p>}
+                    {balance !== '' && <p>Balance: {balance} {selectedTokenA ? selectedTokenA.name : ''}</p>}
                 </div>
 
                 <span className="arrow" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} onClick={handleClick}>
@@ -302,7 +307,7 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
                   style={{ textAlign: 'left' }} 
                   placeholder="0.0" 
                   numbersOnly={true} 
-                  value={inputValueB}
+                  value={inputValueB || ''} // Ensure value is never null
                   onChange={(e) => setInputValueB(e.target.value)} 
                 />
                 {shouldRenderPriceView && <PriceView tokenA={selectedTokenA} tokenB={selectedTokenB} price={price} />}
