@@ -15,7 +15,7 @@ import Web3 from 'web3'; // Import Web3
 import FactoryABI from '../Card/components/FactoryABI.json'; // Import the Factory ABI
 import "./Lcard.css";
 
-const Lcard = ({ updateShouldRenderParamCard }) => {
+const Lcard = ({ updateShouldRenderParamCard, onAddLiquidity }) => { // Add onAddLiquidity prop
     const [hover, setHover] = useState(false);
     const [clicked, setClicked] = useState(false);
     const [buttonPopUpA, setButtonPopUpA] = useState(false);
@@ -144,7 +144,7 @@ const Lcard = ({ updateShouldRenderParamCard }) => {
                     {liquidityFound ? "Liquidity pairs found" : <p className="no-liquidity">No liquidity found</p>}
                 </div>
 
-                <Button name={account ? "add liquidity" : "connect wallet"} onClick={handleSwapOrConnect} />
+                <Button name={account ? "add liquidity" : "connect wallet"} onClick={account ? onAddLiquidity : handleSwapOrConnect} />
             </div>
         </>
     );

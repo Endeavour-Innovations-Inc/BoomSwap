@@ -1633,6 +1633,274 @@ input[type="checkbox"].toggle:disabled + label.toggle-label:after {
   width: 100%;
 }
 
+.card {
+  background-color: var(--colorPrimary);
+  border-radius: 10px;
+  width: 428px;
+  height: 500px;
+  padding: 10px 30px;
+  position: relative;
+}
+
+.card input {
+  text-align: left !important;
+}
+
+.coinImg img {
+  width: 150px;
+}
+
+.coinImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-45%, -34%);
+}
+
+.cardHeadingPrimary {
+  color: var(--white);
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+
+.Primary1 {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-size: 1rem;
+  display: flex;
+}
+
+.Primary1 h2 {
+  margin: 5px 0;
+  font-size: 20px;
+}
+
+.Primary2 {
+  cursor: pointer;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 1.3rem;
+  display: flex;
+}
+
+.cardHeadingSecondary {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.secondaryText {
+  color: var(--colorLightGrey);
+}
+
+.arrow {
+  background-color: var(--colorBodyBackground) !important;
+  color: var(--white) !important;
+  border-radius: 100% !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 30px !important;
+  height: 30px !important;
+  margin: 20px auto !important;
+  font-size: 1rem !important;
+  display: flex !important;
+  position: static !important;
+}
+
+.arrow:hover {
+  color: #fff;
+}
+
+.popHeading {
+  justify-content: flex-start;
+  display: flex;
+}
+
+.popHeadingText {
+  font-size: 20px;
+}
+
+.popBody input {
+  text-align: left !important;
+}
+
+.popBody input:focus {
+  border: 1px solid var(--colorOrangeBright);
+}
+
+.label {
+  color: var(--white);
+  cursor: pointer;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+.label label {
+  cursor: pointer;
+  font-size: .95rem;
+  font-weight: 700;
+}
+
+.label svg {
+  stroke-width: 60px;
+  height: .8rem;
+  margin-left: 5px;
+  font-weight: 700;
+}
+
+.tokens {
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+  display: flex;
+}
+
+.tokenImgName {
+  cursor: pointer;
+  justify-content: space-between;
+  gap: 20px;
+  display: flex;
+}
+
+.tokenImg img {
+  width: 30px;
+  height: 30px;
+}
+
+.tokenNonFade span {
+  font-weight: 700;
+}
+
+.tokenFade span {
+  color: var(--colorLightGrey);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.slipCaption {
+  text-align: left;
+}
+
+.question {
+  color: var(--colorLightGrey);
+  margin-left: 10px;
+}
+
+.settingsTxt {
+  font-weight: 500;
+}
+
+.tolerancePercent {
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 30px 0;
+  display: flex;
+}
+
+.tolerancePercent span:not(:last-child) {
+  background-color: var(--colorTertiary);
+  border-radius: 25px;
+}
+
+.tolerancePercent span {
+  color: var(--colorOrangeBright);
+  padding: 10px 20px;
+  font-weight: 700;
+}
+
+.tolerancePercent input {
+  border-radius: 25px !important;
+  height: 0 !important;
+}
+
+.deadline {
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 36px;
+  padding: 10px 0;
+  display: flex;
+}
+
+.deadlineTxt {
+  justify-content: space-between;
+  display: flex;
+}
+
+.settingsInputDeadline {
+  width: 30px;
+}
+
+.settingsInputDeadline input {
+  padding: 5px 10px !important;
+}
+
+.expertMode {
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 14px;
+  padding: 10px 0;
+  display: flex;
+}
+
+.swap {
+  justify-content: space-between;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 500;
+  display: flex;
+}
+
+.priceImg {
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  display: flex;
+}
+
+.priceImg img {
+  width: 20px;
+}
+
+.arrDown {
+  justify-content: flex-start;
+  padding: 20px 0;
+  display: flex;
+}
+
+.arrowDownImageContainer {
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  display: flex;
+}
+
+.arrowDownImageContainer img {
+  width: 30px;
+  height: auto;
+}
+
+.leftAlignedPlaceholder > input, .leftAlignedPlaceholder input {
+  text-align: left;
+}
+
+.button-container {
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  display: flex;
+}
+
+.half-button {
+  width: calc(50% - 2px);
+}
+
+.full-button {
+  width: 100%;
+}
+
 .lcard {
   background-color: var(--colorPrimary);
   border-radius: 10px;
