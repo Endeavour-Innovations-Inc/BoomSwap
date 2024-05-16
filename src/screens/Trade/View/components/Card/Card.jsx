@@ -305,7 +305,7 @@ const Card = ({ updateShouldRenderParamCard, updateSwapDetails }) => {
                   numbersOnly={true} 
                   value={inputValueA || ''} // Ensure value is never null
                   onChange={(e) => setInputValueA(e.target.value)}
-                  suffix={<button onClick={handleMaxClick}>Max</button>} // Add Max button
+                  suffix={<button onClick={handleMaxClick} style={{ backgroundColor: 'black', color: '#ffb237' }}>Max</button>} // Add Max button
                 />
                 <div>
                     {balance !== '' && <p>Balance: {balance} {selectedTokenA ? selectedTokenA.name : ''}</p>}
